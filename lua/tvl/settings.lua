@@ -5,13 +5,15 @@ local options = {
 	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
 	conceallevel = 0, -- so that `` is visible in markdown files
 	fileencoding = "utf-8", -- the encoding written to a file
+	incsearch = true,
 	hlsearch = true, -- highlight all matches on previous search pattern
+	inccommand = "nosplit",
 	ignorecase = true, -- ignore case in search patterns
 	mouse = "a", -- allow the mouse to be used in neovim
 	pumheight = 10, -- pop up menu height
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
 	showtabline = 2, -- always show tabs
-	smartcase = true, -- smart case
+	-- smartcase = true, -- smart case
 	smartindent = true, -- make indenting smarter again
 	splitbelow = true, -- force all horizontal splits to go below current window
 	splitright = true, -- force all vertical splits to go to the right of current window
@@ -32,7 +34,7 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
-	guifont = "Fira Code:h17", -- the font used in graphical neovim applications
+	guifont = "Fira Code:h10", -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append("c")

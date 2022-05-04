@@ -38,7 +38,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert --
 ------------------- Press jk fast to enter --------------------
 keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
 
 -- Visual --
 ------------------- Stay in indent mode -----------------------
@@ -69,9 +68,6 @@ keymap("n", ";", ":noh<CR>", opts)
 ------------------- Formatter ---------------------------------
 keymap("n", "<C-f>", ":lua vim.lsp.buf.formatting()<CR>", opts)
 
-------------------- Close buffer quickly ----------------------
-keymap("n", "bd", ":Bdelete<CR>", opts)
-
 ------------------- Go to buffer quickly ----------------------
 keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", opts)
@@ -95,3 +91,5 @@ keymap("n", "<A-l>", ":vertical resize +1<CR>", opts)
 
 ------------------- Switch two windows ------------------------
 keymap("n", "<A-o>", "<C-w>r", opts)
+
+-- keymap("n", "/", "<Plug>(incsearch-forward)", opts)

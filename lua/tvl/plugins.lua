@@ -54,6 +54,7 @@ return packer.startup(function(use)
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
+
 	-- Seep up loading Lua modules in neovim to improve startup time
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
@@ -68,6 +69,7 @@ return packer.startup(function(use)
 	use("folke/tokyonight.nvim")
 	use("ellisonleao/gruvbox.nvim")
 	use("tiagovla/tokyodark.nvim")
+	use("projekt0n/github-nvim-theme")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
