@@ -10,7 +10,7 @@ vim.cmd([[
     " palenight
     " tokyonight
     " gruvbox
-    colorscheme darkplus
+    colorscheme tokyonight
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark
