@@ -12,7 +12,7 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = true,
+	colored = false,
 	update_in_insert = false,
 	always_visible = true,
 }
@@ -27,7 +27,7 @@ local diff = {
 local mode = {
 	"mode",
 	fmt = function(str)
-		return " " .. str
+		return str .. "  "
 	end,
 }
 
@@ -40,7 +40,7 @@ local filetype = {
 local branch = {
 	"branch",
 	icons_enabled = true,
-	icon = "",
+	icon = "",
 }
 
 local location = {
@@ -58,8 +58,14 @@ local progress = function()
 	return chars[index]
 end
 
+local position = function()
+	local current_line = vim.fn.line(".")
+	local current_column = vim.fn.col(".")
+	return "Ln " .. current_line .. ", Col " .. current_column
+end
+
 local spaces = function()
-	return "Shift Width: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+	return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
 local encoding = function()
@@ -70,19 +76,21 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto", -- set them 'darkplus' to get lualine like vscode
-		component_separators = { left = "|", right = "|" },
-		section_separators = { left = " ", right = " " },
+		-- component_separators = { left = "|", right = "|" },
+		-- section_separators = { left = "", right = "" },
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { mode },
+		lualine_a = {},
 		lualine_b = { branch, diagnostics },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, encoding, filetype },
-		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_x = { position, spaces, encoding, filetype },
+		lualine_y = {},
+		lualine_z = { mode },
 	},
 	inactive_sections = {
 		lualine_a = {},

@@ -47,9 +47,25 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
+	use("ryanoasis/vim-devicons")
+
+	-- neo-tree
+	-- Unless you are still migrating, remove the deprecated commands from v1.x
+	vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 	-- Explorer
 	use("kyazdani42/nvim-tree.lua")
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"MunifTanjim/nui.nvim",
+		},
+	})
+
+	-- Ranger
+	use("kevinhwang91/rnvimr")
+
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
@@ -70,6 +86,7 @@ return packer.startup(function(use)
 	use("ellisonleao/gruvbox.nvim")
 	use("tiagovla/tokyodark.nvim")
 	use("projekt0n/github-nvim-theme")
+	use("loctvl842/vscode.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
