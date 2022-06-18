@@ -55,14 +55,10 @@ return packer.startup(function(use)
 
 	-- Explorer
 	use("kyazdani42/nvim-tree.lua")
-	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		requires = {
-			"MunifTanjim/nui.nvim",
-		},
-	})
-
+	use({ "loctvl842/neo-tree.nvim", requires = {
+		"MunifTanjim/nui.nvim",
+		"loctvl842/dev-icons.nvim",
+	} })
 	-- Ranger
 	use("kevinhwang91/rnvimr")
 
@@ -80,13 +76,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
-	use("lunarvim/darkplus.nvim")
-	use("drewtempelmeyer/palenight.vim")
-	use("folke/tokyonight.nvim")
-	use("ellisonleao/gruvbox.nvim")
-	use("tiagovla/tokyodark.nvim")
-	use("projekt0n/github-nvim-theme")
-	use("loctvl842/vscode.nvim")
+	use("loctvl842/colorscheme")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -116,6 +106,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Git

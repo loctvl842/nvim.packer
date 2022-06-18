@@ -34,13 +34,6 @@ vim.cmd([[
 		autocmd BufWinLeave ?* mkview 1
 		autocmd BufWinEnter ?* silent! loadview 1
   augroup end
-
-	augroup neo_tree_focus
-		autocmd!
-		autocmd FileType neo-tree highlight CursorLineSign guibg=#37373D
-		autocmd FileType neo-tree highlight Cursor guibg=#37373D
-		autocmd BufWinLeave ?* highlight CursorLineSign guibg=#222222
-	augroup end
 ]])
 
 -- Autoformat
