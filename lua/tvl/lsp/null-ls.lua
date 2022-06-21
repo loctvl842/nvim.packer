@@ -14,9 +14,4 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 	},
-	on_attach = function(client)
-		-- if client.resolved_capabilities.document_formatting then
-		vim.api.nvim_command[[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-		-- end
-	end,
 })

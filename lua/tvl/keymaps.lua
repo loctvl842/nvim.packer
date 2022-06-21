@@ -92,6 +92,7 @@ keymap("n", "fd", "zd", opts) -- delete fold
 keymap("n", "fo", "zo", opts) -- open fold
 keymap("n", "fc", "zc", opts) -- close fold
 keymap("n", "fa", "za", opts) -- toggle fold
+keymap("n", "fA", "zA", opts) -- toggle all fold under cursor
 
 ----------------------- Ranger --------------------------------
 keymap("n", "<leader>o", ":RnvimrToggle<CR>", opts)
