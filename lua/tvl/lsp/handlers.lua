@@ -64,9 +64,9 @@ end
 
 M.on_attach = function(client, bufnr)
 	vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
-	end
+	-- if client.name == "tsserver" then
+	-- 	client.resolved_capabilities.document_formatting = false
+	-- end
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
