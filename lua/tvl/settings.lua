@@ -36,6 +36,8 @@ local options = {
 	sidescrolloff = 8,
 	guifont = "Fira Code:h10", -- the font used in graphical neovim applications
 	laststatus = 3,
+	-- guicursor = "n-v-c:block-Cursor,i:ver100-iCursor,n-v-c:blinkon0,i:blinkwait10",
+	-- guicursor = "a:xxx",
 }
 
 vim.opt.shortmess:append("c")

@@ -34,6 +34,7 @@ vim.cmd([[
 		autocmd BufWinLeave ?* mkview 1
 		autocmd BufWinEnter ?* silent! loadview 1
   augroup end
+
 ]])
 
 -- Autoformat
@@ -41,3 +42,5 @@ vim.cmd([[
 --   autocmd!
 --   autocmd BufWritePre * lua vim.lsp.buf.formatting()
 -- augroup end
+
+-- vim.cmd([[setlocal guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20]])
