@@ -131,6 +131,8 @@ return packer.startup(function(use)
 	-- notify
 	use("rcarriga/nvim-notify")
 
+	use({ "filipdutescu/renamer.nvim", branch = "master" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

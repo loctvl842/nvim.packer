@@ -98,3 +98,6 @@ keymap("n", "fA", "zA", opts) -- toggle all fold under cursor
 keymap("n", "<leader>o", ":RnvimrToggle<CR>", opts)
 
 -- keymap("n", "/", "<Plug>(incsearch-forward)", opts)
+-- keymap("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', opts)
+-- keymap("n", "<leader>rn", '<cmd>lua require("renamer").rename()<cr>', opts)
+-- keymap("v", "<leader>rn", '<cmd>lua require("renamer").rename()<cr>', opts)
