@@ -34,8 +34,6 @@ neoTree.setup({
 			-- folder_closed = "",
 			-- folder_open = "",
 			folder_empty = " ",
-			-- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
-			-- then these will never be used.
 			default = " ",
 			highlight = "NeoTreeFileIcon",
 		},
@@ -216,7 +214,7 @@ neoTree.setup({
 						end
 					end
 				elseif node.type == "file" or node.type == "terminal" then
-					local success, web_devicons = pcall(require, "nvim-web-devicons")
+					local success, web_devicons = pcall(require, "dev-icons")
 					if success then
 						local devicon, hl = web_devicons.get_icon(node.name, node.ext)
 						icon = devicon or icon

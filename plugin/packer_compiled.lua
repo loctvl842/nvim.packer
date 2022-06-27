@@ -124,20 +124,20 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  colorizer = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/colorizer",
+    url = "https://github.com/lilydjwg/colorizer"
+  },
   colorscheme = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/colorscheme",
     url = "https://github.com/loctvl842/colorscheme"
   },
-  ["dev-icons.nvim"] = {
+  ["dev-icons"] = {
     loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/dev-icons.nvim",
-    url = "https://github.com/loctvl842/dev-icons.nvim"
-  },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/dev-icons",
+    url = "https://github.com/loctvl842/dev-icons"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -169,11 +169,6 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/loctvl842/neo-tree.nvim"
   },
-  ["nlsp-settings.nvim"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
-    url = "https://github.com/tamago324/nlsp-settings.nvim"
-  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -194,10 +189,10 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-colorizer.lua"] = {
+  ["nvim-gps"] = {
     loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-gps",
+    url = "https://github.com/SmiteshP/nvim-gps"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -214,11 +209,6 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -234,20 +224,10 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  playground = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -293,11 +273,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-illuminate"] = {
     loaded = true,

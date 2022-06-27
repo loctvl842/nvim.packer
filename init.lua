@@ -16,7 +16,7 @@ require("tvl.bufferline") -- Buffer line (tab bar) in neovim
 require("tvl.colorscheme") -- Themes
 require("tvl.lualine") -- Status line for neovim
 require("tvl.auto-closetag")
-require("tvl.colorizer")
+-- require("tvl.colorizer")
 require("tvl.gitsigns")
 require("tvl.project")
 require("tvl.impatient")
@@ -27,3 +27,9 @@ require("tvl.ranger")
 require("tvl.notify")
 require("tvl.illuminate")
 require("tvl.renamer")
+
+------ winbar --------
+
+-- require("tvl.winbar")
+-- require("tvl.functions")
+require("tvl.gps")
