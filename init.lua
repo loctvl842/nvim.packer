@@ -10,13 +10,11 @@ require("tvl.emmet") -- Emmet for html js css
 require("tvl.autopairs") -- Auto pair () [] {}
 require("tvl.comment") -- comment easy
 require("tvl.neo-tree")
--- require("tvl.nvim-tree") -- Explorer
 require("tvl.toggleterm") -- FLoat terminal in neovim
 require("tvl.bufferline") -- Buffer line (tab bar) in neovim
 require("tvl.colorscheme") -- Themes
 require("tvl.lualine") -- Status line for neovim
 require("tvl.auto-closetag")
--- require("tvl.colorizer")
 require("tvl.gitsigns")
 require("tvl.project")
 require("tvl.impatient")
