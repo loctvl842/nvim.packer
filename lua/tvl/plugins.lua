@@ -62,6 +62,7 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye", commit = "5d4d3c957e05a4478998e1f40f3b86d05bd72963" })
 	use({ "nvim-lualine/lualine.nvim", commit = "5113cdb32f9d9588a2b56de6d1df6e33b06a554a" })
 	use({ "akinsho/toggleterm.nvim", commit = "8f2e78d0256eba4896c8514aa150e41e63f7d5b2" })
+	-- use({ "akinsho/toggleterm.nvim" })
 
 	-- Seep up loading Lua modules in neovim to improve startup time
 	use({ "ahmedkhalf/project.nvim", commit = "92166ca6cf94a6a793abbd2629652884f50b7364" })

@@ -75,7 +75,7 @@ bufferline.setup({
 		separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
 		enforce_regular_tabs = true,
 		always_show_bufferline = true,
-		-- sort_by = "insert_after_current",
+		sort_by = "insert_after_current",
 		-- sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
 		--   -- add custom logic
 		--   return buffer_a.modified > buffer_b.modified

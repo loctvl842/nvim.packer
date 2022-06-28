@@ -26,8 +26,12 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 ------------------- Navigate buffers -------------------------
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- keymap("n", "<S-l>", ":bnext<CR>", opts)
+-- keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<A-S-l>", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<A-S-h>", ":BufferLineMovePrev<CR>", opts)
 
 -- Insert --
 ------------------- Press jk fast to enter --------------------

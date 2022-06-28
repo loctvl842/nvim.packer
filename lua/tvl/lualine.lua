@@ -72,6 +72,10 @@ local encoding = function()
 	return string.upper(vim.o.fileencoding)
 end
 
+local term_num = function()
+	return terminal(".b:toggle_number")
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -85,7 +89,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = {},
-		lualine_b = { branch, diagnostics },
+		lualine_b = { branch, diagnostics, term_num },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { position, spaces, encoding, filetype },
