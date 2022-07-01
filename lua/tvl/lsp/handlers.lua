@@ -70,13 +70,22 @@ M.on_attach = function(client, bufnr)
 	-- 	client.resolved_capabilities.document_formatting = false
 	-- end
 	lsp_keymaps(bufnr)
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
+
+	local status_illuminate_ok, illuminate = pcall(require, "illuminate")
+	if not status_illuminate_ok then
 		return
 	end
 	if client.name ~= "neo-tree" then
 		illuminate.on_attach(client)
 	end
+
+	-- FIX THIS PLEASE
+	local status_navic_ok, navic = pcall(require, "nvim-navic")
+	if not status_navic_ok then
+		return
+	end
+	navic.attach(client, bufnr)
+	--------------------------------
 end
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")

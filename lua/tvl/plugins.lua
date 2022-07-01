@@ -58,7 +58,7 @@ return packer.startup(function(use)
 	-- Ranger
 	use({ "kevinhwang91/rnvimr", commit = "5877509cfdbf3a0382ff24198a3f730b476f8262" })
 
-	use({ "akinsho/bufferline.nvim", commit = "6a2509e3dbbaa99a06f07b17facdf92a643d4912" })
+	use({ "loctvl842/bufferline" })
 	use({ "moll/vim-bbye", commit = "5d4d3c957e05a4478998e1f40f3b86d05bd72963" })
 	use({ "nvim-lualine/lualine.nvim", commit = "5113cdb32f9d9588a2b56de6d1df6e33b06a554a" })
 	use({ "akinsho/toggleterm.nvim", commit = "8f2e78d0256eba4896c8514aa150e41e63f7d5b2" })
@@ -97,7 +97,7 @@ return packer.startup(function(use)
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", commit = "901ffe1a363f21c168eacf011dce4f905fd26d5f" })
-	-- use("nvim-treesitter/playground")
+	use("nvim-treesitter/playground")
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", commit = "831cc1c47c2b3f88b3981f3ed033c6e973706c1f" })
 
 	-- Git
@@ -122,7 +122,8 @@ return packer.startup(function(use)
 	use({ "filipdutescu/renamer.nvim", branch = "master", commit = "eecd939c68312a1a4c1744699189eaf61f4c6027" })
 
 	-- Lua
-	use({ "SmiteshP/nvim-gps", commit = "be4bb5b903af81f04b316425b8ba8142504d023f" })
+	use("loctvl842/winbar")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

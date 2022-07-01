@@ -89,10 +89,10 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
-  ["bufferline.nvim"] = {
+  bufferline = {
     loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/bufferline",
+    url = "https://github.com/loctvl842/bufferline"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -189,11 +189,6 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-gps"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-gps",
-    url = "https://github.com/SmiteshP/nvim-gps"
-  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -228,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  playground = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -288,6 +288,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  winbar = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/winbar",
+    url = "https://github.com/loctvl842/winbar"
   }
 }
 

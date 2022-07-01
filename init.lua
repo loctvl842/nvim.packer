@@ -30,4 +30,5 @@ require("tvl.renamer")
 
 -- require("tvl.winbar")
 -- require("tvl.functions")
-require("tvl.gps")
+-- require("tvl.gps")
+require("tvl.winbar")

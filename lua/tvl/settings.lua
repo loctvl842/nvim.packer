@@ -38,6 +38,7 @@ local options = {
 	laststatus = 3,
 	-- guicursor = "n-v-c:block-Cursor,i:ver100-iCursor,n-v-c:blinkon0,i:blinkwait10",
 	-- guicursor = "a:xxx",
+	background = "dark",
 }
 
 vim.opt.shortmess:append("c")
