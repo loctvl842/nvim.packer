@@ -27,8 +27,4 @@ require("tvl.illuminate")
 require("tvl.renamer")
 
 ------ winbar --------
-
--- require("tvl.winbar")
--- require("tvl.functions")
--- require("tvl.gps")
 require("tvl.winbar")
