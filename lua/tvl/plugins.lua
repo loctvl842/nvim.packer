@@ -62,7 +62,6 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye", commit = "5d4d3c957e05a4478998e1f40f3b86d05bd72963" })
 	use({ "nvim-lualine/lualine.nvim", commit = "5113cdb32f9d9588a2b56de6d1df6e33b06a554a" })
 	use({ "akinsho/toggleterm.nvim", commit = "8f2e78d0256eba4896c8514aa150e41e63f7d5b2" })
-	-- use({ "akinsho/toggleterm.nvim" })
 
 	-- Seep up loading Lua modules in neovim to improve startup time
 	use({ "ahmedkhalf/project.nvim", commit = "92166ca6cf94a6a793abbd2629652884f50b7364" })
@@ -84,6 +83,9 @@ return packer.startup(function(use)
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "aa1c36fa6786d2a5023a007f33c5a9dddbeb061e" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets", commit = "471f3ab20c1ee02d33830f379caaa8edfbd39808" }) -- a bunch of snippets to use
+
+	-- emmet
+	use({ "mattn/emmet-vim", commit = "f4c999bdf2a21b9d96132f6cd04a9e19eb7e87ff" })
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig", commit = "8c2b8d490f91eb72a43a3d47c356d9bc96ccc983" }) -- enable LSP

@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/dev-icons",
     url = "https://github.com/loctvl842/dev-icons"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/friendly-snippets",
