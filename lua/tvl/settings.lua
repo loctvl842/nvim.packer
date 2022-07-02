@@ -39,6 +39,7 @@ local options = {
 	-- guicursor = "n-v-c:block-Cursor,i:ver100-iCursor,n-v-c:blinkon0,i:blinkwait10",
 	-- guicursor = "a:xxx",
 	background = "dark",
+	formatoptions = "jql",
 }
 
 vim.opt.shortmess:append("c")
@@ -49,4 +50,3 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,]")
 vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work

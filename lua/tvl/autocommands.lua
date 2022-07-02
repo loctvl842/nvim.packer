@@ -41,6 +41,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- fix comment
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = { "*" },
+	callback = function()
+		vim.cmd([[
+			set formatoptions-=cro
+		]])
+	end,
+})
+
 -- Autoformat
 -- augroup _lsp
 --   autocmd!
