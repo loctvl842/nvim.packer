@@ -21,28 +21,29 @@ vim.g.indent_blankline_show_trailing_blankline_indent = true
 vim.g.indent_blankline_show_first_indent_level = true
 vim.g.indent_blankline_use_treesitter = true
 vim.g.indent_blankline_show_current_context = true
-vim.g.indent_blankline_context_patterns = {
-	"class",
-	"return",
-	"function",
-	"method",
-	"^if",
-	"^while",
-	"jsx_element",
-	"^for",
-	"^object",
-	"^table",
-	"block",
-	"arguments",
-	"if_statement",
-	"else_clause",
-	"jsx_element",
-	"jsx_self_closing_element",
-	"try_statement",
-	"catch_clause",
-	"import_statement",
-	"operation_type",
-}
+vim.g.indent_blankline_use_treesitter_scope = true
+-- vim.g.indent_blankline_context_patterns = {
+-- 	"class",
+-- 	"return",
+-- 	"function",
+-- 	"method",
+-- 	"^if",
+-- 	"^while",
+-- 	"jsx_element",
+-- 	"^for",
+-- 	"^object",
+-- 	"^table",
+-- 	"block",
+-- 	"arguments",
+-- 	"if_statement",
+-- 	"else_clause",
+-- 	"jsx_element",
+-- 	"jsx_self_closing_element",
+-- 	"try_statement",
+-- 	"catch_clause",
+-- 	"import_statement",
+-- 	"operation_type",
+-- }
 -- HACK: work-around for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
 vim.wo.colorcolumn = "99999"
 
@@ -53,12 +54,13 @@ vim.wo.colorcolumn = "99999"
 -- vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 vim.opt.list = true
--- vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append("space:∙")
 -- vim.opt.listchars:append "space:"
--- vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append("eol: ")
+vim.opt.listchars:append("tab:  ")
 
 indent_blankline.setup({
-	show_end_of_line = true,
+	show_end_of_line = false,
 	space_char_blankline = " ",
 	show_current_context = true,
 	-- show_current_context_start = true,

@@ -39,8 +39,11 @@ local options = {
 	-- guicursor = "n-v-c:block-Cursor,i:ver100-iCursor,n-v-c:blinkon0,i:blinkwait10",
 	-- guicursor = "a:xxx",
 	background = "dark",
-	formatoptions = "jql",
+	selection = "exclusive",
 }
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.fillchars.eob = " "
 
 vim.opt.shortmess:append("c")
 
