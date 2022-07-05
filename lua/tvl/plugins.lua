@@ -47,7 +47,10 @@ return packer.startup(function(use)
 	-- neo-tree
 	-- Unless you are still migrating, remove the deprecated commands from v1.x
 	-- vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-	use({ "loctvl842/neo-tree.nvim", requires = { "MunifTanjim/nui.nvim" } })
+	use({
+		"loctvl842/neo-tree.nvim",
+		requires = { "MunifTanjim/nui.nvim", commit = "ec64b753eb2b0fa75631d770b1d4a414036a3d11" },
+	})
 
 	-- General
 	use({ "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" }) -- Have packer manage itself
@@ -94,7 +97,7 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" })
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", commit = "f33df8f35f2ee0cf9bb19142a4a41b3dc6c0d0b6" })
+	use({ "nvim-telescope/telescope.nvim", commit = "e7e90466de0571d39fe642cdfec1c577451b8be1" })
 	use({ "nvim-telescope/telescope-media-files.nvim", commit = "513e4ee385edd72bf0b35a217b7e39f84b6fe93c" })
 
 	-- Treesitter

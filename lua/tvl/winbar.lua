@@ -5,6 +5,19 @@ end
 
 winbar.setup({
 	disable_icons = false,
+	disabled_filetype = {
+		"startify",
+		"dashboard",
+		"packer",
+		"neogitstatus",
+		"Trouble",
+		"alpha",
+		"Outline",
+		"WhichKey",
+		"toggleterm",
+		"neo-tree",
+		"TelescopePrompt",
+	},
 	separator = require("tvl.icons").ui.ChevronRight,
 	-- limit for amount of context shown
 	-- 0 means no limit

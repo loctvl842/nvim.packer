@@ -24,7 +24,6 @@ require("tvl.telescope") -- Easy finding
 require("tvl.toggleterm") -- FLoat terminal in neovim
 require("tvl.treesitter") -- Highlight
 require("tvl.whichkey")
-
 require("tvl.lsp") -- Language server protocol
 
 ------ winbar --------
