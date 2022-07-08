@@ -129,6 +129,8 @@ return packer.startup(function(use)
 	-- Lua
 	use("loctvl842/winbar")
 
+	use("ray-x/lsp_signature.nvim")
+
 	-- Lua
 	use({
 		"folke/trouble.nvim",
