@@ -7,6 +7,8 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
+local prev_filetype = ""
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
@@ -33,10 +35,41 @@ local mode = {
 
 local filetype = {
 	"filetype",
-	icons_enabled = false,
-	icon = nil,
-}
+	fmt = function(str)
+		local ui_filetypes = {
+			"help",
+			"packer",
+			"neogitstatus",
+			"NvimTree",
+			"Trouble",
+			"lir",
+			"Outline",
+			"spectre_panel",
+			"toggleterm",
+			"DressingSelect",
+			"neo-tree",
+			"",
+		}
 
+		if str == "toggleterm" then
+			-- 
+			local term = " " .. vim.api.nvim_buf_get_var(0, "toggle_number")
+			return term
+		end
+
+		if str == "neo-tree" then
+			return prev_filetype
+		end
+
+		if vim.tbl_contains(ui_filetypes, str) then
+			return ""
+		else
+			prev_filetype = str
+			return str
+		end
+	end,
+	icons_enabled = true,
+}
 local branch = {
 	"branch",
 	icons_enabled = true,
