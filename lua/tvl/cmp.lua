@@ -103,11 +103,13 @@ cmp.setup({
 	window = {
 		-- documentation = "native",
 		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			border = "single",
+			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 		completion = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			border = "single",
+			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},

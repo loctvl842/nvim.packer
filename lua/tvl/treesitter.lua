@@ -15,10 +15,29 @@ configs.setup({
 		disable = { "scss", "css" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = true, disable = { "yaml" } },
+	indent = { enable = true, disable = { "yaml", "python" } },
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
+	},
+	autotag = {
+		enable = true,
+		disable = { "xml", "markdown" },
+	},
+	rainbow = {
+		enable = true,
+		colors = {
+			"#68a0b0",
+			"#946EaD",
+			"#c7aA6D",
+			-- "Gold",
+			-- "Orchid",
+			-- "DodgerBlue",
+			-- "Cornsilk",
+			-- "Salmon",
+			-- "LawnGreen",
+		},
+		disable = { "html" },
 	},
 	playground = {
 		enable = true,

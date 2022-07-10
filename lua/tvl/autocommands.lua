@@ -51,6 +51,33 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function()
+		require("neodim").setup({
+			alpha = 0.5,
+			blend_color = "#333333",
+			update_in_insert = {
+				enable = false,
+				delay = 100,
+			},
+			hide = {
+				virtual_text = true,
+				signs = true,
+				underline = true,
+			},
+		})
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "term://*" },
+	callback = function()
+		vim.cmd("startinsert!")
+		-- TODO: if java = 2
+		vim.cmd("set cmdheight=0")
+	end,
+})
+
 -- Autoformat
 -- augroup _lsp
 --   autocmd!
