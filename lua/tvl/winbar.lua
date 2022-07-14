@@ -12,6 +12,8 @@ winbar.setup({
 		"toggleterm",
 		"neo-tree",
 		"Compile",
+		"TelescopePrompt",
+		"TelescopeResult",
 	},
 	separator = require("tvl.icons").ui.ChevronRight,
 	-- limit for amount of context shown
