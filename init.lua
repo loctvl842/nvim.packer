@@ -25,6 +25,9 @@ require("tvl.toggleterm") -- FLoat terminal in neovim
 require("tvl.treesitter") -- Highlight
 require("tvl.whichkey")
 require("tvl.lsp") -- Language server protocol
+require("tvl.compile")
 
+-- source `colorizer` after set termguicolor
+require("tvl.colorizer")
 ------ winbar --------
 require("tvl.winbar")

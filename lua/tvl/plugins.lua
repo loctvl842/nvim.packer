@@ -42,10 +42,12 @@ packer.init({
 return packer.startup(function(use)
 	-- UI
 	use("loctvl842/dev-icons")
-	use({ "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" })
 	use({ "loctvl842/bufferline" })
 	use("loctvl842/winbar")
 	use({ "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" })
+	use({ "loctvl842/compile-nvim" })
+	-- Colorschemes
+	use("loctvl842/colorscheme")
 	use({
 		"loctvl842/neo-tree.nvim",
 		requires = { "MunifTanjim/nui.nvim", commit = "ec64b753eb2b0fa75631d770b1d4a414036a3d11" },
@@ -53,9 +55,7 @@ return packer.startup(function(use)
 	-- neo-tree
 	-- Unless you are still migrating, remove the deprecated commands from v1.x
 	-- vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
-	-- Colorschemes
-	use("loctvl842/colorscheme")
+	-- quick run
 
 	-- General
 	use({ "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" }) -- Have packer manage itself
@@ -75,7 +75,6 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
 	use({ "lukas-reineke/indent-blankline.nvim", commit = "38b3567bc5d72a338699bd489a4b4e8e5b9b40e7" })
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
-	use({ "antoinemadec/FixCursorHold.nvim", commit = "100981c4e4f224a019e028f7d56cbd1da5c1bf5d" }) -- This is needed to fix lsp doc highlight
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "8cab7889766d715b1107b9967a4077568c41ee2a" }) -- The completion plugin
@@ -116,21 +115,19 @@ return packer.startup(function(use)
 	use({ "mg979/vim-visual-multi", branch = "master", commit = "e522dd192eb19d060a8bc312fb51fe4af49aadb1" })
 
 	-- Colorizer
-	use({ "lilydjwg/colorizer", commit = "bafd4e98462a4ddeb275d02fa1448b4349e2e50f" })
+	use({ "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" })
 
 	use({ "filipdutescu/renamer.nvim", branch = "master", commit = "eecd939c68312a1a4c1744699189eaf61f4c6027" })
 
+	-- better highlight for unused variable
 	use({ "zbirenbaum/neodim", commit = "9c9c69ab59135ccbf823c7fda16bc87ea57431db" })
 
-	-- install without yarn or npm
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
+	-- better ui for showing error or warning
+	use({ "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" })
 
-	use({ "iamcco/markdown-preview.nvim" })
+	-- better preview markdown
+	use({ "iamcco/markdown-preview.nvim", commit = "9becceee5740b7db6914da87358a183ad11b2049" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

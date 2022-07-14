@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  ["FixCursorHold.nvim"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
-    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -124,15 +119,15 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  colorizer = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/colorizer",
-    url = "https://github.com/lilydjwg/colorizer"
-  },
   colorscheme = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/colorscheme",
     url = "https://github.com/loctvl842/colorscheme"
+  },
+  ["compile-nvim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/compile-nvim",
+    url = "https://github.com/loctvl842/compile-nvim"
   },
   ["dev-icons"] = {
     loaded = true,
@@ -208,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,

@@ -101,6 +101,9 @@ keymap("n", "fA", "zA", opts) -- toggle all fold under cursor
 ----------------------- Ranger --------------------------------
 keymap("n", "<leader>o", ":RnvimrToggle<CR>", opts)
 
+----------------------- Compile --------------------------------
+keymap("n", "<c-m-n>", "<cmd>only | Compile<CR>", opts)
+
 -- keymap("n", "/", "<Plug>(incsearch-forward)", opts)
 -- keymap("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', opts)
 -- keymap("n", "<leader>rn", '<cmd>lua require("renamer").rename()<cr>', opts)

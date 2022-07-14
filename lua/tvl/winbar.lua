@@ -11,6 +11,7 @@ winbar.setup({
 		"WhichKey",
 		"toggleterm",
 		"neo-tree",
+		"Compile",
 	},
 	separator = require("tvl.icons").ui.ChevronRight,
 	-- limit for amount of context shown

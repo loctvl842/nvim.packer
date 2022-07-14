@@ -1,15 +1,24 @@
 vim.cmd([[
-  augroup _auto_resize
-    autocmd!
-    autocmd VimResized * tabdo wincmd = 
-  augroup end
-
   augroup remember_folds
 		autocmd!
-		autocmd BufWinLeave ?* mkview 1
+		autocmd BufWinLeave ?* silent! mkview 1
 		autocmd BufWinEnter ?* silent! loadview 1
   augroup end
 ]])
+
+-- fix tab in python
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = { "*.py" },
+	callback = function()
+		vim.cmd("setlocal noexpandtab")
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+	callback = function()
+		vim.cmd("tabdo wincmd =")
+	end,
+})
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
@@ -45,9 +54,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*" },
 	callback = function()
-		vim.cmd([[
-			set formatoptions-=cro
-		]])
+		vim.cmd([[set formatoptions-=cro]])
 	end,
 })
 
@@ -74,7 +81,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	callback = function()
 		vim.cmd("startinsert!")
 		-- TODO: if java = 2
-		vim.cmd("set cmdheight=0")
+		vim.cmd("set cmdheight=1")
 	end,
 })
 
