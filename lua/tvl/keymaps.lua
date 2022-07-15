@@ -84,8 +84,8 @@ keymap("n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", opts)
 keymap("n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", opts)
 
 ------------------- split window ------------------------------
-keymap("n", "<leader>\\", ":vsplit<CR> <ESC>:lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<leader>/", ":split<CR> <ESC>:lua require('telescope.builtin').find_files()<cr>", opts)
+keymap("n", "<leader>\\", ":vsplit<CR>", opts)
+keymap("n", "<leader>/", ":split<CR>", opts)
 
 ------------------- Switch two windows ------------------------
 keymap("n", "<A-o>", "<C-w>r", opts)

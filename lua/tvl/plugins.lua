@@ -128,6 +128,10 @@ return packer.startup(function(use)
 	-- better preview markdown
 	use({ "iamcco/markdown-preview.nvim", commit = "9becceee5740b7db6914da87358a183ad11b2049" })
 
+	-- save session
+	use({ "rmagatti/auto-session" })
+	use({ "rmagatti/session-lens" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

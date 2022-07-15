@@ -89,6 +89,7 @@ local mappings = {
 	["E"] = { "<cmd>Neotree toggle position=float<cr>", "Explorer Float" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
+	["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 	["d"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["r"] = { "<cmd>source ~/.config/nvim/lua/tvl/colorscheme.lua<CR>", "ReSource Colorscheme" },
