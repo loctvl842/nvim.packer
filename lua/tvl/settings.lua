@@ -21,7 +21,7 @@ local options = {
 	termguicolors = true, -- set term gui colors (most terminals support this)
 	timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
 	-- undofile = true,                         -- enable persistent undo
-	updatetime = 300, -- faster completion (4000ms default)
+	updatetime = 0, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 	expandtab = true, -- convert tabs to spaces
 	shiftwidth = 2, -- the number of spaces inserted for each indentation
@@ -34,16 +34,17 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
-	-- guifont = "Fira Code:h1", -- the font used in graphical neovim applications
+	guifont = "monospace:h17", -- the font used in graphical neovim applications
 	laststatus = 3,
 	-- guicursor = "n-v-c:block-Cursor,i-sm-ci:ver100-iCursor,n-v-c:blinkon0,i:blinkwait10",
 	-- guicursor = "a:xxx",
 	background = "dark",
 	selection = "exclusive",
+	showcmd = false,
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.opt.fillchars.eob = " "
+vim.opt.fillchars = vim.opt.fillchars + "eob: "
 
 vim.opt.shortmess:append("c")
 
@@ -53,3 +54,5 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,]")
 vim.cmd([[set iskeyword+=-]])
+-- diable open fold with `l`
+vim.cmd([[set foldopen-=hor]])

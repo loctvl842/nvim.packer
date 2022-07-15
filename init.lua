@@ -33,3 +33,5 @@ require("tvl.compile")
 require("tvl.colorizer")
 ------ winbar --------
 require("tvl.winbar")
+
+require("tvl.ufo")
