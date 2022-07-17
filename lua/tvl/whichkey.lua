@@ -132,37 +132,6 @@ local mappings = {
 		},
 	},
 
-	l = {
-		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = {
-			"<cmd>Telescope lsp_document_diagnostics<cr>",
-			"Document Diagnostics",
-		},
-		w = {
-			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
-		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-		i = { "<cmd>LspInfo<cr>", "Info" },
-		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-			"Next Diagnostic",
-		},
-		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-			"Prev Diagnostic",
-		},
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
-		},
-	},
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -189,3 +158,47 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+
+local fold_opts = {
+	mode = "n", -- NORMAL mode
+	prefix = "f",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+
+local fold_mappings = {
+	["d"] = { "zd", "Delete fold under cursor" },
+	["o"] = { "zo", "Open fold under cursor" },
+	["O"] = { "zo", "Open all folds under cursor" },
+	["c"] = { "zc", "Close fold under cursor" },
+	["C"] = { "zC", "Close all folds under cursor" },
+	["a"] = { "za", "Toggle fold under cursor" },
+	["A"] = { "zA", "Toggle all folds under cursor" },
+	["v"] = { "zv", "Show cursor line" },
+	["M"] = { "zM", "Close all folds" },
+	["R"] = { "zR", "Open all folds" },
+	["m"] = { "zm", "Fold more" },
+	["r"] = { "zr", "Fold less" },
+	["x"] = { "zx", "Update folds" },
+	["z"] = { "zz", "Center this line" },
+	["t"] = { "zt", "Top this line" },
+	["b"] = { "zb", "Bottom this line" },
+	["g"] = { "zg", "Add word to spell list" },
+	["w"] = { "zw", "Mark word as bad/misspelling" },
+	["e"] = { "ze", "Right this line" },
+	["s"] = { "zs", "Left this line" },
+	["H"] = { "zH", "Half screen to the left" },
+	["L"] = { "zL", "Half screen to the right" },
+}
+
+which_key.register(fold_mappings, fold_opts)
+which_key.register({ ["f"] = { "zf", "Create fold" } }, {
+	mode = "v",
+	prefix = "f",
+	buffer = nil,
+	silent = true,
+	noremap = true,
+	nowait = true,
+})
