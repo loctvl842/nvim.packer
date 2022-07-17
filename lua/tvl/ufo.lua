@@ -1,4 +1,4 @@
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.foldcolumn = "1"
 
 local handler = function(virtText, lnum, endLnum, width, truncate)
