@@ -130,7 +130,7 @@ return packer.startup(function(use)
 
 	-- session
 	use({ "rmagatti/auto-session", commit = "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e" })
-	use({ "rmagatti/session-lens", commit = "5e95ad9aec94b34c83db3eff5dabc4ca1778de6d" })
+	use({ "loctvl842/session-lens" })
 
 	-- fold
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
