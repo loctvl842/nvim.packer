@@ -1,3 +1,8 @@
+local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_cmp_ok then
+	return
+end
+
 local M = {}
 
 M.setup = function()
@@ -65,33 +70,30 @@ local function lsp_keymaps(bufnr)
 	-- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
-M.on_attach = function(client, bufnr)
-	vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-	-- if client.name == "tsserver" then
-	-- 	client.resolved_capabilities.document_formatting = false
-	-- end
-	lsp_keymaps(bufnr)
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
-	local status_illuminate_ok, illuminate = pcall(require, "illuminate")
-	if not status_illuminate_ok then
+local function lsp_highlight_document(client)
+	-- if client.server_capabilities.document_highlight then
+	local status_ok, illuminate = pcall(require, "illuminate")
+	if not status_ok then
 		return
 	end
 	if client.name ~= "neo-tree" then
 		illuminate.on_attach(client)
 	end
+	-- end
 end
 
-local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_cmp_ok then
-	return
+M.on_attach = function(client, bufnr)
+	vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+		callback = function()
+			vim.lsp.buf.format()
+		end,
+	})
+	lsp_keymaps(bufnr)
+	lsp_highlight_document(client) -- illuminate
 end
-
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
--- M.capabilities.textDocument.foldingRange = {
--- 	dynamicRegistration = false,
--- 	lineFoldingOnly = false,
--- }
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 return M
