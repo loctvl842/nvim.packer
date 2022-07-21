@@ -5,9 +5,16 @@ end
 
 local M = {}
 
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- M.capabilities.textDocument.foldingRange = {
+--   dynamicRegistration = false,
+--   lineFoldingOnly = true,
+-- }
+M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+
 M.setup = function()
 	local signs = {
-
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
 		{ name = "DiagnosticSignHint", text = "" },
@@ -59,7 +66,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap(bufnr, "n", "<leader>rn", "<cmd>lua require('renamer').rename()<CR>", opts)
-	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
+	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 	-- keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
@@ -69,10 +76,6 @@ local function lsp_keymaps(bufnr)
 	-- keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 	-- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
-
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 local function lsp_highlight_document(client)
 	-- if client.server_capabilities.document_highlight then
@@ -87,11 +90,13 @@ local function lsp_highlight_document(client)
 end
 
 M.on_attach = function(client, bufnr)
-	vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-		callback = function()
-			vim.lsp.buf.format()
-		end,
-	})
+	-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	-- 	callback = function()
+	-- 		if client.name ~= "sumneko_lua" then
+	-- 			vim.lsp.buf.format()
+	-- 		end
+	-- 	end,
+	-- })
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client) -- illuminate
 end

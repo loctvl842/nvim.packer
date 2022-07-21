@@ -41,6 +41,8 @@ local options = {
 	background = "dark",
 	selection = "exclusive",
 	showcmd = false,
+	foldcolumn = "1",
+  fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

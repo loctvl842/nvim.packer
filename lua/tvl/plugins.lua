@@ -133,7 +133,8 @@ return packer.startup(function(use)
 	use({ "loctvl842/session-lens" })
 
 	-- fold
-	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+	-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+  use({"loctvl842/pretty-fold.nvim"})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

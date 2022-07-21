@@ -34,4 +34,4 @@ require("tvl.colorizer")
 ------ winbar --------
 require("tvl.winbar")
 
-require("tvl.ufo")
+require("tvl.pretty-fold")

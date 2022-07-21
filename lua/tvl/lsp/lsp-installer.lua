@@ -7,6 +7,19 @@ local servers = { "clangd", "cssls", "html", "jsonls", "sumneko_lua", "tsserver"
 
 lsp_installer.setup({
 	ensure_installed = servers,
+	ui = {
+		icons = {},
+		keymaps = {
+			toggle_server_expand = "<CR>",
+			install_server = "i",
+			update_server = "u",
+			check_server_version = "c",
+			update_all_servers = "U",
+			check_outdated_servers = "C",
+			uninstall_server = "X",
+		},
+	},
+	log_level = vim.log.levels.INFO,
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")

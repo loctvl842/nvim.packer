@@ -244,11 +244,6 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
-  ["nvim-ufo"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-ufo",
-    url = "https://github.com/kevinhwang91/nvim-ufo"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -264,15 +259,15 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["pretty-fold.nvim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
+    url = "https://github.com/loctvl842/pretty-fold.nvim"
+  },
   ["project.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
-  },
-  ["promise-async"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/promise-async",
-    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["renamer.nvim"] = {
     loaded = true,
@@ -287,7 +282,7 @@ _G.packer_plugins = {
   ["session-lens"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/session-lens",
-    url = "https://github.com/rmagatti/session-lens"
+    url = "https://github.com/loctvl842/session-lens"
   },
   ["telescope.nvim"] = {
     loaded = true,
