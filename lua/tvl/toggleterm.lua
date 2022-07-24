@@ -22,8 +22,8 @@ toggleterm.setup({
 	},
 	highlights = {
 		FloatBorder = { link = "TermBorder" },
-		Normal = { link = "Normal" },
-		NormalFloat = { link = "Normal" },
+		Normal = { link = "TermNormal" },
+		NormalFloat = { link = "TermNormal" },
 	},
 })
 

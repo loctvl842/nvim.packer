@@ -15,6 +15,7 @@ compile.setup({
 		cpp = "g++ -O2 -Wall % -o $fileBase && ./$fileBase",
 		go = "go run %",
 		sh = "sh %",
+    lua = "lua %"
 	},
 
 	-- UI settings

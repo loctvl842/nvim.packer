@@ -6,6 +6,13 @@ vim.cmd([[
   augroup end
 ]])
 
+vim.cmd([[
+augroup illuminate_augroup
+    autocmd!
+    autocmd VimEnter * hi illuminatedCurWord cterm=italic gui=italic
+augroup END
+]])
+
 -- fix tab in python
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.py" },
@@ -73,15 +80,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				underline = true,
 			},
 		})
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = { "term://*" },
-	callback = function()
-		vim.cmd("startinsert!")
-		-- TODO: if java = 2
-		vim.cmd("set cmdheight=1")
 	end,
 })
 

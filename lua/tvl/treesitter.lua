@@ -15,7 +15,7 @@ configs.setup({
 		disable = { "scss", "css" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = true, disable = { "yaml", "python" } },
+	indent = { enable = false, disable = { "yaml", "python" } },
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,

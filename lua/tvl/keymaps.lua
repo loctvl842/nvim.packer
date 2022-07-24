@@ -41,7 +41,6 @@ keymap("i", "jk", "<ESC>", opts)
 ------------------- Stay in indent mode -----------------------
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 keymap("v", "p", '"_dP', opts)
 
 ------------------- Resize windows ----------------------------
@@ -69,9 +68,6 @@ keymap("i", "<A-S-k>", "<ESC>:m .-2<CR>==gi", opts)
 ------------------- No highlight ------------------------------
 keymap("n", ";", ":noh<CR>", opts)
 
-------------------- Formatter ---------------------------------
-keymap("n", "<C-f>", ":lua vim.lsp.buf.formatting()<CR>", opts)
-
 ------------------- Go to buffer quickly ----------------------
 keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", opts)
@@ -90,21 +86,9 @@ keymap("n", "<leader>/", ":split<CR>", opts)
 ------------------- Switch two windows ------------------------
 keymap("n", "<A-o>", "<C-w>r", opts)
 
-------------------------- Fold --------------------------------
-keymap("v", "ff", "zf", opts) -- create fold
-keymap("n", "fd", "zd", opts) -- delete fold
-keymap("n", "fo", "zo", opts) -- open fold
-keymap("n", "fc", "zc", opts) -- close fold
-keymap("n", "fa", "za", opts) -- toggle fold
-keymap("n", "fA", "zA", opts) -- toggle all fold under cursor
 
------------------------ Ranger --------------------------------
+------------------- Ranger --------------------------------
 keymap("n", "<leader>o", ":RnvimrToggle<CR>", opts)
 
------------------------ Compile --------------------------------
+------------------- Compile --------------------------------
 keymap("n", "<c-m-n>", "<cmd>only | Compile<CR>", opts)
-
--- keymap("n", "/", "<Plug>(incsearch-forward)", opts)
--- keymap("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', opts)
--- keymap("n", "<leader>rn", '<cmd>lua require("renamer").rename()<cr>', opts)
--- keymap("v", "<leader>rn", '<cmd>lua require("renamer").rename()<cr>', opts)
