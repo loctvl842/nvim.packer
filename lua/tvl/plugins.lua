@@ -117,6 +117,10 @@ return packer.startup(function(use)
     "JoosepAlviste/nvim-ts-context-commentstring",
     commit = "831cc1c47c2b3f88b3981f3ed033c6e973706c1f",
   })
+  use({
+    "p00f/nvim-ts-rainbow",
+    commit = "e486fad0aa038e346995e2477affd5269f2dcbea",
+  })
 	use({
     "windwp/nvim-ts-autotag",
     commit = "044a05c4c51051326900a53ba98fddacd15fea22",
@@ -228,7 +232,6 @@ return packer.startup(function(use)
 	use({                                   -- fold
     "loctvl842/pretty-fold.nvim",
   })
-
 	-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
