@@ -13,9 +13,9 @@ configs.setup({
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "scss", "css" }, -- list of language that will be disabled
-		additional_vim_regex_highlighting = true,
+		-- additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = false, disable = { "yaml", "python" } },
+	indent = { enable = true, disable = { "yaml", "python" } },
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
@@ -27,15 +27,11 @@ configs.setup({
 	rainbow = {
 		enable = true,
 		colors = {
-			"#68a0b0",
-			"#946EaD",
-			"#c7aA6D",
-			-- "Gold",
-			-- "Orchid",
-			-- "DodgerBlue",
-			-- "Cornsilk",
-			-- "Salmon",
-			-- "LawnGreen",
+      "#00ffe5",
+      "#FFF8DC",
+      "#fff047",
+      "#ff00e1",
+      "#7cfc00",
 		},
 		disable = { "html" },
 	},
