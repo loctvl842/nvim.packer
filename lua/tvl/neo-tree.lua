@@ -13,17 +13,17 @@ neoTree.setup({
 			enable_character_fade = true,
 		},
 		indent = {
-			indent_size = 1.5,
+			indent_size = 2,
 			padding = 0, -- extra padding on left hand side
 			-- indent guides
-			with_markers = false,
+			with_markers = true,
 			-- indent_marker = "│",
 			-- last_indent_marker = "└",
 			indent_marker = "▏",
 			last_indent_marker = "▏",
 			highlight = "NeoTreeIndentMarker",
 			-- expander config, needed for nesting files
-			with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+			with_expanders = false, -- if nil and file nesting is enabled, will enable expanders
 			expander_collapsed = "",
 			expander_expanded = "",
 			expander_highlight = "NeoTreeExpander",
@@ -65,7 +65,7 @@ neoTree.setup({
 	},
 	window = {
 		position = "left",
-		width = 30,
+		width = 35,
 		mapping_options = {
 			noremap = true,
 			nowait = true,
@@ -145,96 +145,6 @@ neoTree.setup({
 				["[g"] = "prev_git_modified",
 				["]g"] = "next_git_modified",
 			},
-		},
-		components = {
-			name = function(config, node, state)
-				local highlight = "NeoTreeFileName"
-				if node.type == "directory" then
-					highlight = "NeoTreeDirectoryName"
-				end
-				if node:get_depth() == 1 then
-					highlight = "NeoTreeRootName"
-				else
-					if config.use_git_status_colors == nil or config.use_git_status_colors then
-						local git_status = state.components.git_status({}, node, state)
-						if git_status and git_status.highlight then
-							highlight = git_status.highlight
-						end
-					end
-				end
-				-- make root-folder shorter and upper-case
-				local function newName(name)
-					if name:sub(1, 1) == "~" then
-						local function split(inputstr, sep)
-							if sep == nil then
-								sep = "%s"
-							end
-							local t = {}
-							for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
-								table.insert(t, str)
-							end
-							return t
-						end
-
-						local dirs = split(name, "/")
-						local ans = dirs[#dirs]
-						return string.upper(ans)
-					else
-						return name
-					end
-				end
-
-				node.name = newName(node.name)
-
-				return {
-					text = node.name,
-					highlight = highlight,
-				}
-			end,
-			icon = function(config, node, state)
-				local icon = config.default or " "
-				local highlight = "NeoTreeFileIcon"
-				if node.type == "directory" then
-					highlight = "NeoTreeDirectoryIcon"
-					if node.loaded and not node:has_children() then
-						icon = config.folder_empty or config.folder_open or "-"
-					elseif node:is_expanded() then
-						icon = config.folder_open or "-"
-					else
-						icon = config.folder_closed or "+"
-					end
-					if node:get_depth() == 1 then
-						highlight = "NeoTreeRootName"
-					else
-						if config.use_git_status_colors == nil or config.use_git_status_colors then
-							local git_status = state.components.git_status({}, node, state)
-							if git_status and git_status.highlight then
-								highlight = git_status.highlight
-							end
-						end
-					end
-				elseif node.type == "file" or node.type == "terminal" then
-					local success, web_devicons = pcall(require, "dev-icons")
-					if success then
-						local devicon, hl = web_devicons.get_icon(node.name, node.ext)
-						icon = devicon or icon
-						highlight = hl or highlight
-					end
-				end
-				-- Don't render icon in root folder
-				if node:get_depth() == 1 then
-					return {
-						text = "",
-						highlight = highlight,
-					}
-					-- Don't insert space between icon and filename (Only have a space in icon)
-				else
-					return {
-						text = icon .. " ",
-						highlight = highlight,
-					}
-				end
-			end,
 		},
 	},
 	buffers = {
