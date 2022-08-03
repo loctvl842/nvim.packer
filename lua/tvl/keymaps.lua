@@ -15,11 +15,13 @@ vim.g.maplocalleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
-------------------- Better window navigation -----------------
+-------------------- Better window navigation ------------------
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
 
-------------------- Navigate buffers -------------------------
+-------------------- Navigate buffers --------------------------
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
@@ -27,21 +29,21 @@ keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<A-S-l>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<A-S-h>", ":BufferLineMovePrev<CR>", opts)
 
-------------------- Press jk fast to enter --------------------
+-------------------- Press jk fast to enter --------------------
 keymap("i", "jk", "<ESC>", opts)
 
-------------------- Stay in indent mode -----------------------
+-------------------- Stay in indent mode ------------------------
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
 
-------------------- Resize windows ----------------------------
+-------------------- Resize windows ----------------------------
 keymap("n", "<A-C-j>", ":resize +1<CR>", opts)
 keymap("n", "<A-C-k>", ":resize -1<CR>", opts)
 keymap("n", "<A-C-h>", ":vertical resize +1<CR>", opts)
 keymap("n", "<A-C-l>", ":vertical resize -1<CR>", opts)
 
-------------------- Move text up/ down ------------------------
+-------------------- Move text up/ down ------------------------
 -- Visual --
 keymap("v", "<A-S-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-S-k>", ":m .-2<CR>==", opts)
@@ -57,10 +59,10 @@ keymap("n", "<A-S-k>", ":m .-2<CR>==", opts)
 keymap("i", "<A-S-j>", "<ESC>:m .+1<CR>==gi", opts)
 keymap("i", "<A-S-k>", "<ESC>:m .-2<CR>==gi", opts)
 
-------------------- No highlight ------------------------------
+-------------------- No highlight ------------------------------
 keymap("n", ";", ":noh<CR>", opts)
 
-------------------- Go to buffer quickly ----------------------
+-------------------- Go to buffer quickly ----------------------
 keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", opts)
 keymap("n", "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", opts)
@@ -71,16 +73,16 @@ keymap("n", "<leader>7", "<Cmd>BufferLineGoToBuffer 7<CR>", opts)
 keymap("n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", opts)
 keymap("n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", opts)
 
-------------------- split window ------------------------------
+-------------------- split window ------------------------------
 keymap("n", "<leader>\\", ":vsplit<CR>", opts)
 keymap("n", "<leader>/", ":split<CR>", opts)
 
-------------------- Switch two windows ------------------------
+-------------------- Switch two windows ------------------------
 keymap("n", "<A-o>", "<C-w>r", opts)
 
 
-------------------- Ranger --------------------------------
+-------------------- Ranger --------------------------------
 keymap("n", "<leader>o", ":RnvimrToggle<CR>", opts)
 
-------------------- Compile --------------------------------
+-------------------- Compile --------------------------------
 keymap("n", "<c-m-n>", "<cmd>only | Compile<CR>", opts)
