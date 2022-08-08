@@ -16,10 +16,11 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 -------------------- Better window navigation ------------------
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<c-h>", "<c-w>h", opts)
+keymap("n", "<c-l>", "<c-w>l", opts)
+keymap("n", "<c-j>", "<c-w>j", opts)
+keymap("n", "<c-k>", "<c-w>k", opts)
+keymap("n", "<m-tab>", "<c-6>", opts)
 
 -------------------- Navigate buffers --------------------------
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -79,7 +80,6 @@ keymap("n", "<leader>/", ":split<CR>", opts)
 
 -------------------- Switch two windows ------------------------
 keymap("n", "<A-o>", "<C-w>r", opts)
-
 
 -------------------- Ranger --------------------------------
 keymap("n", "<leader>o", ":RnvimrToggle<CR>", opts)
