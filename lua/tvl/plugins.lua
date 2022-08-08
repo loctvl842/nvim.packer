@@ -139,16 +139,10 @@ return packer.startup(function(use)
 			commit = "4bfd3afec57f45776e7df4bc5f57014d09333845",
 		},
 	})
-	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = {
-			"kyazdani42/nvim-web-devicons", -- optional, for file icons
-		},
-		tag = "nightly", -- optional, updated every week. (see issue #1193)
-	})
 	use({ -- status line
 		"nvim-lualine/lualine.nvim",
-		commit = "5113cdb32f9d9588a2b56de6d1df6e33b06a554a",
+		-- commit = "5113cdb32f9d9588a2b56de6d1df6e33b06a554a",
+    commit = "b1042d318446601d57e8b44033e597e003511636",
 	})
 	use({ -- Start up nvim Ui
 		"goolord/alpha-nvim",
