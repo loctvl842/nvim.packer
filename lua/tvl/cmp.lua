@@ -8,7 +8,7 @@ if not snip_status_ok then
 	return
 end
 
--- require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local icons = require("tvl.icons")
 local kind_icons = icons.kind
@@ -21,6 +21,7 @@ cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert',
   },
+  preselect = cmp.PreselectMode.None,
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -28,13 +29,7 @@ cmp.setup({
 	},
 	mapping = {
 		["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-		["<C-j>"] = cmp.mapping(function(fallback) 
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end, { "i", "c" }),
+    ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -81,7 +76,7 @@ cmp.setup({
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			vim_item.kind = kind_icons[vim_item.kind]
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
