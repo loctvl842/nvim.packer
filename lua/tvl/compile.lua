@@ -11,7 +11,7 @@ compile.setup({
 		markdown = "glow %",
 		python = "python %",
 		rust = "rustc % && ./$fileBase && rm $fileBase",
-		rust = "cargo run",
+		-- rust = "cargo run",
 		cpp = "g++ -O2 -Wall % -o $fileBase && ./$fileBase",
 		go = "go run %",
 		sh = "sh %",
@@ -41,7 +41,7 @@ compile.setup({
 		normal_hl = "Normal",
 
 		-- Floating Window Transparency (see ':h winblend')
-		blend = 0,
+		blend = 30,
 	},
 })
 
