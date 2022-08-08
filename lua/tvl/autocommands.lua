@@ -125,6 +125,12 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+  callback = function ()
+    vim.cmd [[silent! NeoTreeClose]]
+  end
+})
+
 -- vim.api.nvim_create_autocmd({ "VimResized" }, {
 --   callback = function()
 --     vim.cmd "tabdo wincmd ="
