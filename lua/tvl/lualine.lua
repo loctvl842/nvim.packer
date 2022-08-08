@@ -4,60 +4,68 @@ if not status_ok then
 end
 
 local hl_str = function(str, hl_cur, hl_after)
-  if hl_after == nil then
-    return "%#" .. hl_cur .. "#" .. str .. "%*"
-  end
-  return "%#" .. hl_cur .. "#" .. str .. "%*" .. "%#" .. hl_after .. "#"
+	if hl_after == nil then
+		return "%#" .. hl_cur .. "#" .. str .. "%*"
+	end
+	return "%#" .. hl_cur .. "#" .. str .. "%*" .. "%#" .. hl_after .. "#"
 end
 
+local padding_pad = {
+	function()
+		return hl_str("    ", "SLPadding")
+	end,
+	padding = 0,
+}
+
 local left_pad_alt = {
-  function()
-    return hl_str(" ", "SLSeparator")
-  end,
-  padding = 0,
+	function()
+		return hl_str(" ", "SLSeparator")
+	end,
+	padding = 0,
 }
 
 local right_pad_alt = {
-  function()
-    return hl_str(" ", "SLSeparator")
-  end,
-  padding = 0,
+	function()
+		return hl_str("  ", "SLSeparator")
+	end,
+	padding = 0,
 }
 
 local right_pad_alt_1 = {
-  function()
-    return hl_str("", "SLSeparator")
-  end,
-  padding = 0,
+	function()
+		return hl_str(" ", "SLSeparator")
+	end,
+	padding = 0,
 }
 
 local left_pad = {
-  function()
-    return hl_str(" ", "SLSeparator")
-  end,
-  padding = 0,
+	function()
+		return hl_str(" ", "SLSeparator")
+		-- return hl_str(" ", "SLSeparator")
+	end,
+	padding = 0,
 }
 
 local right_pad = {
-  function()
-    return hl_str(" ", "SLSeparator")
-  end,
-  padding = 0,
+	function()
+		return hl_str(" ", "SLSeparator")
+		-- return hl_str(" ", "SLSeparator")
+	end,
+	padding = 0,
 }
-
 
 local branch = {
 	"branch",
 	icons_enabled = true,
-  icon = hl_str("", "SLGitIcon", "SLBranchName"),
-  colored = false,
-  fmt = function(str)
-    if str == "" or str == nil then
-      return "!=vcs"
-    end
+	icon = hl_str("", "SLGitIcon", "SLBranchName"),
+	colored = false,
+	fmt = function(str)
+		if str == "" or str == nil then
+			return "!=vcs"
+		end
 
-    return str
-  end,
+		return str
+	end,
 }
 
 local diagnostics = {
@@ -65,32 +73,31 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = {
-    error = "%#SLError#" .. "  " .. "%*" .. "%#SLError#",
-    warn = "%#SLWarning#" .. "  " .. "%*" .. "%#SLWarning#",
-  },
+		error = "%#SLError#" .. "  " .. "%*" .. "%#SLError#",
+		warn = "%#SLWarning#" .. "  " .. "%*" .. "%#SLWarning#",
+	},
 	colored = false,
 	update_in_insert = false,
 	always_visible = true,
-  padding = 0,
+	padding = 0,
 }
 
 local position = function()
 	local current_line = vim.fn.line(".")
 	local current_column = vim.fn.col(".")
 	local str = "Ln " .. current_line .. ", Col " .. current_column
-  return hl_str(str, "SLPosition") .. "%#SLPosition#"
+	return hl_str(str, "SLPosition") .. "%#SLPosition#"
 end
 
 local spaces = function()
 	local str = "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-  return hl_str(str, "SLShiftWidth", "SLShiftWidth")
+	return hl_str(str, "SLShiftWidth", "SLShiftWidth")
 end
 
 local encoding = function()
 	local str = string.upper(vim.o.fileencoding)
-  return hl_str(str, "SLEncoding", "SLEncoding")
+	return hl_str(str, "SLEncoding", "SLEncoding")
 end
-
 
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
@@ -109,7 +116,7 @@ local mode = {
 	"mode",
 	fmt = function(str)
 		local mode_str = " " .. str
-    return hl_str(mode_str, "SLMode", "SLMode")
+		return hl_str(mode_str, "SLMode", "SLMode")
 	end,
 }
 
@@ -130,22 +137,22 @@ local filetype = {
 			"neo-tree",
 			"",
 		}
-    local filetype_str = ""
+		local filetype_str = ""
 
 		if str == "toggleterm" then
 			-- 
 			filetype_str = " " .. vim.api.nvim_buf_get_var(0, "toggle_number")
-    elseif str == "TelescopePrompt" then
-      filetype_str = ""
-    elseif str == "neo-tree" then
-      filetype_str = prev_filetype
-    elseif vim.tbl_contains(ui_filetypes, str) then
-      filetype_str = ""
+		elseif str == "TelescopePrompt" then
+			filetype_str = ""
+		elseif str == "neo-tree" then
+			filetype_str = prev_filetype
+		elseif vim.tbl_contains(ui_filetypes, str) then
+			filetype_str = ""
 		else
 			prev_filetype = str
-      filetype_str = str
+			filetype_str = str
 		end
-    return hl_str(filetype_str, "SLFiletype", "SLFiletype")
+		return hl_str(filetype_str, "SLFiletype", "SLFiletype")
 	end,
 	icons_enabled = true,
 }
@@ -161,24 +168,24 @@ local filetype = {
 
 lualine.setup({
 	options = {
-    globalstatus = true,
+		globalstatus = true,
 		icons_enabled = true,
 		theme = "auto", -- set them 'darkplus' to get lualine like vscode
 		component_separators = { left = "", right = "" },
 		-- section_separators = { left = "", right = "" },
 		-- component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "Outline" },
+		disabled_filetypes = { "alpha" },
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = {left_pad, branch, right_pad },
+		lualine_a = { padding_pad, left_pad, branch, right_pad },
 		lualine_b = { left_pad_alt, diagnostics, right_pad_alt },
-		lualine_c = {},
+		lualine_c = { },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_y = { left_pad, position, right_pad, left_pad, filetype, right_pad},
-		lualine_z = { left_pad, spaces, right_pad, left_pad, encoding, right_pad },
-		lualine_x = { left_pad_alt, mode, right_pad_alt_1 },
+		lualine_x = {  left_pad_alt, mode, right_pad_alt_1 },
+		lualine_y = { left_pad, position, right_pad, left_pad, filetype, right_pad },
+		lualine_z = { left_pad, spaces, right_pad, left_pad, encoding, right_pad, padding_pad },
 	},
 	inactive_sections = {
 		lualine_a = {},
