@@ -125,7 +125,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
   callback = function ()
     vim.cmd [[silent! NeoTreeClose]]
   end
