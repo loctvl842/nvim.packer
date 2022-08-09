@@ -1,3 +1,5 @@
+require("plugins")          -- General settings
+
 require("tvl.alpha")            -- Vim dashboard
 require("tvl.auto-closetag")
 require("tvl.auto-session")
@@ -18,7 +20,6 @@ require("tvl.keymaps")
 require("tvl.lualine-triangle")
 require("tvl.neo-tree")
 require("tvl.notify")
-require("tvl.plugins")          -- General settings
 require("tvl.project")
 require("tvl.ranger")
 require("tvl.renamer")

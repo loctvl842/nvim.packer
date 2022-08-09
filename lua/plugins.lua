@@ -142,7 +142,7 @@ return packer.startup(function(use)
 	use({ -- status line
 		"nvim-lualine/lualine.nvim",
 		-- commit = "5113cdb32f9d9588a2b56de6d1df6e33b06a554a",
-    commit = "b1042d318446601d57e8b44033e597e003511636",
+		commit = "b1042d318446601d57e8b44033e597e003511636",
 	})
 	use({ -- Start up nvim Ui
 		"goolord/alpha-nvim",
