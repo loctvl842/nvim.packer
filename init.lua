@@ -1,5 +1,4 @@
 require("plugins")          -- General settings
-
 require("tvl.alpha")            -- Vim dashboard
 require("tvl.auto-closetag")
 require("tvl.auto-session")
@@ -7,8 +6,10 @@ require("tvl.autocommands")
 require("tvl.autopairs")        -- Auto pair () [] {}
 require("tvl.bufferline")       -- Buffer line (tab bar) in neovim
 require("tvl.cmp")              -- Autocomplete
+require("tvl.colorizer")
 require("tvl.colorscheme")      -- Themes
 require("tvl.comment")          -- comment easy
+require("tvl.compile")
 require("tvl.emmet")            -- Emmet for html js css
 require("tvl.gitsigns")
 require("tvl.illuminate")
@@ -29,13 +30,10 @@ require("tvl.telescope")        -- Easy finding
 require("tvl.toggleterm")       -- FLoat terminal in neovim
 require("tvl.treesitter")       -- Highlight
 require("tvl.whichkey")
+require("tvl.winbar")
 require("tvl.lsp")              -- Language server protocol
-require("tvl.compile")
 
 -- source `colorizer` after set termguicolor
-require("tvl.colorizer")
------- winbar --------
-require("tvl.winbar")
 
 require("tvl.pretty-fold")
 -- require("tvl.ufo")
