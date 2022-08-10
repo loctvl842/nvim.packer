@@ -32,6 +32,9 @@ keymap("n", "<A-S-h>", ":BufferLineMovePrev<CR>", opts)
 
 -------------------- Press jk fast to enter --------------------
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "Jk", "<ESC>", opts)
+keymap("i", "jK", "<ESC>", opts)
+keymap("i", "JK", "<ESC>", opts)
 
 -------------------- Stay in indent mode ------------------------
 keymap("v", "<", "<gv", opts)
