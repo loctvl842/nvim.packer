@@ -99,7 +99,8 @@ return packer.startup(function(use)
 	----------------------------- SNIPPET & EMMET ----------------------------------
 	use({
 		"L3MON4D3/LuaSnip", -- snippet engine
-		commit = "aa1c36fa6786d2a5023a007f33c5a9dddbeb061e",
+		-- commit = "aa1c36fa6786d2a5023a007f33c5a9dddbeb061e",
+    commit = "c599c560ed26f04f5bdb7e4498b632dc16fb9209",
 	})
 	use({
 		"rafamadriz/friendly-snippets", -- a bunch of snippets to use
