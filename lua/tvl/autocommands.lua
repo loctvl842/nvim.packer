@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
-		vim.opt_local.wrap = true
+		-- vim.opt_local.wrap = true
 		vim.opt_local.spell = true
 	end,
 })
@@ -128,6 +128,12 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 vim.api.nvim_create_autocmd({ "VimLeave" }, {
   callback = function ()
     vim.cmd [[silent! NeoTreeClose]]
+  end
+})
+
+vim.api.nvim_create_autocmd({ "CursorHold"}, {
+  callback = function()
+    vim.cmd [[echon '']]
   end
 })
 
