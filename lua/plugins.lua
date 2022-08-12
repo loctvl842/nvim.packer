@@ -132,7 +132,7 @@ return packer.startup(function(use)
 	use("loctvl842/dev-icons") -- Change some icons
 	use({ "loctvl842/bufferline" }) -- haiz use loctvl842/dev-icons
 	use("loctvl842/winbar") -- Make simple root name
-	use("loctvl842/colorscheme") -- Colorschemes
+	use({"loctvl842/colorscheme"}) -- Colorschemes
 	use({
 		"loctvl842/neo-tree.nvim",
 		requires = {
@@ -142,9 +142,8 @@ return packer.startup(function(use)
 		},
 	})
 	use({ -- status line
-		"nvim-lualine/lualine.nvim",
-		-- commit = "5113cdb32f9d9588a2b56de6d1df6e33b06a554a",
-		commit = "b1042d318446601d57e8b44033e597e003511636",
+		"loctvl842/lualine.nvim",
+    branch = "triangle"
 	})
 	use({ -- Start up nvim Ui
 		"goolord/alpha-nvim",
@@ -198,22 +197,22 @@ return packer.startup(function(use)
 		"lukas-reineke/indent-blankline.nvim",
 		commit = "052c880396076af074f1ff3d3eb687cb36018dfa",
 	})
-	use({
-		"nvim-telescope/telescope.nvim", -- Telescope
+	use({ -- Telescope
+		"nvim-telescope/telescope.nvim",
 		-- commit = "e7e90466de0571d39fe642cdfec1c577451b8be1",
     commit = "8746347ac4065f5795e7bd33c7912ab1152cca4b",
 	})
-	use({
-		"lewis6991/gitsigns.nvim", -- Git
+	use({ -- Git
+		"lewis6991/gitsigns.nvim",
 		commit = "4883988cf8b623f63cc8c7d3f11b18b7e81f06ff",
 	})
-	use({
-		"mg979/vim-visual-multi", -- Multi cursor
+	use({ -- Multi cursor
+		"mg979/vim-visual-multi",
 		branch = "master",
 		commit = "e522dd192eb19d060a8bc312fb51fe4af49aadb1",
 	})
-	use({
-		"norcalli/nvim-colorizer.lua", -- Real color of rgba or hex color
+	use({ -- Real color of rgba or hex color
+		"norcalli/nvim-colorizer.lua",
 		commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
 	})
 	use({ -- Rename
@@ -221,16 +220,16 @@ return packer.startup(function(use)
 		branch = "master",
 		commit = "eecd939c68312a1a4c1744699189eaf61f4c6027",
 	})
-	use({
-		"rcarriga/nvim-notify", -- better ui for showing error or warning
+	use({ -- better ui for showing error or warning
+		"rcarriga/nvim-notify",
 		commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd",
 	})
-	use({
-		"iamcco/markdown-preview.nvim", -- better preview markdown
+	use({ -- better preview markdown
+		"iamcco/markdown-preview.nvim",
 		commit = "9becceee5740b7db6914da87358a183ad11b2049",
 	})
-	use({
-		"rmagatti/auto-session", -- Save job as session
+	use({ -- Save job as session
+		"rmagatti/auto-session",
 		commit = "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e",
 	})
 	use({ -- Add mapping 'dd' to delete session

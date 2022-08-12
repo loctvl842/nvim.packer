@@ -172,7 +172,7 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
+    url = "https://github.com/loctvl842/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,

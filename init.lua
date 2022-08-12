@@ -16,9 +16,7 @@ require("tvl.illuminate")
 require("tvl.impatient")
 require("tvl.indentline")
 require("tvl.keymaps")
--- require("tvl.lualine")          -- Status line for neovim
--- require("tvl.lualine-slash")          -- Status line for neovim
-require("tvl.lualine-triangle")
+require("tvl.lualine")
 require("tvl.neo-tree")
 require("tvl.notify")
 require("tvl.project")
