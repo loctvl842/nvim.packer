@@ -132,7 +132,11 @@ return packer.startup(function(use)
 	use("loctvl842/dev-icons") -- Change some icons
 	use({ "loctvl842/bufferline" }) -- haiz use loctvl842/dev-icons
 	use("loctvl842/winbar") -- Make simple root name
-	use({"loctvl842/colorscheme"}) -- Colorschemes
+	use({"loctvl842/colorscheme", branch = "float"}) -- Colorschemes
+	use({ -- status line
+		"loctvl842/lualine.nvim",
+    branch = "main"
+	})
 	use({
 		"loctvl842/neo-tree.nvim",
 		requires = {
@@ -140,10 +144,6 @@ return packer.startup(function(use)
 			-- commit = "4bfd3afec57f45776e7df4bc5f57014d09333845",
       commit = "a5fd005263d238d2fbd6ee335e06139645f11fa9",
 		},
-	})
-	use({ -- status line
-		"loctvl842/lualine.nvim",
-    branch = "triangle"
 	})
 	use({ -- Start up nvim Ui
 		"goolord/alpha-nvim",
