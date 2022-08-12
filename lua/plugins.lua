@@ -134,7 +134,7 @@ return packer.startup(function(use)
 	use("loctvl842/winbar") -- Make simple root name
 	use({"loctvl842/colorscheme", branch = "float"}) -- Colorschemes
 	use({ -- status line
-		"loctvl842/lualine.nvim", branch = "main"
+		"loctvl842/lualine.nvim", branch = "triangle"
 	})
 	use({
 		"loctvl842/neo-tree.nvim",
