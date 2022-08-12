@@ -137,7 +137,8 @@ return packer.startup(function(use)
 		"loctvl842/neo-tree.nvim",
 		requires = {
 			"MunifTanjim/nui.nvim",
-			commit = "4bfd3afec57f45776e7df4bc5f57014d09333845",
+			-- commit = "4bfd3afec57f45776e7df4bc5f57014d09333845",
+      commit = "a5fd005263d238d2fbd6ee335e06139645f11fa9",
 		},
 	})
 	use({ -- status line
@@ -200,6 +201,7 @@ return packer.startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim", -- Telescope
 		-- commit = "e7e90466de0571d39fe642cdfec1c577451b8be1",
+    commit = "8746347ac4065f5795e7bd33c7912ab1152cca4b",
 	})
 	use({
 		"lewis6991/gitsigns.nvim", -- Git
