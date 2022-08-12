@@ -44,7 +44,7 @@ return packer.startup(function(use)
 		"wbthomason/packer.nvim",
 		commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422",
 	})
-	---------------------------------- LSP -----------------------------------------
+	---------------------------------- LSP ------------------------------------------
 	use({
 		"neovim/nvim-lspconfig", -- enable LSP
 		commit = "8c2b8d490f91eb72a43a3d47c356d9bc96ccc983",
@@ -67,7 +67,7 @@ return packer.startup(function(use)
 	})
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	------------------------------- CMP PLUGIN -------------------------------------
+	------------------------------ CMP PLUGIN --------------------------------------
 	use({
 		"hrsh7th/nvim-cmp", -- The completion plugin
 		commit = "8cab7889766d715b1107b9967a4077568c41ee2a",
@@ -96,7 +96,7 @@ return packer.startup(function(use)
 		"hrsh7th/cmp-nvim-lua",
 		commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
 	})
-	----------------------------- SNIPPET & EMMET ----------------------------------
+	---------------------------- SNIPPET & EMMET ----------------------------------
 	use({
 		"L3MON4D3/LuaSnip", -- snippet engine
 		-- commit = "aa1c36fa6786d2a5023a007f33c5a9dddbeb061e",
@@ -110,7 +110,7 @@ return packer.startup(function(use)
 		"mattn/emmet-vim", -- emmet
 		commit = "f4c999bdf2a21b9d96132f6cd04a9e19eb7e87ff",
 	})
-	------------------------------- TREESITTER -------------------------------------
+	------------------------------ TREESITTER --------------------------------------
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		commit = "901ffe1a363f21c168eacf011dce4f905fd26d5f",
@@ -128,14 +128,13 @@ return packer.startup(function(use)
 		"windwp/nvim-ts-autotag",
 		commit = "044a05c4c51051326900a53ba98fddacd15fea22",
 	})
-	----------------------------------- UI -----------------------------------------
+	---------------------------------- UI ------------------------------------------
 	use("loctvl842/dev-icons") -- Change some icons
 	use({ "loctvl842/bufferline" }) -- haiz use loctvl842/dev-icons
 	use("loctvl842/winbar") -- Make simple root name
 	use({"loctvl842/colorscheme", branch = "float"}) -- Colorschemes
 	use({ -- status line
-		"loctvl842/lualine.nvim",
-    branch = "main"
+		"loctvl842/lualine.nvim", branch = "main"
 	})
 	use({
 		"loctvl842/neo-tree.nvim",
