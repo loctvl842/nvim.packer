@@ -22,6 +22,7 @@ M.setup = function()
 	end
 
 	local config = {
+		virtual_lines = false,
 		virtual_text = false, -- disable virtual text
 		signs = {
 			active = signs, -- show signs
@@ -73,28 +74,14 @@ local function lsp_keymaps(bufnr)
 	-- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
-local function lsp_highlight_document(client)
-	-- if client.server_capabilities.document_highlight then
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
-	if client.name ~= "neo-tree" then
-		illuminate.on_attach(client)
-	end
-	-- end
+local status_inlay_hints_ok, inlay_hints = pcall(require, "lsp-inlayhints")
+if not status_inlay_hints_ok then
+	return
 end
 
 M.on_attach = function(client, bufnr)
-	-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	-- 	callback = function()
-	-- 		if client.name ~= "sumneko_lua" then
-	-- 			vim.lsp.buf.format()
-	-- 		end
-	-- 	end,
-	-- })
 	lsp_keymaps(bufnr)
-	lsp_highlight_document(client) -- illuminate
+	inlay_hints.on_attach(client, bufnr)
 end
 
 return M

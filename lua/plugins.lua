@@ -47,7 +47,8 @@ return packer.startup(function(use)
 	---------------------------------- LSP ------------------------------------------
 	use({
 		"neovim/nvim-lspconfig", -- enable LSP
-		commit = "8c2b8d490f91eb72a43a3d47c356d9bc96ccc983",
+		-- commit = "8c2b8d490f91eb72a43a3d47c356d9bc96ccc983",
+		commit = "ae2d6161e1b0c7610ad271e68ffb9afdacebe209",
 	})
 	use({
 		"williamboman/nvim-lsp-installer", -- simple to use language server installer
@@ -57,14 +58,15 @@ return packer.startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
 		commit = "741894f047966f0f45d7938d0fe4473c7635c6d3",
 	})
-	use({
-		"RRethy/vim-illuminate", -- Hight light word the same
-		commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5",
-	})
+	-- use({
+	-- 	"RRethy/vim-illuminate", -- Hight light word the same
+	-- 	commit = "78cf9c1ce0dc1ee3cfd6f29f9aab1b538a2784b6",
+	-- })
 	use({
 		"ray-x/lsp_signature.nvim", -- Recommend type of parameter of function
 		commit = "86f0310c095ed72607359fd9a4aef1f375d8fbec",
 	})
+	use({ "lvimuser/lsp-inlayhints.nvim" })
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	------------------------------ CMP PLUGIN --------------------------------------
@@ -100,7 +102,7 @@ return packer.startup(function(use)
 	use({
 		"L3MON4D3/LuaSnip", -- snippet engine
 		-- commit = "aa1c36fa6786d2a5023a007f33c5a9dddbeb061e",
-    commit = "c599c560ed26f04f5bdb7e4498b632dc16fb9209",
+		commit = "c599c560ed26f04f5bdb7e4498b632dc16fb9209",
 	})
 	use({
 		"rafamadriz/friendly-snippets", -- a bunch of snippets to use
@@ -132,16 +134,17 @@ return packer.startup(function(use)
 	use("loctvl842/dev-icons") -- Change some icons
 	use({ "loctvl842/bufferline" }) -- haiz use loctvl842/dev-icons
 	use("loctvl842/winbar") -- Make simple root name
-	use({"loctvl842/colorscheme", branch = "float"}) -- Colorschemes
+	use({ "loctvl842/colorscheme", branch = "float" }) -- Colorschemes main | float | slant
 	use({ -- status line
-		"loctvl842/lualine.nvim", branch = "triangle"
+		"loctvl842/lualine.nvim",
+		branch = "triangle", -- main | bubble | slant | triangle
 	})
 	use({
 		"loctvl842/neo-tree.nvim",
 		requires = {
 			"MunifTanjim/nui.nvim",
 			-- commit = "4bfd3afec57f45776e7df4bc5f57014d09333845",
-      commit = "a5fd005263d238d2fbd6ee335e06139645f11fa9",
+			commit = "a5fd005263d238d2fbd6ee335e06139645f11fa9",
 		},
 	})
 	use({ -- Start up nvim Ui
@@ -156,6 +159,7 @@ return packer.startup(function(use)
 		"zbirenbaum/neodim", -- better highlight for unused variable
 		commit = "9c9c69ab59135ccbf823c7fda16bc87ea57431db",
 	})
+	use({ "onsails/lspkind.nvim" })
 	---------------------------------- UTIL ----------------------------------------
 	use({ -- Keybinding
 		"folke/which-key.nvim",
@@ -199,7 +203,7 @@ return packer.startup(function(use)
 	use({ -- Telescope
 		"nvim-telescope/telescope.nvim",
 		-- commit = "e7e90466de0571d39fe642cdfec1c577451b8be1",
-    commit = "8746347ac4065f5795e7bd33c7912ab1152cca4b",
+		commit = "8746347ac4065f5795e7bd33c7912ab1152cca4b",
 	})
 	use({ -- Git
 		"lewis6991/gitsigns.nvim",
@@ -238,6 +242,8 @@ return packer.startup(function(use)
 		"loctvl842/pretty-fold.nvim",
 	})
 	-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+  use({"elkowar/yuck.vim"})
+
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

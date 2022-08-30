@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local icons = require("tvl.icons")
+local icons = require("icons")
 
 notify.setup({
 	-- Animation style (see below for details)

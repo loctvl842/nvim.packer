@@ -164,10 +164,20 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lsp-inlayhints.nvim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/lsp-inlayhints.nvim",
+    url = "https://github.com/lvimuser/lsp-inlayhints.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -314,11 +324,6 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
-  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
@@ -333,6 +338,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/winbar",
     url = "https://github.com/loctvl842/winbar"
+  },
+  ["yuck.vim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/yuck.vim",
+    url = "https://github.com/elkowar/yuck.vim"
   }
 }
 

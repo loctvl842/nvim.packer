@@ -20,7 +20,6 @@ keymap("n", "<c-h>", "<c-w>h", opts)
 keymap("n", "<c-l>", "<c-w>l", opts)
 keymap("n", "<c-j>", "<c-w>j", opts)
 keymap("n", "<c-k>", "<c-w>k", opts)
-keymap("n", "<m-tab>", "<c-6>", opts)
 
 -------------------- Navigate buffers --------------------------
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)

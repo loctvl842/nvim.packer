@@ -15,7 +15,7 @@ winbar.setup({
 		"TelescopePrompt",
 		"TelescopeResult",
 	},
-	separator = require("tvl.icons").ui.ChevronRight,
+	separator = require("icons").ui.ChevronRight,
 	-- limit for amount of context shown
 	-- 0 means no limit
 	-- Note: to make use of depth feature properly, make sure your separator isn't something that can appear
