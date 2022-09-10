@@ -242,8 +242,8 @@ return packer.startup(function(use)
 		"loctvl842/pretty-fold.nvim",
 	})
 	-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
-  use({"elkowar/yuck.vim"})
-
+	-- use({ "elkowar/yuck.vim" })
+	use({ "ms-jpq/coq_nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

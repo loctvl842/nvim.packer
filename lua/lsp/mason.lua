@@ -42,6 +42,11 @@ if not status_ok_lspconfig then
 	return
 end
 
+local status_ok_coq, coq = pcall(require, "coq")
+if not status_ok_coq then
+	return
+end
+
 local opts = {}
 for _, server in pairs(servers) do
 	opts = {
@@ -66,4 +71,5 @@ for _, server in pairs(servers) do
 	end
 
 	lspconfig[server].setup(opts)
+	lspconfig[server].setup(coq.lsp_ensure_capabilities(opts))
 end

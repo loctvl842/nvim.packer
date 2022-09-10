@@ -87,19 +87,19 @@ local mappings = {
 	["e"] = { "<cmd>Neotree toggle position=left<cr>", "Explorer" },
 	["E"] = { "<cmd>Neotree toggle position=float<cr>", "Explorer Float" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
-  ["W"] = { "<cmd>lua vim.lsp.buf.format()<CR><cmd>w!<CR>", "Format and Save" },
+	["W"] = { "<cmd>lua vim.lsp.buf.format()<CR><cmd>w!<CR>", "Format and Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 	["d"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["r"] = { "<cmd>source ~/.config/nvim/lua/tvl/colorscheme.lua<CR>", "ReSource Colorscheme" },
+	["r"] = { "<cmd>source ~/.config/nvim/lua/setup/colorscheme.lua<CR>", "ReSource Colorscheme" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files()<cr>",
 		"Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  ["<Tab>"] = {"<c-6>", "Move back and forth"}
+	["<Tab>"] = { "<c-6>", "Move back and forth" },
 
 	-- p = {
 	-- 	name = "Packer",
@@ -178,7 +178,7 @@ local fold_mappings = {
 	["g"] = { "zg", "Add word to spell list" },
 	["w"] = { "zw", "Mark word as bad/misspelling" },
 	["e"] = { "ze", "Right this line" },
-  ["E"] = { "zE", "Delete all folds in current buffer"},
+	["E"] = { "zE", "Delete all folds in current buffer" },
 	["s"] = { "zs", "Left this line" },
 	["H"] = { "zH", "Half screen to the left" },
 	["L"] = { "zL", "Half screen to the right" },
@@ -205,14 +205,14 @@ local search_opts = {
 }
 
 local search_mapping = {
-		["b"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		["c"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		["h"] = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		["M"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		["R"] = { "<cmd>Telescope registers<cr>", "Registers" },
-		["k"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		["C"] = { "<cmd>Telescope commands<cr>", "Commands" },
+	["b"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+	["c"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+	["h"] = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+	["M"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+	["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+	["R"] = { "<cmd>Telescope registers<cr>", "Registers" },
+	["k"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+	["C"] = { "<cmd>Telescope commands<cr>", "Commands" },
 }
 
 which_key.register(search_mapping, search_opts)

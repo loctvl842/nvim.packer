@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/compile-nvim",
     url = "https://github.com/loctvl842/compile-nvim"
   },
+  coq_nvim = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/coq_nvim",
+    url = "https://github.com/ms-jpq/coq_nvim"
+  },
   ["dev-icons"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/dev-icons",
@@ -338,11 +343,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/winbar",
     url = "https://github.com/loctvl842/winbar"
-  },
-  ["yuck.vim"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/yuck.vim",
-    url = "https://github.com/elkowar/yuck.vim"
   }
 }
 

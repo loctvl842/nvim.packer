@@ -96,7 +96,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
+		-- { name = "nvim_lua" },
 		{ name = "luasnip", option = { use_show_condition = false } },
 		{ name = "buffer" },
 		{ name = "path" },
