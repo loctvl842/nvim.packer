@@ -72,7 +72,7 @@ return packer.startup(function(use)
 	------------------------------ CMP PLUGIN --------------------------------------
 	use({
 		"hrsh7th/nvim-cmp", -- The completion plugin
-		commit = "8cab7889766d715b1107b9967a4077568c41ee2a",
+		-- commit = "8cab7889766d715b1107b9967a4077568c41ee2a",
 	})
 	use({
 		"hrsh7th/cmp-buffer", -- buffer completions
@@ -241,9 +241,12 @@ return packer.startup(function(use)
 	use({ -- fold
 		"loctvl842/pretty-fold.nvim",
 	})
-	-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+	use({
+		"kevinhwang91/nvim-ufo",
+		commit = "fdbb1f5d56cbe72f88ecf8aa1313ba7c0dc33725",
+		requires = "kevinhwang91/promise-async",
+	})
 	-- use({ "elkowar/yuck.vim" })
-	use({ "ms-jpq/coq_nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
