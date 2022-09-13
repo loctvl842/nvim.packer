@@ -17,7 +17,7 @@ require("setup.indentline")
 require("setup.lualine")
 require("setup.neo-tree")
 require("setup.notify")
-require("setup.pretty-fold")
+-- require("setup.pretty-fold")
 require("setup.project")
 require("setup.ranger")
 require("setup.renamer")
@@ -25,5 +25,6 @@ require("setup.session-lens")
 require("setup.telescope") -- Easy finding
 require("setup.toggleterm") -- FLoat terminal in neovim
 require("setup.treesitter") -- Highlight
+require("setup.ufo")
 require("setup.whichkey")
 require("setup.winbar")
