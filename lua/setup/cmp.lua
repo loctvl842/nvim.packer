@@ -20,8 +20,14 @@ local check_backspace = function()
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 cmp.setup({
-	completion = { completeopt = "menu,menuone,noinsert" },
+	completion = {
+		completeopt = "menu,menuone,noinsert",
+		keyword_length = 1,
+	},
 	preselect = cmp.PreselectMode.None,
+	performance = {
+		debounce = 20,
+	},
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -82,10 +88,10 @@ cmp.setup({
 			-- The function below will be called before any actual modifications from lspkind
 			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
 			before = function(entry, vim_item)
-				-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+				-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 				vim_item.menu = ({
 					nvim_lsp = "LSP",
-					nvim_lua = "NVIM_LUA",
+					nvim_lua = "LUA",
 					luasnip = "Snippet",
 					buffer = "Buffer",
 					path = "Path",
@@ -96,7 +102,8 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		-- { name = "nvim_lua" },
+		{ name = "vsnip" },
+		{ name = "nvim_lua" },
 		{ name = "luasnip", option = { use_show_condition = false } },
 		{ name = "buffer" },
 		{ name = "path" },
@@ -106,12 +113,12 @@ cmp.setup({
 		select = true,
 	},
 	window = {
-		-- documentation = "native",
-		documentation = {
-			border = "rounded",
-			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-		},
+		documentation = false,
+		-- documentation = {
+		-- 	border = "rounded",
+		-- 	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		-- 	winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+		-- },
 		completion = {
 			border = "rounded",
 			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -121,4 +128,20 @@ cmp.setup({
 	experimental = {
 		ghost_text = true,
 	},
+})
+
+cmp.setup.cmdline("/", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
+	},
+})
+
+cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
 })
