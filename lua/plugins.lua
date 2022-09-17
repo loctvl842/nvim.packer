@@ -120,7 +120,7 @@ return packer.startup(function(use)
 	use("nvim-treesitter/playground")
 	use({
 		"JoosepAlviste/nvim-ts-context-commentstring",
-		commit = "831cc1c47c2b3f88b3981f3ed033c6e973706c1f",
+		-- commit = "831cc1c47c2b3f88b3981f3ed033c6e973706c1f",
 	})
 	use({
 		"p00f/nvim-ts-rainbow",

@@ -19,6 +19,15 @@ configs.setup({
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
+		config = {
+			javascript = {
+				__default = "// %s",
+				jsx_element = "{/* %s */}",
+				jsx_fragment = "{/* %s */}",
+				jsx_attribute = "// %s",
+				comment = "// %s",
+			},
+		},
 	},
 	autotag = {
 		enable = true,
@@ -26,13 +35,13 @@ configs.setup({
 	},
 	rainbow = {
 		enable = true,
-    -- extended_mode = true,
+		-- extended_mode = true,
 		colors = {
-      "#00ffe5",
-      "#FFF8DC",
-      "#fff047",
-      "#ff00e1",
-      "#7cfc00",
+			"#00ffe5",
+			"#FFF8DC",
+			"#fff047",
+			"#ff00e1",
+			"#7cfc00",
 		},
 		disable = { "html" },
 	},
