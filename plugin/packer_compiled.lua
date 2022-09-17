@@ -134,11 +134,6 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/compile-nvim",
     url = "https://github.com/loctvl842/compile-nvim"
   },
-  coq_nvim = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/coq_nvim",
-    url = "https://github.com/ms-jpq/coq_nvim"
-  },
   ["dev-icons"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/dev-icons",
@@ -274,6 +269,11 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -298,6 +298,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["renamer.nvim"] = {
     loaded = true,

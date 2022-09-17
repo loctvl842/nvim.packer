@@ -6,7 +6,7 @@ require("keymaps")
 require("settings")
 
 require("autocommands")
-require("lsp")
-
 ---------------- PLUGINS CONFIGURATION ------------------
 require("setup")
+
+require("lsp")

@@ -11,7 +11,7 @@ comment.setup({
 		local line_end = ctx.erow or ctx.range.erow
 		require("lsp-inlayhints.core").clear(0, line_start, line_end)
 
-		-- require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+    -- require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
 
 		if vim.bo.filetype == "javascript" or vim.bo.filetype == "typescript" then
 			local U = require("Comment.utils")
@@ -21,7 +21,7 @@ comment.setup({
 
 			-- Determine the location where to calculate commentstring from
 			local location = nil
-			if ctx.ctype == U.ctype.block then
+			if ctx.ctype == U.ctype.blockwise then
 				location = require("ts_context_commentstring.utils").get_cursor_location()
 			elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
 				location = require("ts_context_commentstring.utils").get_visual_start_location()
