@@ -69,6 +69,7 @@ bufferline.setup({
 		show_buffer_close_icons = true,
 		show_close_icon = true,
 		show_tab_indicators = false,
+    show_duplicate_prefix = true,
 		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
 		-- can also be a table containing 2 custom separators
 		-- [focused and unfocused]. eg: { '|', '|' }

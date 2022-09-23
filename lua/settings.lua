@@ -34,7 +34,7 @@ local options = {
 	wrap = false,                            -- display lines as one long line
 	scrolloff = 6,                           -- is one of my fav
 	sidescrolloff = 8,
-	guifont = "monospace:h17",                  -- the font used in graphical neovim applications
+	guifont = "monospace:h7",                  -- the font used in graphical neovim applications
 	laststatus = 3,
   guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20",
 	-- guicursor = "a:xxx",
@@ -44,6 +44,7 @@ local options = {
 	foldcolumn = "1",
   fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
   title = true,
+  linespace = 8,
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

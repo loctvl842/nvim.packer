@@ -203,7 +203,6 @@ local search_opts = {
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = true, -- use `nowait` when creating keymaps
 }
-
 local search_mapping = {
 	["b"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 	["c"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
@@ -214,5 +213,20 @@ local search_mapping = {
 	["k"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 	["C"] = { "<cmd>Telescope commands<cr>", "Commands" },
 }
-
 which_key.register(search_mapping, search_opts)
+
+local goto_mapping = {
+	["d"] = { "<cmd>Telescope lsp_definitions<cr>", "Go to definition" },
+	["r"] = { "<cmd>Telescope lsp_references<cr>", "Go to references" },
+	["i"] = { "<cmd>Telescope lsp_implementations<cr>", "Go to implementations" },
+}
+-- Go to [g]
+local goto_opts = {
+	mode = "n", -- NORMAL mode
+	prefix = "g",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+which_key.register(goto_mapping, goto_opts)

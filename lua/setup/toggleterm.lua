@@ -18,7 +18,7 @@ toggleterm.setup({
 	shell = vim.o.shell,
 	float_opts = {
 		border = "rounded",
-		winblend = 0,
+		winblend = 10,
 	},
 	highlights = {
 		FloatBorder = { link = "TermBorder" },
