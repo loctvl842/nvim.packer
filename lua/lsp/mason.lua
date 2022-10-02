@@ -16,6 +16,9 @@ local servers = {
 	"sumneko_lua",
 	"tsserver",
 	"pyright",
+  "bashls",
+  "jdtls",
+  "cssmodules_ls",
 }
 
 local settings = {
@@ -64,6 +67,10 @@ for _, server in pairs(servers) do
 		local tsserver_opts = require("lsp.settings.tsserver")
 		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
 	end
+  if server == "jdtls" then
+    goto continue
+  end
 
 	lspconfig[server].setup(opts)
+  ::continue::
 end

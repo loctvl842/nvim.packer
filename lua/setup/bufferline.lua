@@ -5,6 +5,7 @@ end
 
 bufferline.setup({
 	options = {
+		mode = "buffers",
 		numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
 		close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 		right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -13,7 +14,10 @@ bufferline.setup({
 		-- NOTE: this plugin is designed with this icon in mind,
 		-- and so changing this is NOT recommended, this is intended
 		-- as an escape hatch for people who cannot bear it for whatever reason
-		indicator_icon = "▏",
+		indicator = {
+			-- icon = "▏",
+			style = "underline",
+		},
 		buffer_close_icon = "",
 		-- buffer_close_icon = "",
 		modified_icon = "●",
@@ -65,11 +69,12 @@ bufferline.setup({
 				highlight = "Offset",
 			},
 		},
+		color_icons = true,
 		show_buffer_icons = true,
 		show_buffer_close_icons = true,
 		show_close_icon = true,
 		show_tab_indicators = false,
-    show_duplicate_prefix = true,
+		show_duplicate_prefix = true,
 		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
 		-- can also be a table containing 2 custom separators
 		-- [focused and unfocused]. eg: { '|', '|' }
@@ -81,214 +86,219 @@ bufferline.setup({
 		--   -- add custom logic
 		--   return buffer_a.modified > buffer_b.modified
 		-- end
+		-- hover = {
+		-- 	enabled = true,
+		-- 	delay = 200,
+		-- 	reveal = { "close" },
+		-- },
 	},
 	highlights = {
 		fill = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineFill",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineFill",
 			},
 		},
 		background = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineBackground",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineBackground",
 			},
 		},
 		close_button = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineCloseButton",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineCloseButton",
 			},
 		},
 		close_button_selected = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineCloseButtonSelected",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineCloseButtonSelected",
 			},
 		},
 		close_button_visible = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineCloseButtonVisible",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineCloseButtonVisible",
 			},
 		},
 		separator = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineSeparator",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineSeparator",
 			},
 		},
 		separator_selected = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineSeparatorSelected",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineSeparatorSelected",
 			},
 		},
 		separator_visible = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineSeparatorVisible",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineSeparatorVisible",
 			},
 		},
 		indicator_selected = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineIndicatorSelected",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineIndicatorSelected",
 			},
 		},
 		buffer_selected = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineBufferSelected",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineBufferSelected",
 			},
 		},
 		buffer_visible = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineBufferVisible",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineBufferVisible",
 			},
 		},
 		modified = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineModified",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineModified",
 			},
 		},
 		modified_selected = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineModifiedSelected",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineModifiedSelected",
 			},
 		},
 		modified_visible = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineModifiedVisible",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineModifiedVisible",
 			},
 		},
 		error = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineError",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineError",
 			},
 		},
 		error_selected = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineErrorSelected",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineErrorSelected",
 			},
 		},
 		error_visible = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineErrorVisible",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineErrorVisible",
 			},
 		},
 		error_diagnostic = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineErrorDiagnostic",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineErrorDiagnostic",
 			},
 		},
 		error_diagnostic_visible = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineErrorDiagnosticVisible",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineErrorDiagnosticVisible",
 			},
 		},
 		error_diagnostic_selected = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineErrorDiagnosticSelected",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineErrorDiagnosticSelected",
 			},
 		},
 		info = {
-			guifg = {
+			fg = {
 				attribute = "fg",
 				highlight = "BufferLineInfo",
 			},
-			guibg = {
+			bg = {
 				attribute = "bg",
 				highlight = "BufferLineInfo",
 			},

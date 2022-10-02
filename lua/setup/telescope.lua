@@ -84,8 +84,19 @@ telescope.setup({
 		-- Now the picker_config_key will be applied every time you call this
 		-- builtin picker
 	},
-  planets = {
-    show_pluto = true,
-    show_moon = true,
-  }
+	planets = {
+		show_pluto = true,
+		show_moon = true,
+	},
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({
+				-- even more opts
+			}),
+		},
+    specific_opts = {
+      codeactions = true,
+    }
+	},
 })
+require("telescope").load_extension("ui-select")

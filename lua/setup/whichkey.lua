@@ -77,7 +77,6 @@ local opts = {
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = true, -- use `nowait` when creating keymaps
 }
-
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["b"] = {
@@ -100,6 +99,38 @@ local mappings = {
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["<Tab>"] = { "<c-6>", "Move back and forth" },
+
+	l = {
+		name = "LSP",
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		d = {
+			"<cmd>Telescope lsp_document_diagnostics<cr>",
+			"Document Diagnostics",
+		},
+		w = {
+			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
+			"Workspace Diagnostics",
+		},
+		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+		i = { "<cmd>LspInfo<cr>", "Info" },
+		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+		j = {
+			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+			"Next Diagnostic",
+		},
+		k = {
+			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+			"Prev Diagnostic",
+		},
+		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		S = {
+			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+			"Workspace Symbols",
+		},
+	},
 
 	-- p = {
 	-- 	name = "Packer",
@@ -144,7 +175,6 @@ local mappings = {
 	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	-- },
 }
-
 which_key.setup(setup)
 which_key.register(mappings, opts)
 
@@ -157,7 +187,6 @@ local fold_opts = {
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = true, -- use `nowait` when creating keymaps
 }
-
 local fold_mappings = {
 	["d"] = { "zd", "Delete fold under cursor" },
 	["o"] = { "zo<cmd>IndentBlanklineEnable<CR>", "Open fold under cursor" },
@@ -183,7 +212,6 @@ local fold_mappings = {
 	["H"] = { "zH", "Half screen to the left" },
 	["L"] = { "zL", "Half screen to the right" },
 }
-
 which_key.register(fold_mappings, fold_opts)
 which_key.register({ ["f"] = { "zf", "Create fold" } }, {
 	mode = "v",

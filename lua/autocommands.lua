@@ -21,6 +21,14 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	end,
 })
 
+-- fix cmdheight in file java
+vim.api.nvim_create_autocmd({ "BufEnter"}, {
+  pattern = { "*.java"},
+  callback = function ()
+    vim.opt.cmdheight = 1
+  end
+})
+
 vim.api.nvim_create_autocmd({ "VimResized" }, {
 	callback = function()
 		vim.cmd("tabdo wincmd =")
@@ -104,6 +112,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		vim.cmd("set cmdheight=1")
 	end,
 })
+
 
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()

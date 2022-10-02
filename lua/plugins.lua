@@ -98,6 +98,8 @@ return packer.startup(function(use)
 		"hrsh7th/cmp-nvim-lua",
 		commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
 	})
+	-- java
+	use({ "mfussenegger/nvim-jdtls" })
 	---------------------------- SNIPPET & EMMET ----------------------------------
 	use({
 		"L3MON4D3/LuaSnip", -- snippet engine
@@ -131,19 +133,18 @@ return packer.startup(function(use)
 		commit = "044a05c4c51051326900a53ba98fddacd15fea22",
 	})
 	---------------------------------- UI ------------------------------------------
-	use("loctvl842/dev-icons") -- Change some icons
-	use({ "loctvl842/bufferline" }) -- haiz use loctvl842/dev-icons
+	use("loctvl842/nvim-web-devicons")
+	use({ "akinsho/bufferline.nvim" })
 	use("loctvl842/winbar") -- Make simple root name
 	use({ "loctvl842/colorscheme", branch = "float" }) -- Colorschemes main | float | slant
-	use({ -- status line
-		"loctvl842/lualine.nvim",
-		branch = "triangle", -- main | bubble | slant | triangle
+	use({
+		"nvim-lualine/lualine.nvim",
+		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
 	})
 	use({
 		"loctvl842/neo-tree.nvim",
 		requires = {
 			"MunifTanjim/nui.nvim",
-			-- commit = "4bfd3afec57f45776e7df4bc5f57014d09333845",
 			commit = "a5fd005263d238d2fbd6ee335e06139645f11fa9",
 		},
 	})
@@ -202,8 +203,7 @@ return packer.startup(function(use)
 	})
 	use({ -- Telescope
 		"nvim-telescope/telescope.nvim",
-		-- commit = "e7e90466de0571d39fe642cdfec1c577451b8be1",
-		commit = "8746347ac4065f5795e7bd33c7912ab1152cca4b",
+		-- commit = "8746347ac4065f5795e7bd33c7912ab1152cca4b",
 	})
 	use({ -- Git
 		"lewis6991/gitsigns.nvim",
@@ -221,7 +221,6 @@ return packer.startup(function(use)
 	use({ -- Rename
 		"filipdutescu/renamer.nvim",
 		branch = "master",
-		commit = "eecd939c68312a1a4c1744699189eaf61f4c6027",
 	})
 	use({ -- better ui for showing error or warning
 		"rcarriga/nvim-notify",
@@ -246,6 +245,11 @@ return packer.startup(function(use)
 		commit = "fdbb1f5d56cbe72f88ecf8aa1313ba7c0dc33725",
 		requires = "kevinhwang91/promise-async",
 	})
+	use({
+		"kosayoda/nvim-lightbulb",
+		requires = "antoinemadec/FixCursorHold.nvim",
+	})
+	use({ "nvim-telescope/telescope-ui-select.nvim" })
 	-- use({ "elkowar/yuck.vim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim

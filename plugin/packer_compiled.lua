@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -89,10 +94,10 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
-  bufferline = {
+  ["bufferline.nvim"] = {
     loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/bufferline",
-    url = "https://github.com/loctvl842/bufferline"
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -133,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/compile-nvim",
     url = "https://github.com/loctvl842/compile-nvim"
-  },
-  ["dev-icons"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/dev-icons",
-    url = "https://github.com/loctvl842/dev-icons"
   },
   ["emmet-vim"] = {
     loaded = true,
@@ -182,7 +182,7 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/loctvl842/lualine.nvim"
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
@@ -234,6 +234,16 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    url = "https://github.com/mfussenegger/nvim-jdtls"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -273,6 +283,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-ufo",
     url = "https://github.com/kevinhwang91/nvim-ufo"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/loctvl842/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -318,6 +333,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/session-lens",
     url = "https://github.com/loctvl842/session-lens"
+  },
+  ["telescope-ui-select.nvim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

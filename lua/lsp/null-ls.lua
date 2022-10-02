@@ -13,5 +13,6 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.stylua,
+		formatting.google_java_format,
 	},
 })
