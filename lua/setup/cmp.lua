@@ -101,7 +101,7 @@ cmp.setup({
 		}),
 	},
 	sources = {
-		{ 
+		{
       name = "nvim_lsp",
       filter = function(entry, ctx)
         local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]

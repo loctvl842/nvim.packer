@@ -88,15 +88,4 @@ telescope.setup({
 		show_pluto = true,
 		show_moon = true,
 	},
-	extensions = {
-		["ui-select"] = {
-			require("telescope.themes").get_dropdown({
-				-- even more opts
-			}),
-		},
-    specific_opts = {
-      codeactions = true,
-    }
-	},
 })
-require("telescope").load_extension("ui-select")

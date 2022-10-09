@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
--- require("tvl.lsp.lsp-installer")
+-- require("lsp.lsp-installer")
 require("lsp.mason")
 require("lsp.lsp-signature")
 require("lsp.handlers").setup()

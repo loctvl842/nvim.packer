@@ -19,6 +19,7 @@ local servers = {
   "bashls",
   "jdtls",
   "cssmodules_ls",
+  "lemminx",
 }
 
 local settings = {

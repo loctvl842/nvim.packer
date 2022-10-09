@@ -41,8 +41,8 @@ bufferline.setup({
 		diagnostics = false, -- | "nvim_lsp" | "coc",
 		diagnostics_update_in_insert = false,
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
-			-- return "(" .. count .. ")"
-			return ""
+			return "(" .. count .. ")"
+			-- return ""
 		end,
 		-- NOTE: this will be called a lot so don't do any heavy processing here
 		-- custom_filter = function(buf_number)
@@ -63,7 +63,7 @@ bufferline.setup({
 		offsets = {
 			{
 				filetype = "neo-tree",
-				text = " EXPLORER",
+				text = "EXPLORER",
 				padding = 0,
 				text_align = "left",
 				highlight = "Offset",
@@ -86,11 +86,11 @@ bufferline.setup({
 		--   -- add custom logic
 		--   return buffer_a.modified > buffer_b.modified
 		-- end
-		-- hover = {
-		-- 	enabled = true,
-		-- 	delay = 200,
-		-- 	reveal = { "close" },
-		-- },
+		hover = {
+			enabled = true,
+			delay = 200,
+			reveal = { "close" },
+		},
 	},
 	highlights = {
 		fill = {

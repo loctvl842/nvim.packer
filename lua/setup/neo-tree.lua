@@ -14,7 +14,7 @@ neoTree.setup({
 		},
 		indent = {
 			indent_size = 2,
-			padding = 0, -- extra padding on left hand side
+			padding = 1, -- extra padding on left hand side
 			-- indent guides
 			with_markers = true,
 			-- indent_marker = "│",
@@ -65,7 +65,7 @@ neoTree.setup({
 	},
 	window = {
 		position = "left",
-		width = 35,
+		width = 40,
 		mapping_options = {
 			noremap = true,
 			nowait = true,
