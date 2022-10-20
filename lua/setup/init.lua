@@ -3,7 +3,8 @@ require("setup.auto-closetag")
 require("setup.auto-session")
 require("setup.autopairs") -- Auto pair () [] {}
 require("setup.bufferline") -- Buffer line (tab bar) in neovim
--- require("setup.cmp") -- Autocomplete
+require("setup.cmp") -- Autocomplete
+require("setup.codewindow")
 require("setup.colorizer")
 require("setup.colorscheme") -- Themes
 require("setup.comment") -- comment easy
@@ -26,6 +27,7 @@ require("setup.session-lens")
 require("setup.telescope") -- Easy finding
 require("setup.toggleterm") -- FLoat terminal in neovim
 require("setup.treesitter") -- Highlight
+require("setup.trouble")
 require("setup.ufo")
 require("setup.whichkey")
 require("setup.winbar")

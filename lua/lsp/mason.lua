@@ -37,8 +37,8 @@ local settings = {
 
 mason.setup(settings)
 mason_lspconfig.setup({
-	ensure_installed = servers,
-	automatic_installation = true,
+  ensure_installed = servers,
+  automatic_installation = true,
 })
 
 local status_ok_lspconfig, lspconfig = pcall(require, "lspconfig")

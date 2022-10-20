@@ -49,13 +49,13 @@ return packer.startup(function(use)
 		"neovim/nvim-lspconfig", -- enable LSP
 		commit = "9d4b8d393aad0e6e9227e2d67629aa99e56b994a",
 	})
-	use({
-		"williamboman/nvim-lsp-installer", -- simple to use language server installer
-		commit = "23820a878a5c2415bfd3b971d1fe3c79e4dd6763",
-	})
+	-- use({
+	-- 	"williamboman/nvim-lsp-installer", -- simple to use language server installer
+	-- 	commit = "23820a878a5c2415bfd3b971d1fe3c79e4dd6763",
+	-- })
 	use({
 		"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
-		-- commit = "741894f047966f0f45d7938d0fe4473c7635c6d3",
+		commit = "3d76bb2968310f7e18a20711ac89c5e7b07e8c93",
 	})
 	-- use({
 	-- 	"RRethy/vim-illuminate", -- Hight light word the same
@@ -65,7 +65,10 @@ return packer.startup(function(use)
 		"ray-x/lsp_signature.nvim", -- Recommend type of parameter of function
 		commit = "e65a63858771db3f086c8d904ff5f80705fd962b",
 	})
-	use({ "lvimuser/lsp-inlayhints.nvim", commit = "9bcd6fe25417b7808fe039ab63d4224f2071d24a" })
+	use({
+		"lvimuser/lsp-inlayhints.nvim",
+		commit = "9bcd6fe25417b7808fe039ab63d4224f2071d24a",
+	})
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	------------------------------ CMP PLUGIN --------------------------------------
@@ -118,15 +121,15 @@ return packer.startup(function(use)
 	------------------------------ TREESITTER --------------------------------------
 	use({
 		"nvim-treesitter/nvim-treesitter",
-    commit = "b273a06728305c1e7bd0179977ca48049aeff5e6",
+		commit = "b273a06728305c1e7bd0179977ca48049aeff5e6",
 	})
 	use({
-    "nvim-treesitter/playground",
-    commit = "e6a0bfaf9b5e36e3a327a1ae9a44a989eae472cf",
-  })
+		"nvim-treesitter/playground",
+		-- commit = "e6a0bfaf9b5e36e3a327a1ae9a44a989eae472cf",
+	})
 	use({
 		"JoosepAlviste/nvim-ts-context-commentstring",
-    commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08",
+		commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08",
 	})
 	use({
 		"p00f/nvim-ts-rainbow",
@@ -140,7 +143,8 @@ return packer.startup(function(use)
 	use("loctvl842/nvim-web-devicons")
 	use({ "akinsho/bufferline.nvim" })
 	use("loctvl842/winbar") -- Make simple root name
-	use({ "loctvl842/colorscheme", branch = "float" }) -- Colorschemes main | float | slant
+	-- use({ "loctvl842/colorscheme", branch = "float" }) -- Colorschemes main | float | slant
+	use({ "loctvl842/monokai-plus.nvim" })
 	use({
 		"nvim-lualine/lualine.nvim",
 		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
@@ -154,7 +158,6 @@ return packer.startup(function(use)
 	})
 	use({ -- Start up nvim Ui
 		"goolord/alpha-nvim",
-		-- commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94",
 	})
 	use({ -- float terminal
 		"akinsho/toggleterm.nvim",
@@ -183,7 +186,7 @@ return packer.startup(function(use)
 	})
 	use({ -- Easily comment stuff
 		"numToStr/Comment.nvim",
-		-- commit = "2c26a00f32b190390b664e56e32fd5347613b9e2",
+		commit = "d30f2b059c0c03fcfab3842684212bac525a3d0b",
 	})
 	use({ -- Ranger
 		"kevinhwang91/rnvimr",
@@ -207,11 +210,11 @@ return packer.startup(function(use)
 	})
 	use({ -- Telescope
 		"nvim-telescope/telescope.nvim",
-		-- commit = "8746347ac4065f5795e7bd33c7912ab1152cca4b",
+		commit = "f174a0367b4fc7cb17710d867e25ea792311c418",
 	})
 	use({ -- Git
 		"lewis6991/gitsigns.nvim",
-		-- commit = "4883988cf8b623f63cc8c7d3f11b18b7e81f06ff",
+		commit = "9787c94178b4062f30d2f06b6d52984217196647",
 	})
 	use({ -- Multi cursor
 		"mg979/vim-visual-multi",
@@ -241,9 +244,6 @@ return packer.startup(function(use)
 	use({ -- Add mapping 'dd' to delete session
 		"loctvl842/session-lens",
 	})
-	use({ -- fold
-		"loctvl842/pretty-fold.nvim",
-	})
 	use({
 		"kevinhwang91/nvim-ufo",
 		commit = "fdbb1f5d56cbe72f88ecf8aa1313ba7c0dc33725",
@@ -253,6 +253,7 @@ return packer.startup(function(use)
 		"kosayoda/nvim-lightbulb",
 		requires = "antoinemadec/FixCursorHold.nvim",
 	})
+	use({ "gorbit99/codewindow.nvim" })
 	-- use({ "elkowar/yuck.vim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim

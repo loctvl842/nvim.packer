@@ -45,6 +45,8 @@ local options = {
   fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
   title = true,
   linespace = 8,
+  mousemoveevent = true,
+  syntax = "on"
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

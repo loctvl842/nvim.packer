@@ -129,10 +129,10 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  colorscheme = {
+  ["codewindow.nvim"] = {
     loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/colorscheme",
-    url = "https://github.com/loctvl842/colorscheme"
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/codewindow.nvim",
+    url = "https://github.com/gorbit99/codewindow.nvim"
   },
   ["compile-nvim"] = {
     loaded = true,
@@ -199,6 +199,11 @@ _G.packer_plugins = {
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["monokai-plus.nvim"] = {
+    loaded = true,
+    path = "/home/loc/.local/share/nvim/site/pack/packer/start/monokai-plus.nvim",
+    url = "https://github.com/loctvl842/monokai-plus.nvim"
+  },
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
@@ -243,11 +248,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
     url = "https://github.com/kosayoda/nvim-lightbulb"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -303,11 +303,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loc/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["pretty-fold.nvim"] = {
-    loaded = true,
-    path = "/home/loc/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
-    url = "https://github.com/loctvl842/pretty-fold.nvim"
   },
   ["project.nvim"] = {
     loaded = true,
