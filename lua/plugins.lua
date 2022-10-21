@@ -42,25 +42,18 @@ packer.init({
 return packer.startup(function(use)
 	use({ -- General
 		"wbthomason/packer.nvim",
-		commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422",
+		-- commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422",
+    commit = "6afb67460283f0e990d35d229fd38fdc04063e0a",
 	})
 	---------------------------------- LSP ------------------------------------------
 	use({
 		"neovim/nvim-lspconfig", -- enable LSP
 		commit = "9d4b8d393aad0e6e9227e2d67629aa99e56b994a",
 	})
-	-- use({
-	-- 	"williamboman/nvim-lsp-installer", -- simple to use language server installer
-	-- 	commit = "23820a878a5c2415bfd3b971d1fe3c79e4dd6763",
-	-- })
 	use({
 		"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
 		commit = "3d76bb2968310f7e18a20711ac89c5e7b07e8c93",
 	})
-	-- use({
-	-- 	"RRethy/vim-illuminate", -- Hight light word the same
-	-- 	commit = "78cf9c1ce0dc1ee3cfd6f29f9aab1b538a2784b6",
-	-- })
 	use({
 		"ray-x/lsp_signature.nvim", -- Recommend type of parameter of function
 		commit = "e65a63858771db3f086c8d904ff5f80705fd962b",
@@ -69,8 +62,8 @@ return packer.startup(function(use)
 		"lvimuser/lsp-inlayhints.nvim",
 		commit = "9bcd6fe25417b7808fe039ab63d4224f2071d24a",
 	})
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
+	use({"williamboman/mason.nvim"})
+	use({"williamboman/mason-lspconfig.nvim"})
 	------------------------------ CMP PLUGIN --------------------------------------
 	use({
 		"hrsh7th/cmp-nvim-lsp",
@@ -142,7 +135,7 @@ return packer.startup(function(use)
 	---------------------------------- UI ------------------------------------------
 	use("loctvl842/nvim-web-devicons")
 	use({ "akinsho/bufferline.nvim" })
-	use("loctvl842/winbar") -- Make simple root name
+	use({ "loctvl842/winbar" }) -- Make simple root name
 	-- use({ "loctvl842/colorscheme", branch = "float" }) -- Colorschemes main | float | slant
 	use({ "loctvl842/monokai-plus.nvim" })
 	use({
@@ -153,7 +146,7 @@ return packer.startup(function(use)
 		"loctvl842/neo-tree.nvim",
 		requires = {
 			"MunifTanjim/nui.nvim",
-			commit = "a5fd005263d238d2fbd6ee335e06139645f11fa9",
+			commit = "35758e946a64376e0e9625a27469410b3d1f9223",
 		},
 	})
 	use({ -- Start up nvim Ui
@@ -254,7 +247,6 @@ return packer.startup(function(use)
 		requires = "antoinemadec/FixCursorHold.nvim",
 	})
 	use({ "gorbit99/codewindow.nvim" })
-	-- use({ "elkowar/yuck.vim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

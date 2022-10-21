@@ -116,7 +116,8 @@ local diff = {
 local mode = {
 	"mode",
 	fmt = function(str)
-		local mode_str = " " .. str
+		-- local mode_str = " " .. str
+    local mode_str = str
 		return hl_str(mode_str, "SLMode", "SLMode")
 	end,
 }
@@ -147,7 +148,7 @@ local filetype = {
 			filetype_str = " " .. vim.api.nvim_buf_get_var(0, "toggle_number")
 		elseif str == "TelescopePrompt" then
 			filetype_str = ""
-		elseif str == "neo-tree" then
+		elseif str == "neo-tree" or str == "neo-tree-popup" then
 			filetype_str = prev_filetype
 		elseif vim.tbl_contains(ui_filetypes, str) then
 			filetype_str = ""
