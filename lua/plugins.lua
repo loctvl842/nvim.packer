@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
-augroup end
-]])
+-- vim.cmd([[
+-- augroup packer_user_config
+-- autocmd!
+-- autocmd BufWritePost plugins.lua source <afile> | PackerSync
+-- augroup end
+-- ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -36,14 +36,25 @@ packer.init({
 			return require("packer.util").float({ border = "rounded" })
 		end,
 	},
+	profile = {
+		enable = true,
+		threshold = 0.0001,
+	},
+	git = {
+		clone_timeout = 300,
+		subcommands = {
+			update = "pull --rebase",
+		},
+	},
+	auto_clean = true,
+	compile_on_sync = true,
 })
 
 -- Install your plugins here
 return packer.startup(function(use)
 	use({ -- General
 		"wbthomason/packer.nvim",
-		-- commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422",
-    commit = "6afb67460283f0e990d35d229fd38fdc04063e0a",
+		commit = "6afb67460283f0e990d35d229fd38fdc04063e0a",
 	})
 	---------------------------------- LSP ------------------------------------------
 	use({
@@ -62,8 +73,8 @@ return packer.startup(function(use)
 		"lvimuser/lsp-inlayhints.nvim",
 		commit = "9bcd6fe25417b7808fe039ab63d4224f2071d24a",
 	})
-	use({"williamboman/mason.nvim"})
-	use({"williamboman/mason-lspconfig.nvim"})
+	use({ "williamboman/mason.nvim" })
+	use({ "williamboman/mason-lspconfig.nvim" })
 	------------------------------ CMP PLUGIN --------------------------------------
 	use({
 		"hrsh7th/cmp-nvim-lsp",
@@ -134,7 +145,11 @@ return packer.startup(function(use)
 	})
 	---------------------------------- UI ------------------------------------------
 	use("loctvl842/nvim-web-devicons")
-	use({ "akinsho/bufferline.nvim" })
+	use({
+		"akinsho/bufferline.nvim",
+		-- event = "UIEnter",
+		--   config = function() require "configs.bufferline" end,
+	})
 	use({ "loctvl842/winbar" }) -- Make simple root name
 	-- use({ "loctvl842/colorscheme", branch = "float" }) -- Colorschemes main | float | slant
 	use({ "loctvl842/monokai-plus.nvim" })

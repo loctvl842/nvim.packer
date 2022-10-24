@@ -79,10 +79,18 @@ local opts = {
 }
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
-	},
+	-- ["b"] = {
+	-- 	"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+	-- 	"Buffers",
+	-- },
+  ["b"] = {
+    "<cmd>Neotree toggle show buffers left<cr>",
+    "Buffers",
+  },
+  ["g"] = {
+    "<cmd>Neotree toggle show git_status left<cr>",
+    "Buffers",
+  },
 	["e"] = { "<cmd>Neotree toggle position=left<cr>", "Explorer" },
 	["E"] = { "<cmd>Neotree toggle position=float<cr>", "Explorer Float" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
@@ -96,7 +104,8 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files()<cr>",
 		"Find files",
 	},
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	-- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 	["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["<Tab>"] = { "<c-6>", "Move back and forth" },
 

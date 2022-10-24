@@ -14,6 +14,7 @@ winbar.setup({
 		"Compile",
 		"TelescopePrompt",
 		"TelescopeResult",
+		"Codewindow",
 	},
 	separator = require("icons").ui.ChevronRight,
 	-- limit for amount of context shown

@@ -8,6 +8,16 @@ neoTree.setup({
 	popup_border_style = "rounded",
 	enable_git_status = true,
 	enable_diagnostics = true,
+  source_selector = {
+    winbar = true,
+    content_layout = "center",
+    tab_labels = {
+      filesystem = "" .. " File",
+      buffers = "" .. " Bufs",
+      git_status = "" .. " Git",
+      diagnostics = "裂" .. " Diagnostic",
+    },
+  },
 	default_component_configs = {
 		container = {
 			enable_character_fade = true,
@@ -132,7 +142,7 @@ neoTree.setup({
 		-- "open_current",  -- netrw disabled, opening a directory opens within the
 		-- window like netrw would, regardless of window.position
 		-- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
-		use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+		use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
 		-- instead of relying on nvim autocmd events.
 		window = {
 			mappings = {
