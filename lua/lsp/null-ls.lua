@@ -14,5 +14,6 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.google_java_format,
+    formatting.black.with { extra_args = {"--fast"} }
 	},
 })
