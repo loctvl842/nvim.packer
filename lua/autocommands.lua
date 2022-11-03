@@ -15,7 +15,7 @@ augroup END
 
 -- fix tab in python
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	pattern = { "*.py", "*.cpp" },
+	pattern = { "*.cpp" },
 	callback = function()
 		vim.cmd("setlocal noexpandtab")
 	end,
