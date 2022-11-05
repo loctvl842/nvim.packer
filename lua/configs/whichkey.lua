@@ -68,6 +68,9 @@ local setup = {
 		v = { "j", "k" },
 	},
 }
+
+which_key.setup(setup)
+
 -- [<leader>]
 local opts = {
 	mode = "n", -- NORMAL mode
@@ -83,14 +86,14 @@ local mappings = {
 	-- 	"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 	-- 	"Buffers",
 	-- },
-  ["b"] = {
-    "<cmd>Neotree toggle show buffers left<cr>",
-    "Buffers",
-  },
-  ["g"] = {
-    "<cmd>Neotree toggle show git_status left<cr>",
-    "Buffers",
-  },
+	["b"] = {
+		"<cmd>Neotree toggle show buffers left<cr>",
+		"Buffers",
+	},
+	["g"] = {
+		"<cmd>Neotree toggle show git_status left<cr>",
+		"Buffers",
+	},
 	["e"] = { "<cmd>Neotree toggle position=left<cr>", "Explorer" },
 	["E"] = { "<cmd>Neotree toggle position=float<cr>", "Explorer Float" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
@@ -184,7 +187,6 @@ local mappings = {
 	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	-- },
 }
-which_key.setup(setup)
 which_key.register(mappings, opts)
 
 -- fold [f]

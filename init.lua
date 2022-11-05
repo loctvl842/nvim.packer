@@ -1,12 +1,20 @@
------------------------ PLUGINS -------------------------
-require("plugins")
----------------------- KEY BINDING ----------------------
-require("keymaps")
---------------------- GENERAL SETTINGS ------------------
-require("settings")
+local impatient_ok, impatient = pcall(require, "impatient")
+if impatient_ok then
+	impatient.enable_profile()
+end
 
-require("autocommands")
----------------- PLUGINS CONFIGURATION ------------------
-require("setup")
-
-require("lsp")
+for _, source in
+	ipairs({
+		"core.utils",
+		"core.plugins",
+		"core.keymaps",
+		"core.settings",
+		"core.autocommands",
+		"lsp",
+	})
+do
+	local status_ok, fault = pcall(require, source)
+	if not status_ok then
+		vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault)
+	end
+end
