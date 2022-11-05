@@ -54,6 +54,14 @@ M.setup = function()
 	})
 end
 
+local function attach_navic(client, bufnr)
+  local status_ok, winbar = pcall(require, "winbar")
+  if not status_ok then
+    return
+  end
+  winbar.attach(client, bufnr)
+end
+
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
@@ -80,6 +88,7 @@ end
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
+  attach_navic(client, bufnr)
 	if client.name == "jdt.ls" then
 		vim.lsp.codelens.refresh()
 		if JAVA_DAP_ACTIVE then

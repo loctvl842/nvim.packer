@@ -4,7 +4,6 @@ if not status_ok then
 end
 
 winbar.setup({
-	disable_icons = false,
 	disabled_filetype = {
 		"packer",
 		"alpha",
@@ -16,6 +15,35 @@ winbar.setup({
 		"TelescopeResult",
 		"Codewindow",
 	},
+	--  -- VSCode icons
+	-- icons = {
+	-- 	File = " ",
+	-- 	Module = " ",
+	-- 	Namespace = " ",
+	-- 	Package = " ",
+	-- 	Class = " ",
+	-- 	Method = " ",
+	-- 	Property = " ",
+	-- 	Field = " ",
+	-- 	Constructor = " ",
+	-- 	Enum = " ",
+	-- 	Interface = " ",
+	-- 	Function = " ",
+	-- 	Variable = " ",
+	-- 	Constant = " ",
+	-- 	String = " ",
+	-- 	Number = " ",
+	-- 	Boolean = " ",
+	-- 	Array = " ",
+	-- 	Object = " ",
+	-- 	Key = " ",
+	-- 	Null = " ",
+	-- 	EnumMember = " ",
+	-- 	Struct = " ",
+	-- 	Event = " ",
+	-- 	Operator = " ",
+	-- 	TypeParameter = " ",
+	-- },
 	separator = require("icons").ui.ChevronRight,
 	-- limit for amount of context shown
 	-- 0 means no limit
@@ -24,8 +52,8 @@ winbar.setup({
 	depth = 0,
 	-- indicator used when context hits depth limit
 	depth_limit_indicator = "..",
-	highlight = {
-		component = "WinbarFg",
-		separator = "WinbarFg",
+	highlight_group = {
+		component = "WinbarText",
+		separator = "WinbarSeparator",
 	},
 })

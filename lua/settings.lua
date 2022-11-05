@@ -45,6 +45,7 @@ local options = {
 	foldcolumn = "1",
   fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
   title = true,
+  titlestring = "%<%F%=%l/%L - nvim",
   linespace = 8,
   mousemoveevent = true,
   syntax = "on"
