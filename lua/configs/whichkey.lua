@@ -102,7 +102,7 @@ local mappings = {
 	["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 	["d"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["r"] = { "<cmd>source ~/.config/nvim/lua/setup/colorscheme.lua<CR>", "ReSource Colorscheme" },
+	["r"] = { "<cmd>source ~/.config/nvim/lua/configs/colorscheme.lua<CR>", "ReSource Colorscheme" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files()<cr>",
 		"Find files",

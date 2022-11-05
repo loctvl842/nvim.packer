@@ -185,7 +185,10 @@ local tvl_plugins = {
 	},
 
 	["zbirenbaum/neodim"] = {
-		commit = "9c9c69ab59135ccbf823c7fda16bc87ea57431db",
+		event = "LspAttach",
+		config = function()
+			require("configs.neodim")
+		end,
 	},
 
 	["onsails/lspkind.nvim"] = {},
@@ -346,6 +349,16 @@ packer.startup({
 			open_fn = function()
 				return require("packer.util").float({ border = "rounded" })
 			end,
+		},
+		profile = {
+			enable = true,
+			threshold = 0.0001,
+		},
+		git = {
+			clone_timeout = 300,
+			subcommands = {
+				update = "pull --rebase",
+			},
 		},
 		auto_clean = true,
 		compile_on_sync = true,

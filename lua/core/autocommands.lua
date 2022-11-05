@@ -22,11 +22,11 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 -- fix cmdheight in file java
-vim.api.nvim_create_autocmd({ "BufEnter"}, {
-  pattern = { "*.java"},
-  callback = function ()
-    vim.opt.cmdheight = 1
-  end
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "*.java" },
+	callback = function()
+		vim.opt.cmdheight = 1
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
@@ -73,24 +73,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function()
-		require("neodim").setup({
-			alpha = 0.5,
-			blend_color = "#333333",
-			update_in_insert = {
-				enable = false,
-				delay = 100,
-			},
-			hide = {
-				virtual_text = true,
-				signs = true,
-				underline = true,
-			},
-		})
-	end,
-})
-
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = { "" },
 	callback = function()
@@ -112,7 +94,6 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		vim.cmd("set cmdheight=1")
 	end,
 })
-
 
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
