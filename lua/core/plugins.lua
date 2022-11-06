@@ -39,6 +39,7 @@ local tvl_plugins = {
 	},
 
 	["jose-elias-alvarez/null-ls.nvim"] = {
+		-- event = "BufEnter",
 		commit = "3d76bb2968310f7e18a20711ac89c5e7b07e8c93",
 	},
 
@@ -55,6 +56,13 @@ local tvl_plugins = {
 	["williamboman/mason-lspconfig.nvim"] = {},
 
 	------------------------------ CMP PLUGIN --------------------------------------
+	["hrsh7th/nvim-cmp"] = {
+		commit = "0e436ee23abc6c3fe5f3600145d2a413703e7272",
+		config = function()
+			require("configs.cmp")
+		end,
+	},
+
 	["hrsh7th/cmp-nvim-lsp"] = {
 		commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8",
 	},
@@ -69,13 +77,6 @@ local tvl_plugins = {
 
 	["hrsh7th/cmp-cmdline"] = {
 		commit = "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252",
-	},
-
-	["hrsh7th/nvim-cmp"] = {
-		commit = "0e436ee23abc6c3fe5f3600145d2a413703e7272",
-		config = function()
-			require("configs.cmp")
-		end,
 	},
 
 	["saadparwaiz1/cmp_luasnip"] = {
@@ -97,6 +98,7 @@ local tvl_plugins = {
 
 	["rafamadriz/friendly-snippets"] = {
 		commit = "471f3ab20c1ee02d33830f379caaa8edfbd39808",
+		opt = true,
 	},
 
 	["mattn/emmet-vim"] = {
@@ -109,6 +111,17 @@ local tvl_plugins = {
 	------------------------------ TREESITTER --------------------------------------
 	["nvim-treesitter/nvim-treesitter"] = {
 		commit = "b273a06728305c1e7bd0179977ca48049aeff5e6",
+		event = "BufEnter",
+		cmd = {
+			"TSInstall",
+			"TSInstallInfo",
+			"TSInstallSync",
+			"TSUninstall",
+			"TSUpdate",
+			"TSUpdateSync",
+			"TSDisableAll",
+			"TSEnableAll",
+		},
 		config = function()
 			require("configs.treesitter")
 		end,
@@ -116,18 +129,22 @@ local tvl_plugins = {
 
 	["nvim-treesitter/playground"] = {
 		commit = "e6a0bfaf9b5e36e3a327a1ae9a44a989eae472cf",
+		after = "nvim-treesitter",
 	},
 
 	["JoosepAlviste/nvim-ts-context-commentstring"] = {
 		commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08",
+		after = "nvim-treesitter",
 	},
 
 	["p00f/nvim-ts-rainbow"] = {
 		commit = "e486fad0aa038e346995e2477affd5269f2dcbea",
+		after = "nvim-treesitter",
 	},
 
 	["windwp/nvim-ts-autotag"] = {
 		commit = "044a05c4c51051326900a53ba98fddacd15fea22",
+		after = "nvim-treesitter",
 		config = function()
 			require("configs.auto-closetag")
 		end,
@@ -137,12 +154,14 @@ local tvl_plugins = {
 	["loctvl842/nvim-web-devicons"] = {},
 
 	["akinsho/bufferline.nvim"] = {
+		event = "UIEnter",
 		config = function()
 			require("configs.bufferline")
 		end,
 	},
 
 	["loctvl842/winbar"] = {
+		event = "BufEnter",
 		config = function()
 			require("configs.winbar")
 		end,
@@ -249,6 +268,7 @@ local tvl_plugins = {
 
 	["lukas-reineke/indent-blankline.nvim"] = {
 		commit = "052c880396076af074f1ff3d3eb687cb36018dfa",
+		event = "BufEnter",
 		config = function()
 			require("configs.indentline")
 		end,
@@ -289,6 +309,7 @@ local tvl_plugins = {
 
 	["rcarriga/nvim-notify"] = {
 		commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd",
+		event = "UIEnter",
 		config = function()
 			require("configs.notify")
 		end,
