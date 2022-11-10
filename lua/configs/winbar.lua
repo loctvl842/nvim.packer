@@ -14,6 +14,7 @@ winbar.setup({
 		"TelescopePrompt",
 		"TelescopeResult",
 		"Codewindow",
+    "mason",
 	},
 	--  -- VSCode icons
 	-- icons = {

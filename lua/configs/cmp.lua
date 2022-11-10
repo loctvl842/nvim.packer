@@ -14,6 +14,7 @@ if not lspkind_status_ok then
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 local check_backspace = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))

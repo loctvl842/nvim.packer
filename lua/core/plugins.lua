@@ -31,7 +31,11 @@ end
 
 local tvl_plugins = {
 	-- Plugin manager
-	["wbthomason/packer.nvim"] = {},
+	["wbthomason/packer.nvim"] = {
+		config = function()
+			require("configs.mason")
+		end,
+	},
 
 	---------------------------------- LSP ------------------------------------------
 	["neovim/nvim-lspconfig"] = {
@@ -98,8 +102,9 @@ local tvl_plugins = {
 
 	["rafamadriz/friendly-snippets"] = {
 		commit = "471f3ab20c1ee02d33830f379caaa8edfbd39808",
-		opt = true,
 	},
+
+	["honza/vim-snippets"] = {},
 
 	["mattn/emmet-vim"] = {
 		commit = "f4c999bdf2a21b9d96132f6cd04a9e19eb7e87ff",
