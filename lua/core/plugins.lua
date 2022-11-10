@@ -155,7 +155,11 @@ local tvl_plugins = {
 	},
 
 	---------------------------------- UI ------------------------------------------
-	["loctvl842/nvim-web-devicons"] = {},
+	["loctvl842/nvim-web-devicons"] = {
+		config = function()
+			require("configs.nvim-web-devicons")
+		end,
+	},
 
 	["akinsho/bufferline.nvim"] = {
 		config = function()
@@ -322,7 +326,7 @@ local tvl_plugins = {
 	},
 
 	["rmagatti/auto-session"] = {
-		commit = "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e",
+		-- commit = "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e",
 		config = function()
 			require("configs.auto-session")
 		end,
@@ -335,7 +339,8 @@ local tvl_plugins = {
 	},
 
 	["kevinhwang91/nvim-ufo"] = {
-		commit = "fdbb1f5d56cbe72f88ecf8aa1313ba7c0dc33725",
+		-- commit = "fdbb1f5d56cbe72f88ecf8aa1313ba7c0dc33725",
+		commit = "5da70eb121a890df8a5b25e6cc30d88665af97b8",
 		requires = "kevinhwang91/promise-async",
 		config = function()
 			require("configs.ufo")
@@ -352,14 +357,6 @@ local tvl_plugins = {
 	["gorbit99/codewindow.nvim"] = {
 		config = function()
 			require("configs.codewindow")
-		end,
-	},
-
-	-- Smooth escaping
-	["max397574/better-escape.nvim"] = {
-		-- event = "InsertCharPre",
-		config = function()
-			require("configs.better_escape")
 		end,
 	},
 }
