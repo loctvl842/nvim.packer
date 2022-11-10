@@ -54,11 +54,11 @@ M.setup = function()
 end
 
 local function attach_navic(client, bufnr)
-  local status_ok, winbar = pcall(require, "winbar")
-  if not status_ok then
-    return
-  end
-  winbar.attach(client, bufnr)
+	local status_ok, winbar = pcall(require, "winbar")
+	if not status_ok then
+		return
+	end
+	winbar.attach(client, bufnr)
 end
 
 local function lsp_keymaps(bufnr)
@@ -72,7 +72,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>rn", "<cmd>lua require('renamer').rename()<CR>", opts)
 	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-  keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0)<CR>", opts)
+	keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 	-- keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 	-- keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -89,7 +89,7 @@ end
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
-  attach_navic(client, bufnr)
+	attach_navic(client, bufnr)
 	if client.name == "jdt.ls" then
 		vim.lsp.codelens.refresh()
 		if JAVA_DAP_ACTIVE then
