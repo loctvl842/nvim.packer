@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-bufferline.setup({
+bufferline.setup(tvl.user_plugin_opts("plugins.bufferline", {
 	options = {
 		offsets = {
 			{
@@ -279,4 +279,4 @@ bufferline.setup({
 			},
 		},
 	},
-})
+}))

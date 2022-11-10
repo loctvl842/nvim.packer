@@ -25,7 +25,7 @@ configs.setup({
 	},
 	rainbow = {
 		enable = true,
-		-- extended_mode = true,
+		extended_mode = false,
 		colors = {
 			"#00ffe5",
 			"#FFF8DC",

@@ -138,7 +138,6 @@ local tvl_plugins = {
 	},
 
 	["p00f/nvim-ts-rainbow"] = {
-		commit = "e486fad0aa038e346995e2477affd5269f2dcbea",
 		after = "nvim-treesitter",
 	},
 
@@ -154,7 +153,6 @@ local tvl_plugins = {
 	["loctvl842/nvim-web-devicons"] = {},
 
 	["akinsho/bufferline.nvim"] = {
-		event = "UIEnter",
 		config = function()
 			require("configs.bufferline")
 		end,
@@ -268,7 +266,6 @@ local tvl_plugins = {
 
 	["lukas-reineke/indent-blankline.nvim"] = {
 		commit = "052c880396076af074f1ff3d3eb687cb36018dfa",
-		event = "BufEnter",
 		config = function()
 			require("configs.indentline")
 		end,
@@ -350,6 +347,14 @@ local tvl_plugins = {
 	["gorbit99/codewindow.nvim"] = {
 		config = function()
 			require("configs.codewindow")
+		end,
+	},
+
+	-- Smooth escaping
+	["max397574/better-escape.nvim"] = {
+		-- event = "InsertCharPre",
+		config = function()
+			require("configs.better_escape")
 		end,
 	},
 }

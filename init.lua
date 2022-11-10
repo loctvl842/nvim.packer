@@ -7,9 +7,9 @@ for _, source in
 	ipairs({
 		"core.utils",
 		"core.plugins",
+		"core.autocommands",
 		"core.keymaps",
 		"core.settings",
-		"core.autocommands",
 		"lsp",
 	})
 do

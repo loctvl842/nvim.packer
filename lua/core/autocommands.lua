@@ -22,10 +22,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 -- fix cmdheight in file java
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "VimEnter" }, {
 	pattern = { "*.java" },
 	callback = function()
-		vim.opt.cmdheight = 1
+		vim.opt.cmdheight = 0
 	end,
 })
 
@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Remove statusline and tabline when in Alpha
 vim.api.nvim_create_autocmd({ "User" }, {
-	pattern = { "AlphaReady" },
+	pattern = {  "AlphaReady" },
 	callback = function()
 		vim.cmd([[
       setlocal showtabline=0 | autocmd BufUnload <buffer> set showtabline=2

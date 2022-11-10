@@ -49,7 +49,6 @@ local options = {
 	linespace = 8,
 	mousemoveevent = true,
 	syntax = "on",
-	winwidth = 40,
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
