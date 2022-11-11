@@ -9,7 +9,7 @@ for _, source in
 		"core.plugins",
 		"core.autocommands",
 		"core.keymaps",
-		"core.settings",
+		"core.options",
 		"lsp",
 	})
 do

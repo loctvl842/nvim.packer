@@ -42,8 +42,6 @@ local options = {
 	selection = "exclusive",
 	virtualedit = "onemore",
 	showcmd = false,
-	foldcolumn = "1",
-	fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
 	title = true,
 	titlestring = "%<%F%=%l/%L - nvim",
 	linespace = 8,
