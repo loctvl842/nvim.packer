@@ -1,6 +1,6 @@
 vim.opt_local.shiftwidth = 2
 vim.opt_local.tabstop = 2
-vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt_local.cmdheight = 0 -- more space in the neovim command line for displaying messages
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -105,7 +105,7 @@ local config = {
 		workspace_dir,
 	},
 
-	on_attach = require("lsp.handlers").on_attach,
+	on_attach = tvl.lsp.on_attach,
 	capabilities = capabilities,
 
 	--
@@ -131,8 +131,8 @@ local config = {
 				updateBuildConfiguration = "interactive",
 				runtimes = {
 					{
-						name = "JavaSE-18",
-						path = "/usr/lib/jvm/java-18-openjdk",
+						name = "JavaSE-17",
+						path = "/usr/lib/jvm/java-17-openjdk",
 					},
 				},
 			},
@@ -211,8 +211,12 @@ jdtls.start_or_attach(config)
 
 -- require('jdtls').setup_dap()
 
-vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
-vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)")
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
+)
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
+)
 vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
 -- vim.cmd "command! -buffer JdtJol lua require('jdtls').jol()"
 vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")

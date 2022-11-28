@@ -81,6 +81,10 @@ local diagnostics = {
 	update_in_insert = false,
 	always_visible = true,
 	padding = 0,
+
+	on_click = function()
+		vim.diagnostic.setloclist()
+	end,
 }
 
 local position = function()
@@ -117,7 +121,7 @@ local mode = {
 	"mode",
 	fmt = function(str)
 		-- local mode_str = " " .. str
-    local mode_str = str
+		local mode_str = str
 		return hl_str(mode_str, "SLMode", "SLMode")
 	end,
 }
@@ -125,7 +129,7 @@ local mode = {
 local filetype = {
 	"filetype",
 	icons_enabled = false,
-  icons_only = false,
+	icons_only = false,
 	fmt = function(str)
 		local ui_filetypes = {
 			"help",
@@ -150,6 +154,8 @@ local filetype = {
 			filetype_str = ""
 		elseif str == "neo-tree" or str == "neo-tree-popup" then
 			filetype_str = prev_filetype
+		elseif str == "help" then
+			filetype_str = ""
 		elseif vim.tbl_contains(ui_filetypes, str) then
 			filetype_str = ""
 		else
@@ -159,7 +165,14 @@ local filetype = {
 		return hl_str(filetype_str, "SLFiletype", "SLFiletype")
 	end,
 }
--- END tvl
+
+local breadcrumb = function()
+	local breadcrumb_status_ok, breadcrumb = pcall(require, "breadcrumb")
+	if not breadcrumb_status_ok then
+		return
+	end
+	return breadcrumb.get_breadcrumb()
+end
 
 local config = {
 	options = {
@@ -169,14 +182,14 @@ local config = {
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
-			winbar = {},
+			winbar = { "neo-tree" },
 			"alpha",
 		},
 		ignore_focus = {},
 		always_divide_middle = true,
-		globalstatus = vim.go.laststatus == 3,
+		globalstatus = true,
 		refresh = {
-			statusline = 1000,
+			statusline = 100,
 			tabline = 1000,
 			winbar = 1000,
 		},
@@ -199,8 +212,22 @@ local config = {
 		lualine_z = {},
 	},
 	tabline = {},
-	winbar = {},
-	inactive_winbar = {},
+	winbar = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { breadcrumb },
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	inactive_winbar = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { breadcrumb },
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
 	extensions = {},
 }
 

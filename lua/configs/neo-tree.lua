@@ -5,11 +5,12 @@ end
 
 neoTree.setup({
 	close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
-	popup_border_style = "rounded",
+	popup_border_style = {"▄","▄","▄","█","▀","▀","▀","█"},
 	enable_git_status = true,
 	enable_diagnostics = true,
   source_selector = {
     winbar = true,
+    statusline = false, -- toggle to show selector on statusline
     content_layout = "center",
     tab_labels = {
       filesystem = "" .. " File",
@@ -28,21 +29,24 @@ neoTree.setup({
 			-- indent guides
 			with_markers = true,
 			-- indent_marker = "│",
-			-- last_indent_marker = "└",
+			-- last_indent_marker = "└",-- └ 
 			indent_marker = "▏",
 			last_indent_marker = "▏",
 			highlight = "NeoTreeIndentMarker",
 			-- expander config, needed for nesting files
-			with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
-			expander_collapsed = "",
-			expander_expanded = "",
+			with_expanders = false, -- if nil and file nesting is enabled, will enable expanders
+			-- expander_collapsed = "",
+			-- expander_expanded = "",
+
+			expander_collapsed = "",
+			expander_expanded = "",
 			expander_highlight = "NeoTreeExpander",
 		},
 		icon = {
 			folder_closed = "",
-			folder_open = "",
-			-- folder_closed = " ",
-			-- folder_open = " ",
+			folder_open = "",
+			-- folder_closed = " ",
+			-- folder_open = " ",
 			folder_empty = " ",
 			default = " ",
 			highlight = "NeoTreeFileIcon",

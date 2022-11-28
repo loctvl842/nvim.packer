@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 neodim.setup({
-	alpha = 0.75,
+	alpha = 0.5,
 	blend_color = "#000000",
 	update_in_insert = {
 		enable = true,

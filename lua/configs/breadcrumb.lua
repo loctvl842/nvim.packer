@@ -1,21 +1,23 @@
-local status_ok, winbar = pcall(require, "winbar")
+local status_ok, breadcrumb = pcall(require, "breadcrumb")
 if not status_ok then
 	return
 end
 
-winbar.setup({
+breadcrumb.setup({
 	disabled_filetype = {
 		"packer",
 		"alpha",
 		"WhichKey",
-		"toggleterm",
 		"neo-tree",
 		"Compile",
+		"toggleterm",
 		"TelescopePrompt",
 		"TelescopeResult",
 		"Codewindow",
-    "mason",
-    "",
+		"mason",
+		"noice",
+		"qf",
+		"",
 	},
 	--  -- VSCode icons
 	-- icons = {
@@ -46,7 +48,8 @@ winbar.setup({
 	-- 	Operator = " ",
 	-- 	TypeParameter = " ",
 	-- },
-	separator = require("icons").ui.ChevronRight,
+
+	separator = "",
 	-- limit for amount of context shown
 	-- 0 means no limit
 	-- Note: to make use of depth feature properly, make sure your separator isn't something that can appear
@@ -55,7 +58,9 @@ winbar.setup({
 	-- indicator used when context hits depth limit
 	depth_limit_indicator = "..",
 	highlight_group = {
-		component = "WinbarText",
-		separator = "WinbarSeparator",
+		component = "WinBar",
+		separator = "WinBar",
 	},
 })
+
+-- breadcrumb.create_breadcrumb()

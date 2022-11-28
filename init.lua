@@ -10,7 +10,6 @@ for _, source in
 		"core.autocommands",
 		"core.keymaps",
 		"core.options",
-		"lsp",
 	})
 do
 	local status_ok, fault = pcall(require, source)

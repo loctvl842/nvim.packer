@@ -5,8 +5,13 @@ end
 
 session_lens.setup({
 	path_display = { "shorten" },
-	theme_conf = { border = true },
+	theme_conf = {
+		border = true,
+		borderchars = {  "█", " ", "▀", "█", "█", " ", " ", "▀" },
+	},
 	previewer = false,
 })
+
+require("telescope").load_extension("session-lens")
 
 -- ctrl+d to delete session

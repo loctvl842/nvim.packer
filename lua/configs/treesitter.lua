@@ -6,7 +6,7 @@ end
 configs.setup({
 	ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	ignore_install = { "phpdoc", "tree-sitter-phpdoc" }, -- List of parsers to ignore installing
 	autopairs = {
 		enable = true,
 	},
@@ -27,11 +27,13 @@ configs.setup({
 		enable = true,
 		extended_mode = false,
 		colors = {
-			"#00ffe5",
-			"#FFF8DC",
-			"#fff047",
-			"#ff00e1",
-			"#7cfc00",
+			-- monokai pro
+			"#ffd866",
+			"#a9dc76",
+			"#78dce8",
+			"#ab9df2",
+			"#ff6188",
+			"#fc9867",
 		},
 		disable = { "html" },
 	},

@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 toggleterm.setup({
-	size = 20,
+	size = 15,
 	open_mapping = [[<C-\>]],
 	hide_numbers = false,
 	shade_filetypes = {},
@@ -18,13 +18,25 @@ toggleterm.setup({
 	shell = vim.o.shell,
 	float_opts = {
 		border = "rounded",
-		winblend = 10,
+		-- border = { "▄", "▄", "▄", "█", "▀", "▀", "▀", "█" }, -- [ top top top - right - bottom bottom bottom - left ]
+		winblend = 0,
+	},
+	execs = {
+		{ vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
+		{ vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
+		{ vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
 	},
 	highlights = {
-		FloatBorder = { link = "TermBorder" },
-		Normal = { link = "TermNormal" },
-		NormalFloat = { link = "TermNormal" },
+		FloatBorder = { link = "ToggleTermBorder" },
+		Normal = { link = "ToggleTerm" },
+		NormalFloat = { link = "ToggleTerm" },
 	},
+  winbar = {
+    enabled = false,
+    name_formatter = function(term) --  term: Terminal
+      return term.name
+    end
+  },
 })
 
 -- function _G.set_terminal_keymaps()

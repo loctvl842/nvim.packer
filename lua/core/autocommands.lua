@@ -38,8 +38,9 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
 	callback = function()
+		vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q!<CR>", { noremap = true, silent = true })
 		vim.cmd([[
-      nnoremap <silent> <buffer> q! :close<CR> 
+      " nnoremap <silent> <buffer> q! :close<CR> 
       set nobuflisted 
     ]])
 	end,
@@ -47,11 +48,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Remove statusline and tabline when in Alpha
 vim.api.nvim_create_autocmd({ "User" }, {
-	pattern = {  "AlphaReady" },
+	pattern = { "AlphaReady" },
 	callback = function()
 		vim.cmd([[
       setlocal showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
       setlocal laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
+      " normal! 200 \<C-E>
     ]])
 	end,
 })
@@ -126,17 +128,3 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 		vim.cmd([[echon '']])
 	end,
 })
-
--- vim.api.nvim_create_autocmd({ "VimResized" }, {
---   callback = function()
---     vim.cmd "tabdo wincmd ="
---   end,
--- })
-
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
-
--- vim.cmd([[setlocal guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20]])

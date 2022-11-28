@@ -43,11 +43,11 @@ local setup = {
 		scroll_up = "<c-u>", -- binding to scroll up inside the popup
 	},
 	window = {
-		border = "rounded", -- none, single, double, shadow
+		border = "none", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
-		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+		margin = { 1, 0, 2, 0 }, -- extra window margin [top, right, bottom, left]
 		padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-		winblend = 0,
+		winblend = 10,
 	},
 	layout = {
 		height = { min = 3, max = 25 }, -- min and max height of the columns
@@ -102,7 +102,7 @@ local mappings = {
 	["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 	["d"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["r"] = { "<cmd>source ~/.config/nvim/lua/configs/colorscheme.lua<CR>", "ReSource Colorscheme" },
+	["r"] = { "<cmd>source ~/.config/nvim/lua/configs/monokai.lua<CR>", "ReSource Colorscheme" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files()<cr>",
 		"Find files",
