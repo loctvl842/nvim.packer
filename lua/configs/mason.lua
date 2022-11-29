@@ -5,7 +5,8 @@ end
 
 local settings = {
 	ui = {
-		border = "rounded",
+		-- border = "rounded",
+		border = {"▄", "▄", "▄", "█", "▀", "▀", "▀", "█"},
 		icons = {
 			package_installed = "◍",
 			package_pending = "◍",

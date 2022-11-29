@@ -165,24 +165,10 @@ local tvl_plugins = {
 		end,
 	},
 
-	-- ["SmiteshP/nvim-navic"] = {},
-
-	-- ["loctvl842/monokai-plus.nvim"] = {
-	-- 	config = function()
-	-- 		require("configs.colorscheme")
-	-- 	end,
-	-- },
-
 	["loctvl842/monokai-pro.nvim"] = {
 		config = function()
 			require("configs.monokai")
 		end,
-	},
-
-	["olimorris/onedarkpro.nvim"] = {
-		-- configs = function()
-		--   vim.cmd("colorscheme onedarkpro")  -- Lua
-		-- end,
 	},
 
 	["LunarVim/tokyonight.nvim"] = {},
@@ -366,6 +352,12 @@ local tvl_plugins = {
 			require("configs.codewindow")
 		end,
 	},
+
+  ["RRethy/vim-illuminate"] = {
+    config = function()
+      require("configs.illuminate")
+    end
+  }
 }
 -- local tvl_plugins = {}
 

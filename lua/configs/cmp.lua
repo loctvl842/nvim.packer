@@ -16,6 +16,8 @@ end
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_snipmate").lazy_load()
 
+local kind_icons = require("icons").kind
+
 local check_backspace = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -28,52 +30,17 @@ cmp.setup({
 	preselect = cmp.PreselectMode.None,
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
-		format = lspkind.cmp_format({
-			mode = "symbol", -- show only symbol annotations
-			-- preset = "codicons",
-			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-			symbol_map = {
-				Text = "",
-				Method = "",
-				Function = "",
-				Constructor = "",
-				Field = "ﰠ",
-				Variable = "",
-				Class = "ﴯ",
-				Interface = "",
-				Module = "",
-				Property = "ﰠ",
-				Unit = "塞",
-				Value = "",
-				Enum = "",
-				Keyword = "",
-				Snippet = "",
-				Color = "",
-				File = "",
-				Reference = "",
-				Folder = "",
-				EnumMember = "",
-				Constant = "",
-				Struct = "פּ",
-				Event = "",
-				Operator = "",
-				TypeParameter = "",
-			},
-
-			-- The function below will be called before any actual modifications from lspkind
-			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-			before = function(entry, vim_item)
-				-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-				vim_item.menu = ({
-					nvim_lsp = "LSP",
-					nvim_lua = "LUA",
-					luasnip = "Snippet",
-					buffer = "Buffer",
-					path = "Path",
-				})[entry.source.name]
-				return vim_item
-			end,
-		}),
+		format = function(entry, vim_item)
+			vim_item.kind = kind_icons[vim_item.kind]
+			vim_item.menu = ({
+				nvim_lsp = "Lsp",
+				nvim_lua = "Lua",
+				luasnip = "Snippet",
+				buffer = "Buffer",
+				path = "Path",
+			})[entry.source.name]
+			return vim_item
+		end,
 	},
 	performance = {
 		debounce = 20,
