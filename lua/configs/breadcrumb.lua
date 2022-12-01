@@ -7,6 +7,7 @@ breadcrumb.setup({
 	disabled_filetype = {
 		"packer",
 		"alpha",
+    "text",
 		"WhichKey",
 		"neo-tree",
 		"Compile",
@@ -17,6 +18,7 @@ breadcrumb.setup({
 		"mason",
 		"noice",
 		"qf",
+    "help",
 		"",
 	},
 	--  -- VSCode icons
@@ -57,10 +59,11 @@ breadcrumb.setup({
 	depth = 0,
 	-- indicator used when context hits depth limit
 	depth_limit_indicator = "..",
+  color_icons = true,
 	highlight_group = {
 		component = "WinBar",
 		separator = "WinBar",
 	},
 })
 
--- breadcrumb.create_breadcrumb()
+-- breadcrumb.init()

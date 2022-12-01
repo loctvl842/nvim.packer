@@ -50,7 +50,9 @@ tvl.lsp.attach_breadcrumb = function(client, bufnr)
 	if not status_ok then
 		return
 	end
-	breadcrumb.attach(client, bufnr)
+  if client.server_capabilities.documentSymbolProvider then
+    breadcrumb.attach(client, bufnr)
+  end
 end
 
 --- The `attach_inlayhints` function used by on_attach function

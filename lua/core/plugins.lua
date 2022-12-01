@@ -146,12 +146,11 @@ local tvl_plugins = {
 	},
 
 	---------------------------------- UI ------------------------------------------
-	-- ["loctvl842/nvim-web-devicons"] = {
-	-- 	config = function()
-	-- 		require("configs.nvim-web-devicons")
-	-- 	end,
-	-- },
-  ["nvim-tree/nvim-web-devicons"] = {},
+	["loctvl842/nvim-web-devicons"] = {
+		config = function()
+			require("configs.nvim-web-devicons")
+		end,
+	},
 
 	["akinsho/bufferline.nvim"] = {
 		config = function()
@@ -159,15 +158,15 @@ local tvl_plugins = {
 		end,
 	},
 
-	["loctvl842/breadcrumb.nvim"] = {
-		config = function()
-			require("configs.breadcrumb")
-		end,
-	},
-
 	["loctvl842/monokai-pro.nvim"] = {
 		config = function()
 			require("configs.monokai")
+		end,
+	},
+
+	["loctvl842/breadcrumb.nvim"] = {
+		config = function()
+			require("configs.breadcrumb")
 		end,
 	},
 
@@ -209,7 +208,11 @@ local tvl_plugins = {
 		end,
 	},
 
-	["onsails/lspkind.nvim"] = {},
+	["petertriho/nvim-scrollbar"] = {
+    config = function()
+      require("scrollbar").setup()
+    end
+  },
 
 	---------------------------------- UTIL ----------------------------------------
 	["folke/which-key.nvim"] = {
@@ -353,11 +356,11 @@ local tvl_plugins = {
 		end,
 	},
 
-  ["RRethy/vim-illuminate"] = {
-    config = function()
-      require("configs.illuminate")
-    end
-  }
+	["RRethy/vim-illuminate"] = {
+		config = function()
+			require("configs.illuminate")
+		end,
+	},
 }
 -- local tvl_plugins = {}
 

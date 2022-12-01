@@ -10,7 +10,7 @@ bufferline.setup({
         filetype = "neo-tree",
         text = "EXPLORER",
         padding = 0,
-        text_align = "left",
+        text_align = "center",
         highlight = "Offset",
       },
     },
