@@ -5,4 +5,11 @@ end
 
 scrollbar.setup({
 	set_highlights = false,
+	handlers = {
+		cursor = true,
+		diagnostic = true,
+		gitsigns = true, -- Requires gitsigns
+		handle = true,
+		search = false, -- Requires hlslens
+	},
 })
