@@ -112,9 +112,9 @@ cmp.setup({
 		{ name = "path" },
 	},
 	window = {
-		documentation = false,
+		documentation = true,
 		-- documentation = {
-		-- 	border = "rounded",
+			-- border = "rounded",
 		-- 	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		-- 	winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		-- },

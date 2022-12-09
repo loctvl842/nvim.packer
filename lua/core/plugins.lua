@@ -173,7 +173,7 @@ local tvl_plugins = {
 	["LunarVim/tokyonight.nvim"] = {},
 
 	["nvim-lualine/lualine.nvim"] = {
-		commit = "a52f078026b27694d2290e34efa61a6e4a690621",
+		-- commit = "a52f078026b27694d2290e34efa61a6e4a690621",
 		config = function()
 			require("configs.lualine")
 		end,
@@ -209,10 +209,10 @@ local tvl_plugins = {
 	},
 
 	["petertriho/nvim-scrollbar"] = {
-    config = function()
-      require("scrollbar").setup()
-    end
-  },
+		config = function()
+			require("configs.scrollbar")
+		end,
+	},
 
 	---------------------------------- UTIL ----------------------------------------
 	["folke/which-key.nvim"] = {
@@ -361,6 +361,12 @@ local tvl_plugins = {
 			require("configs.illuminate")
 		end,
 	},
+
+	-- ["ms-jpq/coq_nvim"] = {
+	--   config = function()
+	--     require("configs.coq")
+	--   end
+	-- };
 }
 -- local tvl_plugins = {}
 

@@ -6,7 +6,10 @@ end
 monokai.setup({
 	transparent_background = false,
 	italic_comments = true,
-	theme = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+	theme = "machine", -- classic | octagon | pro | machine | ristretto | spectrum
+	diagnostic = {
+		background = true,
+	},
 })
 -- os.execute('dunstify ' .. 'loc')
 
