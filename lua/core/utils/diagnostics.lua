@@ -20,7 +20,7 @@ tvl.lsp.diagnostics = {
 		update_in_insert = false,
 	},
 	on = {
-		virtual_text = true, -- disable virtual text
+		virtual_text = false, -- disable virtual text
 		virtual_lines = false,
 		signs = {
 			active = signs, -- show signs

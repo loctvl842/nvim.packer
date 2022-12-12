@@ -11,7 +11,7 @@ breadcrumb.setup({
 		"WhichKey",
 		"neo-tree",
 		"Compile",
-		"toggleterm",
+		-- "toggleterm",
 		"TelescopePrompt",
 		"TelescopeResult",
 		"Codewindow",

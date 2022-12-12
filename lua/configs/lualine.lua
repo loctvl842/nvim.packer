@@ -179,7 +179,7 @@ local no_theme = {
 	normal = {
 		a = { fg = normal_hl.background, bg = normal_hl.background, gui = "bold" },
 		b = { fg = normal_hl.background, bg = normal_hl.background },
-		c = { fg = normal_hl.background, bg = normal_hl.background },
+		c = { fg = normal_hl.background, bg = normal_hl.foreground },
 		x = { fg = normal_hl.background, bg = normal_hl.background },
 		y = { fg = normal_hl.background, bg = normal_hl.background },
 		z = { fg = normal_hl.background, bg = normal_hl.background },
@@ -192,10 +192,13 @@ local no_theme = {
 		a = { fg = normal_hl.background, bg = normal_hl.background },
 		b = { fg = normal_hl.background, bg = normal_hl.background },
 		c = { fg = normal_hl.background, bg = normal_hl.background },
+		x = { fg = normal_hl.background, bg = normal_hl.background },
+		y = { fg = normal_hl.background, bg = normal_hl.background },
+		z = { fg = normal_hl.background, bg = normal_hl.background },
 	},
 }
 
-local config = {
+local float_config = {
 	options = {
 		theme = no_theme,
 		icons_enabled = true,
@@ -252,4 +255,60 @@ local config = {
 	extensions = {},
 }
 
-lualine.setup(config)
+local normal_config = {
+	options = {
+		theme = no_theme,
+		icons_enabled = true,
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			statusline = {},
+			winbar = { "neo-tree" },
+			"alpha",
+		},
+		ignore_focus = {},
+		always_divide_middle = true,
+		globalstatus = true,
+		refresh = {
+			statusline = 1000,
+			tabline = 1000,
+			winbar = 1000,
+		},
+	},
+	sections = {
+		lualine_a = { mode },
+		lualine_b = { branch, diagnostics },
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = { position, filetype },
+		lualine_z = { spaces, encoding },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	winbar = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { breadcrumb },
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	inactive_winbar = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { breadcrumb },
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	extensions = {},
+}
+
+lualine.setup(float_config)

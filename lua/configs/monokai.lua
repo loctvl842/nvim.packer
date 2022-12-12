@@ -6,11 +6,16 @@ end
 monokai.setup({
 	transparent_background = false,
 	italic_comments = true,
-	theme = "machine", -- classic | octagon | pro | machine | ristretto | spectrum
+	filter = "classic", -- classic | octagon | pro | machine | ristretto | spectrum
 	diagnostic = {
-		background = true,
+		background = false,
+	},
+	plugins = {
+		bufferline = {
+			underline_selected = true,
+		},
+    toggleterm = {
+      background_cleared = true,
+    }
 	},
 })
--- os.execute('dunstify ' .. 'loc')
-
--- vim.cmd("colorscheme tokyonight")

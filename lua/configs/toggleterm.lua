@@ -17,8 +17,8 @@ toggleterm.setup({
 	close_on_exit = true,
 	shell = vim.o.shell,
 	float_opts = {
-		border = "rounded",
-		-- border = { "▄", "▄", "▄", "█", "▀", "▀", "▀", "█" }, -- [ top top top - right - bottom bottom bottom - left ]
+		-- border = "rounded",
+		border = { "▄", "▄", "▄", "█", "▀", "▀", "▀", "█" }, -- [ top top top - right - bottom bottom bottom - left ]
 		winblend = 0,
 	},
 	execs = {
@@ -32,7 +32,7 @@ toggleterm.setup({
 		NormalFloat = { link = "ToggleTerm" },
 	},
   winbar = {
-    enabled = false,
+    enabled = true,
     name_formatter = function(term) --  term: Terminal
       return term.name
     end

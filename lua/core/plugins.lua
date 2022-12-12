@@ -127,19 +127,15 @@ local tvl_plugins = {
 		end,
 	},
 
-	["nvim-treesitter/playground"] = {
-		-- commit = "e6a0bfaf9b5e36e3a327a1ae9a44a989eae472cf",
-	},
+	["nvim-treesitter/playground"] = {},
 
 	["JoosepAlviste/nvim-ts-context-commentstring"] = {
-		-- commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08",
 		event = "BufReadPost",
 	},
 
 	["p00f/nvim-ts-rainbow"] = {},
 
 	["windwp/nvim-ts-autotag"] = {
-		-- commit = "044a05c4c51051326900a53ba98fddacd15fea22",
 		config = function()
 			require("configs.auto-closetag")
 		end,
@@ -173,7 +169,6 @@ local tvl_plugins = {
 	["LunarVim/tokyonight.nvim"] = {},
 
 	["nvim-lualine/lualine.nvim"] = {
-		-- commit = "a52f078026b27694d2290e34efa61a6e4a690621",
 		config = function()
 			require("configs.lualine")
 		end,
@@ -208,11 +203,11 @@ local tvl_plugins = {
 		end,
 	},
 
-	["petertriho/nvim-scrollbar"] = {
-		config = function()
-			require("configs.scrollbar")
-		end,
-	},
+	-- ["petertriho/nvim-scrollbar"] = {
+	-- 	config = function()
+	-- 		require("configs.scrollbar")
+	-- 	end,
+	-- },
 
 	---------------------------------- UTIL ----------------------------------------
 	["folke/which-key.nvim"] = {
@@ -255,11 +250,11 @@ local tvl_plugins = {
 	},
 
 	["moll/vim-bbye"] = {
-		commit = "5d4d3c957e05a4478998e1f40f3b86d05bd72963",
-	},
+    commit = "25ef93ac5a87526111f43e5110675032dbcacf56",
+  },
 
 	["ahmedkhalf/project.nvim"] = {
-		commit = "92166ca6cf94a6a793abbd2629652884f50b7364",
+    commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
 		config = function()
 			require("configs.project")
 		end,
@@ -335,7 +330,6 @@ local tvl_plugins = {
 	},
 
 	["kevinhwang91/nvim-ufo"] = {
-		-- commit = "fdbb1f5d56cbe72f88ecf8aa1313ba7c0dc33725",
 		commit = "5da70eb121a890df8a5b25e6cc30d88665af97b8",
 		requires = "kevinhwang91/promise-async",
 		config = function()
@@ -368,7 +362,6 @@ local tvl_plugins = {
 	--   end
 	-- };
 }
--- local tvl_plugins = {}
 
 packer.startup({
 	function(use)
