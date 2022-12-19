@@ -175,11 +175,12 @@ local breadcrumb = function()
 end
 
 local normal_hl = tvl.get_highlight("Normal")
+print(normal_hl.background)
 local no_theme = {
 	normal = {
 		a = { fg = normal_hl.background, bg = normal_hl.background, gui = "bold" },
 		b = { fg = normal_hl.background, bg = normal_hl.background },
-		c = { fg = normal_hl.background, bg = normal_hl.foreground },
+		c = { fg = normal_hl.background, bg = normal_hl.background},
 		x = { fg = normal_hl.background, bg = normal_hl.background },
 		y = { fg = normal_hl.background, bg = normal_hl.background },
 		z = { fg = normal_hl.background, bg = normal_hl.background },
@@ -295,7 +296,7 @@ local normal_config = {
 	winbar = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { breadcrumb },
+		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},
@@ -303,7 +304,7 @@ local normal_config = {
 	inactive_winbar = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { breadcrumb },
+		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},

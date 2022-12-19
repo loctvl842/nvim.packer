@@ -25,6 +25,12 @@ local tvl_plugins = {
 		end,
 	},
 
+	["j-hui/fidget.nvim"] = {
+		config = function()
+			require("fidget").setup({})
+		end,
+	},
+
 	-- Formatting and linting
 	["jose-elias-alvarez/null-ls.nvim"] = {
 		commit = "3d76bb2968310f7e18a20711ac89c5e7b07e8c93",
@@ -46,6 +52,13 @@ local tvl_plugins = {
 		after = { "mason.nvim", "nvim-lspconfig" },
 		config = function()
 			require("configs.mason-lspconfig")
+		end,
+	},
+
+	-- null-ls manager
+	["jayp0521/mason-null-ls.nvim"] = {
+		config = function()
+			require("configs.mason-null-ls")
 		end,
 	},
 
@@ -94,10 +107,10 @@ local tvl_plugins = {
 		commit = "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252",
 	},
 
-	["hrsh7th/cmp-nvim-lua"] = {
-		after = "nvim-cmp",
-		commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
-	},
+	-- ["hrsh7th/cmp-nvim-lua"] = {
+	-- 	after = "nvim-cmp",
+	-- 	commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
+	-- },
 
 	["mfussenegger/nvim-jdtls"] = {
 		commit = "0422245fdef57aa4eddba3d99aee1afaaf425da7",
@@ -250,11 +263,13 @@ local tvl_plugins = {
 	},
 
 	["moll/vim-bbye"] = {
-    commit = "25ef93ac5a87526111f43e5110675032dbcacf56",
-  },
+		commit = "25ef93ac5a87526111f43e5110675032dbcacf56",
+	},
+
+	-- ["famiu/bufdelete.nvim"] = { module = "bufdelete", cmd = { "Bdelete", "Bwipeout" } },
 
 	["ahmedkhalf/project.nvim"] = {
-    commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
+		commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
 		config = function()
 			require("configs.project")
 		end,
@@ -374,6 +389,7 @@ packer.startup({
 	end,
 
 	config = {
+		compile_path = tvl.compile_path,
 		display = {
 			open_fn = function()
 				return require("packer.util").float({

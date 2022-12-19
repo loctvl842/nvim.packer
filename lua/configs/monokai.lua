@@ -4,9 +4,9 @@ if not status_ok then
 end
 
 monokai.setup({
-	transparent_background = false,
+	transparent_background = true,
 	italic_comments = true,
-	filter = "classic", -- classic | octagon | pro | machine | ristretto | spectrum
+	filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
 	diagnostic = {
 		background = false,
 	},
@@ -15,7 +15,10 @@ monokai.setup({
 			underline_selected = true,
 		},
     toggleterm = {
-      background_cleared = true,
+      background_clear = false,
+    },
+    telescope = {
+      background_clear = false,
     }
 	},
 })
