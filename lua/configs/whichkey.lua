@@ -102,6 +102,7 @@ local mappings = {
 	["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 	["d"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	["m"] = { "<cmd>MonokaiProSelect<CR>", "Choose moonokai pro filter" },
 	["r"] = { "<cmd>source ~/.config/nvim/lua/configs/monokai.lua<CR>", "ReSource Colorscheme" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files()<cr>",

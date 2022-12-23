@@ -3,6 +3,33 @@ if not status_ok then
 	return
 end
 
+local separator = "bubble" -- bubble | triangle
+local separator_icon = {
+	left = "",
+	right = "",
+}
+
+local alt_separator_icon = {
+	left = "",
+	right = "",
+}
+
+if separator == "triangle" then
+	separator_icon = {
+		left = "",
+		right = "",
+	}
+
+	alt_separator_icon = {
+		left = "",
+		right = "",
+	}
+end
+
+local hide_in_width = function()
+	return vim.fn.winwidth(0) > 150
+end
+
 -- tvl
 local hl_str = function(str, hl_cur, hl_after)
 	if hl_after == nil then
@@ -13,90 +40,66 @@ end
 
 local padding_pad = {
 	function()
-		return hl_str("    ", "SLPadding")
-	end,
-	padding = 0,
-}
-
-local left_pad_alt = {
-	function()
-		return hl_str(" ", "SLSeparator")
-	end,
-	padding = 0,
-}
-
-local right_pad_alt = {
-	function()
-		return hl_str("  ", "SLSeparator")
-	end,
-	padding = 0,
-}
-
-local right_pad_alt_1 = {
-	function()
-		return hl_str(" ", "SLSeparator")
-	end,
-	padding = 0,
-}
-
-local left_pad = {
-	function()
-		return hl_str(" ", "SLSeparator")
-		-- return hl_str(" ", "SLSeparator")
-	end,
-	padding = 0,
-}
-
-local right_pad = {
-	function()
-		return hl_str(" ", "SLSeparator")
-		-- return hl_str(" ", "SLSeparator")
+		return hl_str(" ", "SLPadding")
 	end,
 	padding = 0,
 }
 
 local branch = {
 	"branch",
-	icons_enabled = true,
+	icons_enabled = false,
 	icon = hl_str("", "SLGitIcon", "SLBranchName"),
 	colored = false,
 	fmt = function(str)
+		local icon = hl_str(" ", "SLGitIcon", "SLBranchName")
 		if str == "" or str == nil then
 			return "!=vcs"
 		end
-
-		return str
+		return hl_str(separator_icon.left, "SLSeparator")
+			.. hl_str(" " .. icon, "SLGitIcon")
+			.. hl_str(str .. " ", "SLBranchName")
+			.. hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
 	end,
 }
 
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn" },
+	sections = { "error", "warn", "info" },
 	symbols = {
 		error = "%#SLError#" .. "  " .. "%*" .. "%#SLError#",
 		warn = "%#SLWarning#" .. "  " .. "%*" .. "%#SLWarning#",
+		info = "%#SLInfo#" .. "  " .. "%*" .. "%#SLInfo#",
 	},
 	colored = false,
 	update_in_insert = false,
 	always_visible = true,
 	padding = 0,
-
 	on_click = function()
 		vim.diagnostic.goto_next({ buffer = 0 })
+	end,
+	fmt = function(str)
+		return hl_str(alt_separator_icon.left, "SLSeparator")
+			.. str
+			.. " "
+			.. hl_str(alt_separator_icon.right, "SLSeparator")
 	end,
 }
 
 local position = function()
 	local current_line = vim.fn.line(".")
 	local current_column = vim.fn.col(".")
-	local str = "Ln " .. current_line .. ", Col " .. current_column
-	return hl_str(str, "SLPosition") .. "%#SLPosition#"
+	local left_sep = hl_str(separator_icon.left, "SLSeparator")
+	local right_sep = hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
+	local str = " Ln " .. current_line .. ", Col " .. current_column .. " "
+	return left_sep .. hl_str(str, "SLPosition", "SLPosition") .. right_sep
 end
 
 local spaces = function()
+	local left_sep = hl_str(separator_icon.left, "SLSeparator")
+	local right_sep = hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
 	local str = "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-	return hl_str(str, "SLShiftWidth", "SLShiftWidth")
+	return left_sep .. hl_str(" " .. str .. " ", "SLShiftWidth", "SLShiftWidth") .. right_sep
 end
 
 local encoding = function()
@@ -104,27 +107,35 @@ local encoding = function()
 	return hl_str(str, "SLEncoding", "SLEncoding")
 end
 
-local hide_in_width = function()
-	return vim.fn.winwidth(0) > 80
-end
-
-local prev_filetype = ""
-
 local diff = {
 	"diff",
-	colored = false,
+	colored = true,
+	diff_color = {
+		added = "SLDiffAdd",
+		modified = "SLDiffChange",
+		removed = "SLDiffDelete",
+	},
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-	cond = hide_in_width,
+	fmt = function(str)
+		if str == "" then
+			return ""
+		end
+		local left_sep = hl_str(alt_separator_icon.left .. " ", "SLSeparator")
+		local right_sep = hl_str(" " .. alt_separator_icon.right, "SLSeparator", "SLSeparator")
+		return left_sep .. str .. right_sep
+	end,
 }
 
 local mode = {
 	"mode",
 	fmt = function(str)
-		-- local mode_str = " " .. str
-		local mode_str = str
-		return hl_str(mode_str, "SLMode", "SLMode")
+		local left_sep = hl_str(separator_icon.left, "SLSeparator", "SLPadding")
+		local right_sep = hl_str(separator_icon.right, "SLSeparator", "SLPadding")
+		return left_sep .. hl_str(" " .. str .. " ", "SLMode") .. right_sep
 	end,
 }
+
+local prev_filetype = ""
 
 local filetype = {
 	"filetype",
@@ -158,11 +169,15 @@ local filetype = {
 			filetype_str = ""
 		elseif vim.tbl_contains(ui_filetypes, str) then
 			filetype_str = ""
+    elseif str == "" then
+      return ""
 		else
 			prev_filetype = str
 			filetype_str = str
 		end
-		return hl_str(filetype_str, "SLFiletype", "SLFiletype")
+		local left_sep = hl_str(separator_icon.left, "SLSeparator")
+		local right_sep = hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
+		return left_sep .. hl_str(" " .. filetype_str .. " ", "SLFiletype", "SLFiletype") .. right_sep
 	end,
 }
 
@@ -175,12 +190,11 @@ local breadcrumb = function()
 end
 
 local normal_hl = tvl.get_highlight("Normal")
-print(normal_hl.background)
 local no_theme = {
 	normal = {
 		a = { fg = normal_hl.background, bg = normal_hl.background, gui = "bold" },
 		b = { fg = normal_hl.background, bg = normal_hl.background },
-		c = { fg = normal_hl.background, bg = normal_hl.background},
+		c = { fg = normal_hl.background, bg = normal_hl.background },
 		x = { fg = normal_hl.background, bg = normal_hl.background },
 		y = { fg = normal_hl.background, bg = normal_hl.background },
 		z = { fg = normal_hl.background, bg = normal_hl.background },
@@ -220,13 +234,12 @@ local float_config = {
 		},
 	},
 	sections = {
-		lualine_a = { padding_pad, left_pad, branch, right_pad },
-		lualine_b = { left_pad_alt, diagnostics, right_pad_alt },
+		lualine_a = { padding_pad, branch },
+		lualine_b = { diagnostics },
 		lualine_c = {},
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { left_pad_alt, mode, right_pad_alt_1 },
-		lualine_y = { left_pad, position, right_pad, left_pad, filetype, right_pad },
-		lualine_z = { left_pad, spaces, right_pad, left_pad, encoding, right_pad, padding_pad },
+		lualine_x = { diff },
+		lualine_y = { position, filetype },
+		lualine_z = { spaces, mode, padding_pad },
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -249,62 +262,6 @@ local float_config = {
 		lualine_a = {},
 		lualine_b = {},
 		lualine_c = { breadcrumb },
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
-	extensions = {},
-}
-
-local normal_config = {
-	options = {
-		theme = no_theme,
-		icons_enabled = true,
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = {
-			statusline = {},
-			winbar = { "neo-tree" },
-			"alpha",
-		},
-		ignore_focus = {},
-		always_divide_middle = true,
-		globalstatus = true,
-		refresh = {
-			statusline = 1000,
-			tabline = 1000,
-			winbar = 1000,
-		},
-	},
-	sections = {
-		lualine_a = { mode },
-		lualine_b = { branch, diagnostics },
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = { position, filetype },
-		lualine_z = { spaces, encoding },
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
-	tabline = {},
-	winbar = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
-	inactive_winbar = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},

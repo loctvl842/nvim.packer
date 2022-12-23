@@ -16,7 +16,7 @@ end
 
 local colorscheme_ok, monokai_pro = pcall(require, "monokai-pro")
 if colorscheme_ok then
-	tvl.color_base = require("monokai-pro").get_base_color()
+	tvl.color_base = monokai_pro.get_base_color()
 end
 
 --- Serve a notification with a title of TVL

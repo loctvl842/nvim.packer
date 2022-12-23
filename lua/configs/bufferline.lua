@@ -13,6 +13,13 @@ bufferline.setup({
 				text_align = "center",
 				highlight = "Offset",
 			},
+			{
+				filetype = "NvimTree",
+				text = "EXPLORER",
+				padding = 0,
+				text_align = "center",
+				highlight = "Offset",
+			},
 		},
 		buffer_close_icon = "",
 		modified_icon = "●",

@@ -173,6 +173,8 @@ local tvl_plugins = {
 		end,
 	},
 
+	["loctvl842/colorscheme"] = {},
+
 	["loctvl842/breadcrumb.nvim"] = {
 		config = function()
 			require("configs.breadcrumb")
@@ -186,7 +188,15 @@ local tvl_plugins = {
 			require("configs.lualine")
 		end,
 	},
-
+	["nvim-tree/nvim-tree.lua"] = {
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+		config = function()
+			require("configs.nvim-tree")
+		end,
+	},
 	["loctvl842/neo-tree.nvim"] = {
 		config = function()
 			require("configs.neo-tree")
@@ -210,11 +220,11 @@ local tvl_plugins = {
 		end,
 	},
 
-	["zbirenbaum/neodim"] = {
-		config = function()
-			require("configs.neodim")
-		end,
-	},
+	-- ["zbirenbaum/neodim"] = {
+	-- 	config = function()
+	-- 		require("configs.neodim")
+	-- 	end,
+	-- },
 
 	-- ["petertriho/nvim-scrollbar"] = {
 	-- 	config = function()
@@ -370,12 +380,6 @@ local tvl_plugins = {
 			require("configs.illuminate")
 		end,
 	},
-
-	-- ["ms-jpq/coq_nvim"] = {
-	--   config = function()
-	--     require("configs.coq")
-	--   end
-	-- };
 }
 
 packer.startup({

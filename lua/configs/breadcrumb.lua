@@ -5,6 +5,7 @@ end
 
 breadcrumb.setup({
 	disabled_filetype = {
+    "NvimTree",
 		"packer",
 		"alpha",
     "text",

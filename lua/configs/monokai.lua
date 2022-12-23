@@ -6,7 +6,8 @@ end
 monokai.setup({
 	transparent_background = true,
 	italic_comments = true,
-	filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+	filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+  inc_search = "background",
 	diagnostic = {
 		background = false,
 	},
