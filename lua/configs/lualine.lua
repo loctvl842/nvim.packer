@@ -62,29 +62,29 @@ local branch = {
 	end,
 }
 
-local diagnostics = {
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info" },
-	symbols = {
-		error = "%#SLError#" .. "  " .. "%*" .. "%#SLError#",
-		warn = "%#SLWarning#" .. "  " .. "%*" .. "%#SLWarning#",
-		info = "%#SLInfo#" .. "  " .. "%*" .. "%#SLInfo#",
-	},
-	colored = false,
-	update_in_insert = false,
-	always_visible = true,
-	padding = 0,
-	on_click = function()
-		vim.diagnostic.goto_next({ buffer = 0 })
-	end,
-	fmt = function(str)
-		return hl_str(alt_separator_icon.left, "SLSeparator")
-			.. str
-			.. " "
-			.. hl_str(alt_separator_icon.right, "SLSeparator")
-	end,
-}
+-- local diagnostics = {
+-- 	"diagnostics",
+-- 	sources = { "nvim_diagnostic" },
+-- 	sections = { "error", "warn", "info" },
+-- 	symbols = {
+-- 		error = "%#SLError#" .. "  " .. "%*" .. "%#SLError#",
+-- 		warn = "%#SLWarning#" .. "  " .. "%*" .. "%#SLWarning#",
+-- 		info = "%#SLInfo#" .. "  " .. "%*" .. "%#SLInfo#",
+-- 	},
+-- 	colored = false,
+-- 	update_in_insert = false,
+-- 	always_visible = true,
+-- 	padding = 0,
+-- 	on_click = function()
+-- 		vim.diagnostic.goto_next({ buffer = 0 })
+-- 	end,
+-- 	fmt = function(str)
+-- 		return hl_str(alt_separator_icon.left, "SLSeparator")
+-- 			.. str
+-- 			.. " "
+-- 			.. hl_str(alt_separator_icon.right, "SLSeparator")
+-- 	end,
+-- }
 
 local position = function()
 	local current_line = vim.fn.line(".")
@@ -105,6 +105,29 @@ end
 local encoding = function()
 	local str = string.upper(vim.o.fileencoding)
 	return hl_str(str, "SLEncoding", "SLEncoding")
+end
+
+local diagnostics = function()
+	local function nvim_diagnostic()
+		local diagnostics = vim.diagnostic.get(0)
+		local count = { 0, 0, 0, 0 }
+		for _, diagnostic in ipairs(diagnostics) do
+			count[diagnostic.severity] = count[diagnostic.severity] + 1
+		end
+		return count[vim.diagnostic.severity.ERROR],
+			count[vim.diagnostic.severity.WARN],
+			count[vim.diagnostic.severity.INFO],
+			count[vim.diagnostic.severity.HINT]
+	end
+
+	local error_count, warn_count, info_count, hint_count = nvim_diagnostic()
+	local error_hl = hl_str(" " .. error_count, "SLError", "SLError")
+	local warn_hl = hl_str(" " .. warn_count, "SLWarning", "SLWarning")
+	local info_hl = hl_str(" " .. info_count, "SLInfo", "SLInfo")
+	local hint_hl = hl_str(" " .. hint_count, "SLInfo", "SLInfo")
+	local left_sep = hl_str(alt_separator_icon.left .. " ", "SLSeparator")
+	local right_sep = hl_str(" " .. alt_separator_icon.right, "SLSeparator", "SLSeparator")
+	return left_sep .. error_hl .. " " .. warn_hl .. " " .. hint_hl .. right_sep
 end
 
 local diff = {
@@ -169,15 +192,18 @@ local filetype = {
 			filetype_str = ""
 		elseif vim.tbl_contains(ui_filetypes, str) then
 			filetype_str = ""
-    elseif str == "" then
-      return ""
+		elseif str == "" then
+			return ""
 		else
 			prev_filetype = str
 			filetype_str = str
 		end
 		local left_sep = hl_str(separator_icon.left, "SLSeparator")
 		local right_sep = hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
-		return left_sep .. hl_str(" " .. filetype_str .. " ", "SLFiletype", "SLFiletype") .. right_sep
+    -- Upper case first character
+    filetype_str = filetype_str:gsub("%a", string.upper, 1)
+		local filetype_hl = hl_str(" " .. filetype_str .. " ", "SLFiletype", "SLFiletype")
+		return left_sep .. filetype_hl .. right_sep
 	end,
 }
 
