@@ -7,7 +7,7 @@ monokai.setup({
 	transparent_background = true,
 	italic_comments = true,
 	filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
-	inc_search = "background",
+	inc_search = "underline", -- underline | background
 	diagnostic = {
 		background = true,
 	},
@@ -21,8 +21,14 @@ monokai.setup({
 		telescope = {
 			background_clear = false,
 		},
+		cmp = {
+			background_clear = false,
+		},
+		whichkey = {
+			background_clear = false,
+		},
 		indent_blankline = {
-			context_highlight = "pro",
+			context_highlight = "pro", -- default | pro
 		},
 	},
 })

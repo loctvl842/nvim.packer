@@ -112,16 +112,16 @@ cmp.setup({
 		{ name = "path" },
 	},
 	window = {
-		documentation = true,
-		-- documentation = {
+		-- documentation = false,
+		documentation = {
 			-- border = "rounded",
-		-- 	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		-- 	winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-		-- },
+			-- 	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			-- winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+		},
 		completion = {
 			border = "none",
+			-- border = "rounded",
 			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			winhighlight = "NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},
 	experimental = {

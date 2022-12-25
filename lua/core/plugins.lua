@@ -107,11 +107,6 @@ local tvl_plugins = {
 		commit = "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252",
 	},
 
-	-- ["hrsh7th/cmp-nvim-lua"] = {
-	-- 	after = "nvim-cmp",
-	-- 	commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
-	-- },
-
 	["mfussenegger/nvim-jdtls"] = {
 		commit = "0422245fdef57aa4eddba3d99aee1afaaf425da7",
 	},
@@ -121,9 +116,7 @@ local tvl_plugins = {
 		commit = "c599c560ed26f04f5bdb7e4498b632dc16fb9209",
 	},
 
-	["rafamadriz/friendly-snippets"] = {
-		commit = "471f3ab20c1ee02d33830f379caaa8edfbd39808",
-	},
+	["rafamadriz/friendly-snippets"] = {},
 
 	["mattn/emmet-vim"] = {
 		commit = "f4c999bdf2a21b9d96132f6cd04a9e19eb7e87ff",

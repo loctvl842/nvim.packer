@@ -51,40 +51,16 @@ local branch = {
 	icon = hl_str("", "SLGitIcon", "SLBranchName"),
 	colored = false,
 	fmt = function(str)
-		local icon = hl_str(" ", "SLGitIcon", "SLBranchName")
 		if str == "" or str == nil then
-			return "!=vcs"
+			str = "!=vcs"
 		end
+		local icon = hl_str(" ", "SLGitIcon", "SLBranchName")
 		return hl_str(separator_icon.left, "SLSeparator")
 			.. hl_str(" " .. icon, "SLGitIcon")
 			.. hl_str(str .. " ", "SLBranchName")
 			.. hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
 	end,
 }
-
--- local diagnostics = {
--- 	"diagnostics",
--- 	sources = { "nvim_diagnostic" },
--- 	sections = { "error", "warn", "info" },
--- 	symbols = {
--- 		error = "%#SLError#" .. "  " .. "%*" .. "%#SLError#",
--- 		warn = "%#SLWarning#" .. "  " .. "%*" .. "%#SLWarning#",
--- 		info = "%#SLInfo#" .. "  " .. "%*" .. "%#SLInfo#",
--- 	},
--- 	colored = false,
--- 	update_in_insert = false,
--- 	always_visible = true,
--- 	padding = 0,
--- 	on_click = function()
--- 		vim.diagnostic.goto_next({ buffer = 0 })
--- 	end,
--- 	fmt = function(str)
--- 		return hl_str(alt_separator_icon.left, "SLSeparator")
--- 			.. str
--- 			.. " "
--- 			.. hl_str(alt_separator_icon.right, "SLSeparator")
--- 	end,
--- }
 
 local position = function()
 	local current_line = vim.fn.line(".")
@@ -100,11 +76,6 @@ local spaces = function()
 	local right_sep = hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
 	local str = "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 	return left_sep .. hl_str(" " .. str .. " ", "SLShiftWidth", "SLShiftWidth") .. right_sep
-end
-
-local encoding = function()
-	local str = string.upper(vim.o.fileencoding)
-	return hl_str(str, "SLEncoding", "SLEncoding")
 end
 
 local diagnostics = function()
@@ -159,7 +130,6 @@ local mode = {
 }
 
 local prev_filetype = ""
-
 local filetype = {
 	"filetype",
 	icons_enabled = false,
@@ -187,21 +157,22 @@ local filetype = {
 		elseif str == "TelescopePrompt" then
 			filetype_str = ""
 		elseif str == "neo-tree" or str == "neo-tree-popup" then
+      if prev_filetype == '' then
+        return
+      end
 			filetype_str = prev_filetype
 		elseif str == "help" then
 			filetype_str = ""
 		elseif vim.tbl_contains(ui_filetypes, str) then
-			filetype_str = ""
-		elseif str == "" then
-			return ""
+      return
 		else
 			prev_filetype = str
 			filetype_str = str
 		end
 		local left_sep = hl_str(separator_icon.left, "SLSeparator")
 		local right_sep = hl_str(separator_icon.right, "SLSeparator", "SLSeparator")
-    -- Upper case first character
-    filetype_str = filetype_str:gsub("%a", string.upper, 1)
+		-- Upper case first character
+		filetype_str = filetype_str:gsub("%a", string.upper, 1)
 		local filetype_hl = hl_str(" " .. filetype_str .. " ", "SLFiletype", "SLFiletype")
 		return left_sep .. filetype_hl .. right_sep
 	end,
