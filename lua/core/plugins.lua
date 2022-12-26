@@ -213,21 +213,8 @@ local tvl_plugins = {
 		end,
 	},
 
-	-- ["zbirenbaum/neodim"] = {
-	-- 	config = function()
-	-- 		require("configs.neodim")
-	-- 	end,
-	-- },
-
-	-- ["petertriho/nvim-scrollbar"] = {
-	-- 	config = function()
-	-- 		require("configs.scrollbar")
-	-- 	end,
-	-- },
-
 	---------------------------------- UTIL ----------------------------------------
 	["folke/which-key.nvim"] = {
-		commit = "6885b669523ff4238de99a7c653d47b081b5506d",
 		config = function()
 			require("configs.whichkey")
 		end,
@@ -244,7 +231,6 @@ local tvl_plugins = {
 	},
 
 	["windwp/nvim-autopairs"] = {
-		commit = "4a95b3982be7397cd8e1370d1a09503f9b002dbf",
 		event = "InsertEnter",
 		config = function()
 			require("configs.autopairs")
@@ -269,21 +255,15 @@ local tvl_plugins = {
 		commit = "25ef93ac5a87526111f43e5110675032dbcacf56",
 	},
 
-	-- ["famiu/bufdelete.nvim"] = { module = "bufdelete", cmd = { "Bdelete", "Bwipeout" } },
-
 	["ahmedkhalf/project.nvim"] = {
-		commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
 		config = function()
 			require("configs.project")
 		end,
 	},
 
-	["lewis6991/impatient.nvim"] = {
-		commit = "d3dd30ff0b811756e735eb9020609fa315bfbbcc",
-	},
+	["lewis6991/impatient.nvim"] = {},
 
 	["lukas-reineke/indent-blankline.nvim"] = {
-		commit = "052c880396076af074f1ff3d3eb687cb36018dfa",
 		config = function()
 			require("configs.indentline")
 		end,
@@ -297,7 +277,6 @@ local tvl_plugins = {
 	},
 
 	["lewis6991/gitsigns.nvim"] = {
-		commit = "9787c94178b4062f30d2f06b6d52984217196647",
 		config = function()
 			require("configs.gitsigns")
 		end,

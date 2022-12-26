@@ -5,7 +5,7 @@ end
 local mappings_utils = require("renamer.mappings.utils")
 renamer.setup({
 	-- The popup title, shown if `border` is true
-	title = "",
+	title = "rename",
 	-- The padding around the popup content
 	padding = {
 		top = 0,
@@ -20,7 +20,7 @@ renamer.setup({
 	-- Whether or not to shown a border around the popup
 	border = true,
 	-- The characters which make up the border
-	-- border_chars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, [ top - right - bottom - left - topleft - topright - bottomright - bottomleft]
+	-- border_chars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, -- [ top - right - bottom - left - topleft - topright - bottomright - bottomleft]
 	border_chars = { "▄", "█", "▀", "█", "▄", "▄", "▀", "▀" },
 	-- Whether or not to highlight the current word references through LSP
 	show_refs = true,
