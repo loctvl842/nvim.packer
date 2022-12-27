@@ -103,7 +103,7 @@ function tvl.lsp.server_settings(server_name)
 		on_attach = tvl.lsp.on_attach,
 	}
 	local lang_opts = tvl.lsp.language_opts(server_name)
-	vim.tbl_deep_extend("force", lang_opts, opts)
+	opts = vim.tbl_deep_extend("force", lang_opts, opts)
 	return opts
 end
 

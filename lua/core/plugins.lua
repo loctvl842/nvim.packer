@@ -166,6 +166,8 @@ local tvl_plugins = {
 		end,
 	},
 
+  ["rebelot/kanagawa.nvim"] = {},
+
 	["loctvl842/colorscheme"] = {},
 
 	["loctvl842/breadcrumb.nvim"] = {
@@ -215,6 +217,7 @@ local tvl_plugins = {
 
 	---------------------------------- UTIL ----------------------------------------
 	["folke/which-key.nvim"] = {
+    commit = "fb276a07c7dc305e48ecc2683e4bd28cda49499a",
 		config = function()
 			require("configs.whichkey")
 		end,

@@ -42,7 +42,7 @@ bufferline.setup({
 		indicator = {
 			-- icon = "▏",
 			-- style = 'icon',
-			style = "underline",
+			-- style = "underline",
 		},
 		-- buffer_close_icon = "",
 		-- close_icon = '',
@@ -50,8 +50,10 @@ bufferline.setup({
 		right_trunc_marker = "",
 		diagnostics_update_in_insert = false,
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
-			return "(" .. count .. ")"
-			-- return ""
+      if count > 9 then
+        return "9+"
+      end
+			return tostring(count)
 		end,
 		color_icons = true,
 		show_buffer_icons = true,

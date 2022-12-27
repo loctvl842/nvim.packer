@@ -225,6 +225,7 @@ local fold_mappings = {
 	["L"] = { "zL", "Half screen to the right" },
 }
 which_key.register(fold_mappings, fold_opts)
+
 which_key.register({ ["f"] = { "zf", "Create fold" } }, {
 	mode = "v",
 	prefix = "f",
