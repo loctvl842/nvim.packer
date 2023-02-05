@@ -4,7 +4,24 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	-- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	ensure_installed = {
+		"bash",
+		"help",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"markdown",
+		"markdown_inline",
+		"python",
+		"query",
+		"regex",
+		"tsx",
+		"typescript",
+		"vim",
+		"yaml",
+	},
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 	ignore_install = { "phpdoc", "tree-sitter-phpdoc" }, -- List of parsers to ignore installing
 	autopairs = {
@@ -23,19 +40,19 @@ configs.setup({
 		enable = true,
 		disable = { "xml", "markdown" },
 	},
-	rainbow = {
-		enable = true,
-		extended_mode = false,
-		colors = {
-			tvl.color_base.blue,
-			tvl.color_base.red,
-			tvl.color_base.magenta,
-			tvl.color_base.cyan,
-			tvl.color_base.green,
-			tvl.color_base.yellow,
-		},
-		disable = { "html" },
-	},
+	-- rainbow = {
+	-- 	enable = true,
+	-- 	extended_mode = false,
+	-- 	colors = {
+	-- 		tvl.color_base.blue,
+	-- 		tvl.color_base.red,
+	-- 		tvl.color_base.magenta,
+	-- 		tvl.color_base.cyan,
+	-- 		tvl.color_base.green,
+	-- 		tvl.color_base.yellow,
+	-- 	},
+	-- 	disable = { "html" },
+	-- },
 	playground = {
 		enable = true,
 		disable = {},

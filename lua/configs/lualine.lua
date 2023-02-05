@@ -212,7 +212,7 @@ local no_theme = {
 
 local float_config = {
 	options = {
-		theme = no_theme,
+		theme = "auto",
 		icons_enabled = true,
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },

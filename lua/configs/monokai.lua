@@ -4,10 +4,11 @@ if not status_ok then
 end
 
 monokai.setup({
-	transparent_background = true,
+	transparent_background = false,
 	italic_comments = true,
 	filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
 	inc_search = "underline", -- underline | background
+	background_clear = {},
 	diagnostic = {
 		background = true,
 	},
@@ -15,23 +16,10 @@ monokai.setup({
 		bufferline = {
 			underline_selected = true,
 		},
-		toggleterm = {
-			background_clear = false,
-		},
-		telescope = {
-			background_clear = false,
-		},
-		cmp = {
-			background_clear = false,
-		},
-		whichkey = {
-			background_clear = false,
-		},
-    renamer = {
-			background_clear = false,
-    },
 		indent_blankline = {
 			context_highlight = "pro", -- default | pro
 		},
 	},
 })
+
+vim.cmd([[colorscheme monokai-pro]])

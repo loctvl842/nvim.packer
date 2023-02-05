@@ -6,27 +6,27 @@ tvl.compile_path = stdpath("data") .. "/packer_compiled.lua"
 -- @param highlight group to get (string)
 -- @return table { foreground, background }
 function tvl.get_highlight(group)
-	local hl = vim.api.nvim_get_hl_by_name(group, true)
-	local hl_config = {}
-	for key, value in pairs(hl) do
-		hl_config[key] = string.format("#%02x", value)
-	end
-	return hl_config
+  local hl = vim.api.nvim_get_hl_by_name(group, true)
+  local hl_config = {}
+  for key, value in pairs(hl) do
+    hl_config[key] = string.format("#%02x", value)
+  end
+  return hl_config
 end
 
-local colorscheme_ok, monokai_pro = pcall(require, "monokai-pro")
-if colorscheme_ok then
-	tvl.color_base = monokai_pro.get_base_color()
-end
+-- local colorscheme_ok, monokai_pro = pcall(require, "monokai-pro")
+-- if colorscheme_ok then
+-- 	tvl.color_base = monokai_pro.get_base_color()
+-- end
 
 --- Serve a notification with a title of TVL
 -- @param msg the notification body
 -- @param type the type of the notification (:help vim.log.levels)
 -- @param opts table of nvim-notify options to use (:help notify-options)
 function tvl.notify(msg, type, opts)
-	vim.schedule(function()
-		vim.notify(msg, type, tvl.default_tbl(opts, { title = "TVL" }))
-	end)
+  vim.schedule(function()
+    vim.notify(msg, type, tvl.default_tbl(opts, { title = "TVL" }))
+  end)
 end
 
 --- Check if packer is installed and loadable, if not then install it and make sure it loads
